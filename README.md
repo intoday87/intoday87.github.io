@@ -10,10 +10,13 @@
 
 ## git 환경으로 갈아타는 이유
 
-notion이 물론 미디어 삽입시 미리보기 기능이나 풍부한 기능들이 좋지만 일반적이지 않은 네트워크 상황(보안이 된 사내망) 에서는 특히 느리다. 빠르게 보고 확인해야 하는 상황에서 로딩 타임도 한 몫한다. 그래서
+notion이 물론 미디어 삽입시 미리보기 기능이나 풍부한 기능들이 좋지만 일반적이지 않은 네트워크 상황(보안이 된 사내망) 에서는 특히 느리다. 빠르게 보고 확인해야 하는 상황에서 로딩 타임도 한 몫 한다. 그래서
 
 -  github pages 사용
 	- git으로 버전관리 용이
 	- github markdown language를 사용하여 페이지를 구성할 수 있는 장점 -> editor 환경에서도 동일하게 markdown language로 작업할 수 있다. 
-	- md파일 수정을 목적으로 하는 [obsidian](https://obsidian.md/) + [git plugin](https://github.com/Vinzent03/obsidian-git) 사용
-		- 완전 동일하지는 않지만(특히 이미지 업로드) github 웹으로 접근시 editor와 거의 같은 포맷으로 보여줌
+	- md파일  수정에 최적화 된 [obsidian](https://obsidian.md/) + [git plugin](https://github.com/Vinzent03/obsidian-git) 으로 주기적인 commit & push
+		- 완전 동일하지는 않지만(특히 이미지 업로드) github 웹으로 접근시 editor와 거의 같은 포맷으로 보여줄 수 있다
+
+## 구성
+- 주제별 페이지를 디렉토리 하위로 묶지 않고 태그 기
