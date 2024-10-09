@@ -1,0 +1,12 @@
+{
+  "obsidian-git:switch-to-remote-branch": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod",
+        "Shift"
+      ],
+      "key": "C"
+    }
+  ]
+}
