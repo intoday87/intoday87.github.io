@@ -62,3 +62,5 @@ For your company account, make sure that you use `git!github-COMPANY` as the hos
 출처: https://gist.githubusercontent.com/JoaquimLey/e6049a12c8fd2923611802384cd2fb4a/raw/12f4a1b95bfdbc77ea0ac993e63b8e459173c3db/github_multiple-accounts.md
 
 `$ git remote set-url origin git@github-intoday87:intoday87/next-amplified.git` 기존 repo에는 origin 주소를 ssh git 주소로 변경해준다. `github-intoday87` 은 git ssh config에 있는 host로 적어놓은 이름
+
+#github-multiple-account #github-계정-여러개
