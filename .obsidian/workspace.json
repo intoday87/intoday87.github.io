@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/무제 파일.md",
+                "file": "posts/github 계정 여러개 사용하기.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/무제 파일.md",
+                "file": "posts/github 계정 여러개 사용하기.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "posts/무제 파일.md",
+                "file": "posts/github 계정 여러개 사용하기.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/무제 파일.md"
+                "file": "posts/github 계정 여러개 사용하기.md"
               }
             }
           }
@@ -150,7 +150,7 @@
   "active": "b16e232e6fea8411",
   "lastOpenFiles": [
     "README.md",
-    "posts/무제 파일.md",
+    "posts/github 계정 여러개 사용하기.md",
     "posts"
   ]
 }
