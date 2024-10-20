@@ -1,8 +1,7 @@
 ---
 title: github 계정 여러개 사용하기
-description: 이 post는
+description: 이 post는 github 계정을 여러개 사용하는 방법을 정리해 놓았습니다
 ---
-
 - mac에서 github 계정 여러개 사용하기
     - keychain에서 [github.com](http://github.com)이 등록됨에 따라 여러 [github.com](http://github.com) 계정을 사용하지 못하고 keychain에 들어간 계정만 사용할 수 있게 되는데 ssh 키 등록을 통해 해결할 수 있다
 	
