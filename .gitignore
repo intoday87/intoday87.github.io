@@ -1,2 +1,3 @@
 *.swp
-.obsidian
+.obsidian/
+.DS_Store
