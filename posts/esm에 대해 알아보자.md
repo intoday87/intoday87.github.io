@@ -8,8 +8,10 @@ package.json에서 [type: "module"](https://nodejs.org/api/packages.html#type)�
 
 bundler에서 인식
 
-node esm에서 확장자를 필수로 요구
+## node esm에서 확장자를 필수로 요구 한다
+
 https://nodejs.org/api/esm.html#mandatory-file-extensions
+
 ```json
 //package.json
 {
