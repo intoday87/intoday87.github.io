@@ -5,6 +5,7 @@ docs에 보니 bundler인 것 같고 이렇게 적혀 있다
 > What can it bundle
 > Bundle your TypeScript library with no config, powered by [esbuild](https://github.com/evanw/esbuild).
 
+ts를 별도의 plugin
 설치해서 실행해 보자
 
 ```zsh
@@ -53,10 +54,23 @@ CJS Build start
 CJS dist/index.js 44.00 B
 CJS ⚡️ Build success in 411ms
 ```
+
 성공한다. 설정 없이 바로 bundle로 만들었다
 dist/index.js를 봐보자
+
 ```js
 // src/index.ts
 var a = 10;
 console.log(a);
+```
+
+문서를 읽다보니 bundling시 [Excluding packages](https://github.com/egoist/tsup/tree/main/docs#excluding-packages) 를 보니까 dependencies와 peerDependencies를 제외 한다고 되어 있다. 테스트를 해보자
+
+```
+pnpm add hello-world-npm
+```
+
+import를 해서 entry point에 추가해 보자
+
+```
 ```
