@@ -54,5 +54,9 @@ CJS dist/index.js 44.00 B
 CJS ⚡️ Build success in 411ms
 ```
 성공한다. 설정 없이 바로 bundle로 만들었다
+dist/index.js를 봐보자
 ```js
+// src/index.ts
+var a = 10;
+console.log(a);
 ```
