@@ -5,7 +5,7 @@ docs에 보니 bundler인 것 같고 이렇게 적혀 있다
 > What can it bundle
 > Bundle your TypeScript library with no config, powered by [esbuild](https://github.com/evanw/esbuild).
 
-ts를 별도의 plugin
+typescript를 별도의 plugin 설정과 별도의 다른 설정 없이 번들링을 해주는 도구로 보인다
 설치해서 실행해 보자
 
 ```zsh
@@ -42,7 +42,7 @@ Require stack:
     at Module.require (node:internal/modules/cjs/loader:1233:19)
 ```
 
-typescript를 찾는다
+typescript를 찾는다. typescript와 의존성을 분리 해놨다
 
 ```zsh
 pnpm add typescript -D
@@ -72,5 +72,15 @@ pnpm add hello-world-npm
 
 import를 해서 entry point에 추가해 보자
 
+```ts
+import { helloWorld } from 'hello-world-npm';
+
+console.log(helloWorld());
+
+const a: number = 10
+console.log(a)
 ```
+그리고 돌려보자
+```
+pnpm tsup src/index.ts
 ```
