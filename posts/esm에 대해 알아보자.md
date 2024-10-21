@@ -31,4 +31,23 @@ import a from './a'
 //
 ```
 
-e
+다음과 같이 오류 발생
+```
+node:internal/modules/run_main:129
+    triggerUncaughtException(
+    ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/Users/USER/vscode-repo/temp/import-test-node/a' imported from /Users/USER/vscode-repo/temp/import-test-node/import.js
+Did you mean to import "./a.js"?
+    at finalizeResolution (node:internal/modules/esm/resolve:265:11)
+    at moduleResolve (node:internal/modules/esm/resolve:933:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1169:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:383:12)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:352:25)
+    at ModuleLoader.getModuleJob (node:internal/modules/esm/loader:227:38)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/module_job:87:39)
+    at link (node:internal/modules/esm/module_job:86:36) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///Users/USER/vscode-repo/temp/import-test-node/a'
+}
+```
