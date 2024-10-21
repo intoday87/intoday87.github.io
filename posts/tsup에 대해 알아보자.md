@@ -81,6 +81,14 @@ const a: number = 10
 console.log(a)
 ```
 그리고 돌려보자
-```
+```zsh
 pnpm tsup src/index.ts
+CLI Building entry: src/index.ts
+CLI tsup v8.3.0
+CLI Target: node16
+CJS Build start
+CJS dist/index.js 156.00 B
+CJS ⚡️ Build success in 21ms
 ```
+dist 디렉토리를 보면 cli 콘솔에서 찍혔듯이 index.js 밖에 없다. dependencies는 제외된다. peerDependencies는 말할것도 없겠..
+
