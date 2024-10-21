@@ -92,3 +92,6 @@ CJS ⚡️ Build success in 21ms
 ```
 dist 디렉토리를 보면 cli 콘솔에서 찍혔듯이 index.js 밖에 없다. dependencies는 제외된다. peerDependencies는 말할것도 없겠..
 
+
+## 왜 rollup과 esbuild를 같이 쓰지?
+
