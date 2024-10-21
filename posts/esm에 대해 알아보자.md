@@ -7,3 +7,28 @@ package.json에서 [type: "module"](https://nodejs.org/api/packages.html#type)�
 - js내 export, import 구문 사용 가능
 
 bundler에서 인식
+
+node esm에서 확장자를 필수로 요구
+https://nodejs.org/api/esm.html#mandatory-file-extensions
+```json
+//package.json
+{
+  "name": "import-test-node",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+```
+
+```js
+// index.js
+import a from './a'
+//
+```
+
+e
