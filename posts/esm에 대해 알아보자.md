@@ -12,6 +12,8 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 `import` 와 `export` 문(statement)은 모듈 내에서만 사용할 수 있다. 정규 스크립트가 아니다
 
 
+
+
 ## commonjs와의 차이
 - 복사냐 참조냐
 
