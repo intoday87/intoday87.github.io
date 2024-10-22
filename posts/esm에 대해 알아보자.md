@@ -1,4 +1,7 @@
-esm이란?
+## esm이란?
+[mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)을 읽고 남겨보자
+
+
 
 commonjs와의 차이
 - 복사냐 참조냐
