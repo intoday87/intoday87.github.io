@@ -1,7 +1,7 @@
 ## esm이란?
 [JavaScript modules - mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)을 읽고 남겨보자
 브라우저와 달리 node.js에서는 일찍부터 commonjs 기반으로 서버를 기반으로 한 모듈 시스템을 지원하고 있었으나 브라우저는 그렇지 않음
-javascript module은 두 가지 키워드로 구성된다
+javascript module은 두 가지 구문으로 구성된다
 - export
 - import
 
