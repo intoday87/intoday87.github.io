@@ -1,8 +1,8 @@
 ## esm이란?
-[mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)을 읽고 남겨보자
+[JavaScript modules - mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)을 읽고 남겨보자
+브라우저와 달리 node.js에서는 일찍부터 commonjs 기반으로 모듈 시스템을 지원하고 있었으나 브라우저는 그렇지 않음
 
-
-
+[]
 commonjs와의 차이
 - 복사냐 참조냐
 
