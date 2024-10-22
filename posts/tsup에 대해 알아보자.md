@@ -55,7 +55,7 @@ CJS dist/index.js 44.00 B
 CJS ⚡️ Build success in 411ms
 ```
 
-성공한다. 설정 없이 바로 bundle로 만들었다
+설정 없이 바로 bundle로 만들었다
 dist/index.js를 봐보자
 
 ```js
@@ -90,8 +90,6 @@ CJS Build start
 CJS dist/index.js 156.00 B
 CJS ⚡️ Build success in 21ms
 ```
-dist 디렉토리를 보면 cli 콘솔에서 찍혔듯이 index.js 밖에 없다. dependencies는 제외된다. peerDependencies는 말할것도 없겠..
-
-
+dist 디렉토리를 보면 cli 콘솔에서 찍혔듯이 index.js 밖에 없다. dependencies는 제외된다
 ## 왜 rollup과 esbuild를 같이 쓰지?
 
