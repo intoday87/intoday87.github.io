@@ -17,7 +17,7 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 
 package.json에서 [type: "module"](https://nodejs.org/api/packages.html#type)로  선언된 경우 esm only로 해석되어 *.js는 기본적으로 esm으로 해석되게 된다
  js내 export, import 구문 사용 가능
-기본적으로 *.js는 esm으로 취급한다. (*.m)
+기본적으로 `*.js`는 esm으로 취급한다. `*.mjs`가 아니어도 상관없이)
 
 bundler에서 인식
 
