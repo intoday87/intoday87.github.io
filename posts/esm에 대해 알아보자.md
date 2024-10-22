@@ -1,7 +1,7 @@
 ## esm이란?
 [JavaScript modules - mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)을 읽고 남겨보자
 브라우저와 달리 node.js에서는 일찍부터 commonjs 기반으로 서버를 기반으로 한 모듈 시스템을 지원하고 있었으나 브라우저는 그렇지 않음
-javascript module은 다음과 같이 구성됨
+javascript module은 두 가지 키워드로 구성된다
 - export
 - import
 
@@ -14,8 +14,7 @@ package.json에서 [type: "module"](https://nodejs.org/api/packages.html#type)�
 
 bundler에서 인식
 
-## node esm에서 확장자를 필수로 요구 한다
-
+## Node.js esm에서 확장자를 필수로 요구 한다
 https://nodejs.org/api/esm.html#mandatory-file-extensions
 
 ```json
@@ -40,7 +39,7 @@ import a from './a'
 ```
 
 다음과 같이 오류 발생
-```
+```zsh
 node:internal/modules/run_main:129
     triggerUncaughtException(
     ^
