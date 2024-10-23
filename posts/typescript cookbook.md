@@ -4,9 +4,13 @@
 > by chatgpt
 
 ## object에서 key에 해당하는 union type 얻기
+
 ```typescript
 const O = { 
-A: 1, 
-B: 2, 
-C: 3 } as const; type KeysOfO = keyof typeof O; // 아래 코드는 KeysOfO를 확인하는데 사용됩니다. console.log(KeysOfO); // "A" | "B" | "C"
+	A: 1, 
+	B: 2, 
+	C: 3 
+} as const
+type KeysOfO = keyof typeof O // 아래 코드는 KeysOfO를 확인하는데 사용됩니다. console.log(KeysOfO); // "A" | "B" | "C"
 ```
+
