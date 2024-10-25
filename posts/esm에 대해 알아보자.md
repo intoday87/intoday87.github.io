@@ -69,6 +69,10 @@ Did you mean to import "./a.js"?
 }
 ```
 
+## todo esm과 cjs의 로딩 방식
+- esm: 비동기
+- cjs: 동기
+
 ## todo commonjs 와의 차이
 - 복사냐 참조냐
 
