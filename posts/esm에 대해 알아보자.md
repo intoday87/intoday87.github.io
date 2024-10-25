@@ -7,8 +7,6 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 - `export`
 - `import`
 
- [JavaScript modules - mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules) 링크를 참고하자
-
 `import` 와 `export` 문(statement)은 모듈 내에서만 사용할 수 있다. 정규 스크립트가 아니다
 즉 브라우저에서는 `<script type="module" src="./a.mjs />` 로 써야 한다. - [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)
 
@@ -17,9 +15,8 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 	- web에서는 사실 이 확장자는 `Content-type: text/javascript`로 서빙되면 아무 문제가 없다
 	- browser에서 `type` 속성으로 부터 script라는 것을 알고 있다
 	- 그러므로 2가지 이유로 `.mjs`를 추천한다
-		- code를 들여다 보지 않아도 esm module이라고 가정할 수 있다
+		- code를 들여다 보지 않아도 esm module이라고 가정할 수 있다. 즉 시각적으로 누구나 다 전통적인 클래식 스크립트가 아닌 모듈이라고 확신할 수 있다
 		- nodejs 및 [d8](https://v8.dev/docs/d8), babel에서 esm module로 구문이 분석되도록 보장한다
-
 
 ## commonjs 와의 차이
 - 복사냐 참조냐
