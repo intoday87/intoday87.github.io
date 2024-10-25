@@ -18,8 +18,6 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 		- code를 들여다 보지 않아도 esm module이라고 가정할 수 있다. 즉 시각적으로 누구나 다 전통적인 클래식 스크립트가 아닌 모듈이라고 확신할 수 있다
 		- nodejs 및 [d8](https://v8.dev/docs/d8), babel에서 esm module로 구문이 분석되도록 보장한다
 
-## commonjs 와의 차이
-- 복사냐 참조냐
 
 package.json에서 [type: "module"](https://nodejs.org/api/packages.html#type)로  선언된 경우 esm only로 해석되어 *.js는 기본적으로 esm으로 해석되게 된다
  js내 export, import 구문 사용 가능
@@ -48,7 +46,6 @@ https://nodejs.org/api/esm.html#mandatory-file-extensions
 ```js
 // index.js
 import a from './a'
-//
 ```
 
 다음과 같이 오류 발생
@@ -71,5 +68,8 @@ Did you mean to import "./a.js"?
   url: 'file:///Users/USER/vscode-repo/temp/import-test-node/a'
 }
 ```
+
+## todo commonjs 와의 차이
+- 복사냐 참조냐
 
 #esm #javascript-module
