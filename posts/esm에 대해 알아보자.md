@@ -14,7 +14,11 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 
 ## `.mjs`에 대해 파헤쳐 보자
 - [v8 문서에서 추천하는 이유](https://v8.dev/features/modules#mjs)
-	- web에서는 사실 이 확장자는 `Content-type: text/javascript`
+	- web에서는 사실 이 확장자는 `Content-type: text/javascript`로 서빙되면 아무 문제가 없다
+	- browser에서 `type` 속성으로 부터 script라는 것을 알고 있다
+	- 그러므로 2가지 이유로 `.mjs`를 추천한다
+		- code를 들여다 보지 않아도 esm module이라고 가정할 수 있다
+		- 
 
 
 ## commonjs 와의 차이
