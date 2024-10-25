@@ -12,6 +12,9 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 `import` 와 `export` 문(statement)은 모듈 내에서만 사용할 수 있다. 정규 스크립트가 아니다
 즉 브라우저에서는 `<script type="module" src="./a.mjs />` 로 써야 한다. - [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)
 
+## mjs에 대해 파헤쳐 보자
+
+
 ## commonjs 와의 차이
 - 복사냐 참조냐
 
