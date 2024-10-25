@@ -18,7 +18,7 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 	- browser에서 `type` 속성으로 부터 script라는 것을 알고 있다
 	- 그러므로 2가지 이유로 `.mjs`를 추천한다
 		- code를 들여다 보지 않아도 esm module이라고 가정할 수 있다
-		- 
+		- nodejs 및 [d8](https://v8.dev/docs/d8), babel에서 esm module로 구문이 분석되도록 보장한다
 
 
 ## commonjs 와의 차이
