@@ -105,7 +105,7 @@ module.exports = index;
 ## `.browserslist` 파일은 그럼 필요한가?
 rollup.config.js에서 설정하는데 별도로 `.browserslist`이 필요 한가?
 
-bebel-preset-env에서 설명하고 있는 부분을 보자
+[bebel-preset-env](https://babeljs.io/docs/babel-preset-env)에서 설명하고 있는 부분을 보자
 
 
 https://github.com/browserslist/browserslist#queries를 보면 browserslist를 조회하는 순서에 대해 설명하고 있다
