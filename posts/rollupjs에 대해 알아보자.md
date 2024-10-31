@@ -27,3 +27,7 @@ exports.__esModule = true;
 var bar_1 = __importDefault(require("bar"));
 ```
 출처: [stackoverflow](https://stackoverflow.com/questions/50943704/whats-the-purpose-of-object-definepropertyexports-esmodule-value-0)
+
+## rollup에서 browserslist를 인식해서 polyfill이 포함되도록 해보자
+
+rollupjs는 기본적으로 polyfill을 추가하지 않는다
