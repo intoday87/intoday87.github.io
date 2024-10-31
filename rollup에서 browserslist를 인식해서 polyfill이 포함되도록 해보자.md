@@ -101,3 +101,17 @@ function index () {
 
 module.exports = index;
 ```
+
+## `.browserslist` 파일은 그럼 필요한가?
+rollup.config.js에서 설정하는데 별도로 `.browserslist`이 필요 한가?
+
+bebel-preset-env에서 설명하고 있는 부분을 보자
+
+
+https://github.com/browserslist/browserslist#queries를 보면 browserslist를 조회하는 순서에 대해 설명하고 있다
+
+> 1. `.browserslistrc` config file in current or parent directories.
+> 2. `browserslist` key in `package.json` file in current or parent directories.
+> 3. `browserslist` config file in current or parent directories.
+> 4. `BROWSERSLIST` environment variable.
+> 5. If the above methods did not produce a valid result Browserslist will use defaults: `> 0.5%, last 2 versions, Firefox ESR, not dead`.
