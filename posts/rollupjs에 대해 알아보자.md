@@ -36,6 +36,9 @@ babel 플러그인과 함께 사용하는 방법이 가이드 된다. `rollup-pl
 결과적으로 정리하자면 rollup에서 browserslist 지원 범위를 target으로 지정해 해당 지원 브라우저 범위에 polyfill이 필요하다고 판단되면 번들링 결과에 import가 되어 있는 형태로 지원된다. 코드에 따라 필요에 따라 포함되는 방법을 소개한다.
 
 예시에서 가정은 ie 9에서 `Array.prototype.includes`를 지원하지 않으므로 해당 폴리필을 core-js의 
+['core-js/modules/es.array.includes.js'](https://github.com/zloirock/core-js/blob/master/packages/core-js/modules/es.array.includes.js)가 include 되는지 확인해보면 될 것 같다
+
+browserslist를 ie 9부터 지원하도록 셋팅 해보자 - https://browsersl.ist/#q=ie+%3E%3D+9
 
 ```js
 // rollup.config.js
@@ -57,9 +60,9 @@ export default {
           '@babel/preset-env',
           {
             targets: {
-              browsers: ['ie >= 9'],
+              browsers: ['ie >= 9'], // ie 9부터 지원
             },
-            useBuiltIns: 'usage',
+            useBuiltIns: 'usage', // 코드에 따라 필요하면 포함
             corejs: 3,
           },
         ],
@@ -69,4 +72,8 @@ export default {
     commonjs(),
   ],
 };
+```
+
+
+```
 ```
