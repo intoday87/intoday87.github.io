@@ -31,3 +31,4 @@ var bar_1 = __importDefault(require("bar"));
 ## rollup에서 browserslist를 인식해서 polyfill이 포함되도록 해보자
 
 rollupjs는 기본적으로 polyfill을 추가하지 않는다
+babel 플러그인과 함께 사용하는 방법이 가이드 된다. `@swc/core`와 `rollup-plugin-swc3`와 같은 플러그인을 이용해
