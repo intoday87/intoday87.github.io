@@ -73,7 +73,31 @@ export default {
   ],
 };
 ```
+config 파일에서 esm 형태로 작성되어 있음을 유의한다
 
+```json
+// package.json
+{
+  "name": "rollup-browserslist",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@9.7.1",
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "rollup": "^4.24.3"
+  }
+}
+```
+rollup.config.js를 esm으로 인식하기 위해 `type: module`로 선언된 것에 주목한다
 
-```
-```
