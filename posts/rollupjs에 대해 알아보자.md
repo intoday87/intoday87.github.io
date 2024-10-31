@@ -4,7 +4,9 @@ title: rollupjs에 대해 알아보자
 # 왜 rollup을 쓰는거지?
 
 
-## 다음과 같은 코드는 왜 있는것일까?
+## transfile된 코드에서 다음과 같은 코드는 왜 있는것일까?
+
+```
 ```js
 Object.defineProperty(exports, '__esModule', { value: true });
 ```
