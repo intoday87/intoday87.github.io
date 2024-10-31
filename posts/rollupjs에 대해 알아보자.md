@@ -2,7 +2,7 @@
 title: rollupjs에 대해 알아보자
 ---
 # 왜 rollup을 쓰는거지?
-
+TODO
 
 ## transfile된 코드에서 다음과 같은 코드는 왜 있는것일까?
 
@@ -101,3 +101,32 @@ config 파일에서 esm 형태로 작성되어 있음을 유의한다
 ```
 rollup.config.js를 esm으로 인식하기 위해 `type: module`로 선언된 것에 주목한다
 
+```js
+// src/index.js
+import foo from './foo.js';
+
+const arr = [1,2,3]
+
+console.log(arr.includes(4))
+
+export default function () {
+	console.log(foo);
+}
+```
+
+```js
+// dist/bundle.js
+'use strict';
+
+require('core-js/modules/es.array.includes.js'); // 번들 결과에 자동으로 polyfill 추가
+
+var foo = 'hello world!';
+
+var arr = [1, 2, 3];
+console.log(arr.includes(4));
+function index () {
+  console.log(foo);
+}
+
+module.exports = index;
+```
