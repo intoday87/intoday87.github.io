@@ -105,9 +105,6 @@ module.exports = index;
 ## `.browserslist` 파일은 그럼 필요한가?
 rollup.config.js에서 설정하는데 별도로 `.browserslist`이 필요 한가?
 
-[bebel-preset-env](https://babeljs.io/docs/babel-preset-env)에서 설명하고 있는 부분을 보자
-
-
 https://github.com/browserslist/browserslist#queries를 보면 browserslist를 조회하는 순서에 대해 설명하고 있다
 
 > 1. `.browserslistrc` config file in current or parent directories.
@@ -115,3 +112,12 @@ https://github.com/browserslist/browserslist#queries를 보면 browserslist를 �
 > 3. `browserslist` config file in current or parent directories.
 > 4. `BROWSERSLIST` environment variable.
 > 5. If the above methods did not produce a valid result Browserslist will use defaults: `> 0.5%, last 2 versions, Firefox ESR, not dead`.
+
+
+
+babel-preset-env [Browserslist Integration](https://babeljs.io/docs/babel-preset-env#browserslist-integration)에서 설명하고 있는 부분을 보자
+> For browser- or Electron-based projects, we recommend using a [`.browserslistrc`](https://github.com/browserslist/browserslist) file to specify targets.
+
+.browserslistrc
+
+
