@@ -114,10 +114,31 @@ https://github.com/browserslist/browserslist#queries를 보면 browserslist를 �
 > 5. If the above methods did not produce a valid result Browserslist will use defaults: `> 0.5%, last 2 versions, Firefox ESR, not dead`.
 
 
-
 babel-preset-env [Browserslist Integration](https://babeljs.io/docs/babel-preset-env#browserslist-integration)에서 설명하고 있는 부분을 보자
 > For browser- or Electron-based projects, we recommend using a [`.browserslistrc`](https://github.com/browserslist/browserslist) file to specify targets.
 
-.browserslistrc
+babel-preset-env에서 .browserslistrc를 인식한다고 되어 있다
+```json
+// babel.config.json
+{  
+	"presets": [  
+		[  
+			"@babel/preset-env",  
+			{  
+				"useBuiltIns": "entry",  
+				"corejs": "3.22"  
+			}  
+		]  
+	]  
+}
+```
 
+```
+// .browserslistrc
+ie >= 9
+```
 
+실제로 테스트를 해보니 `Array.prototype.include`가 포함되어 인식한다
+
+```
+```
