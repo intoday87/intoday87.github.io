@@ -8,10 +8,11 @@
 
 javascript module은 두 가지 구문(statement)으로 구성된다
 - `export`
+	- functions, `var`, `let`, `const`, class를 내보낼 수 있지만 최상위에서 내보내야 한다. 즉 함수내에서 `export` 를 사용할 수 없다
 - `import`
 
 `import` 와 `export` 문(statement)은 모듈 내에서만 사용할 수 있다. 정규 스크립트가 아니다
-즉 브라우저에서는 `<script type="module" src="./a.mjs />` 로 써야 한다. - [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)
+즉 브라우저에서는 `<script type="module" src="./a.js />` 와 같은 형태로 써야 한다. - [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)
 
 ## `.mjs`에 대해 파헤쳐 보자
 - [v8 문서에서 추천하는 이유](https://v8.dev/features/modules#mjs)
