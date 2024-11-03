@@ -14,6 +14,13 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 `import` 와 `export` 문(statement)은 모듈 내에서만 사용할 수 있다. 정규 스크립트가 아니다
 즉 브라우저에서는 `<script type="module" src="./a.js />` 와 같은 형태로 써야 한다. - [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html)
 
+##  html에서 사용하는 경우
+`type="module"`로 선언해서 가져온다
+ ```
+```
+ <script type="module" src="/scripts/main.js" />`
+main
+
 ## `.mjs`에 대해 파헤쳐 보자
 - [v8 문서에서 추천하는 이유](https://v8.dev/features/modules#mjs)
 	- web에서는 사실 이 확장자는 `Content-type: text/javascript`로 서빙되면 아무 문제가 없다
