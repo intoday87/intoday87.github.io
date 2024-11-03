@@ -28,12 +28,21 @@ https://hacks.mozilla.org/2015/08/es6-in-depth-modules 에서 `Default export`�
 그 예시로 node 프로젝트에서  `npm install lodash`로 설치한 경우 다음과 같이 가능하다는데 실제로 테스트해보니 되지는 않는다;;
 
 ```js
-import { each } from 'loadash'
+import { each } from 'lodash'
 
 each([1,2,3], console.log)
 ```
 
-하지만 아래와 같은 코드는 동작한다. CommonJS의 `module.exports = lodash` 와 같은 [코드](exports)를 
+하지만 아래와 같은 코드는 동작한다. CommonJS의 `module.exports = lodash` 와 같은 [코드](https://github.com/lodash/lodash/blob/f299b52f39486275a9e6483b60a410e06520c538/dist/lodash.js#L17201)를 default로 인식해서 import가 가능하다
+
+```js
+import { default as _ } from 'lodash' // import _ from 'lodash' 도 가능
+
+_.each([1,2,3], console.log)
+```
+
+정확히 위
+> All CommonJS and AMD modules are presented to ES6 as having a `default` export, which is the same thing that you would get if you asked `require()` for that module—that is, the `exports` object.
 
 ## `.mjs`에 대해 파헤쳐 보자
 - [v8 문서에서 추천하는 이유](https://v8.dev/features/modules#mjs)
