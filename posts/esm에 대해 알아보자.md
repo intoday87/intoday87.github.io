@@ -3,6 +3,9 @@
 
 브라우저와 달리 node.js에서는 일찍부터 commonjs 기반으로 서버를 기반으로 한 모듈 시스템을 지원하고 있었으나 브라우저는 그렇지 않음
 
+브라우저에서 동작하는 여러 샘플들을 mdn이 [github](https://github.com/mdn/js-examples/tree/main)에 공유
+> **주의:** 예제를 다운로드하여 로컬에서 실행하려면, 로컬 웹 서버를 통해 예제를 실행해야 합니다.
+
 javascript module은 두 가지 구문(statement)으로 구성된다
 - `export`
 - `import`
