@@ -1,5 +1,5 @@
 ## esm이란?
-[JavaScript modules - mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)을 참고
+[JavaScript modules - mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)을 읽으면서 정맅
 
 브라우저와 달리 node.js에서는 일찍부터 commonjs 기반으로 서버를 기반으로 한 모듈 시스템을 지원하고 있었으나 브라우저는 그렇지 않음
 
@@ -43,7 +43,7 @@ _.each([1,2,3], console.log)
 
 > All CommonJS and AMD modules are presented to ES6 as having a `default` export, which is the same thing that you would get if you asked `require()` for that module—that is, the `exports` object.
 
-exports의 
+exports의 object를 default로 상호 호환해 인식한다
 
 ## `.mjs`에 대해 파헤쳐 보자
 - [v8 문서에서 추천하는 이유](https://v8.dev/features/modules#mjs)
