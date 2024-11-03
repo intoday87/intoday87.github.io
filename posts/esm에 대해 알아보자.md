@@ -21,6 +21,12 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 ```
 main.js에서 import는 경로에 따라 http로 요청해 js 리소스를 가져와 실행한다
 
+###  Default export
+https://hacks.mozilla.org/2015/08/es6-in-depth-modules 에서 `Default export`를 검색한다
+새로운 표준 esm은 CommonJS와 AMD 모듈과 상호 협력하도록 설계 되었다
+
+
+
 ## `.mjs`에 대해 파헤쳐 보자
 - [v8 문서에서 추천하는 이유](https://v8.dev/features/modules#mjs)
 	- web에서는 사실 이 확장자는 `Content-type: text/javascript`로 서빙되면 아무 문제가 없다
