@@ -25,7 +25,15 @@ main.js에서 import는 경로에 따라 http로 요청해 js 리소스를 가�
 https://hacks.mozilla.org/2015/08/es6-in-depth-modules 에서 `Default export`를 검색한다
 새로운 표준 esm은 CommonJS와 AMD 모듈과 상호 협력하도록 설계 되었다
 
+그 예시로 node 프로젝트에서  `npm install lodash`로 설치한 경우 다음과 같이 가능하다는데 실제로 테스트해보니 되지는 않는다;;
 
+```js
+import { each } from 'loadash'
+
+each([1,2,3], console.log)
+```
+
+하지만 아래와 같은 코드는 동작한다. CommonJS의 `module.exports = lodash` 와 같은 코드를 
 
 ## `.mjs`에 대해 파헤쳐 보자
 - [v8 문서에서 추천하는 이유](https://v8.dev/features/modules#mjs)
