@@ -33,7 +33,7 @@ import { each } from 'loadash'
 each([1,2,3], console.log)
 ```
 
-하지만 아래와 같은 코드는 동작한다. CommonJS의 `module.exports = lodash` 와 같은 코드를 
+하지만 아래와 같은 코드는 동작한다. CommonJS의 `module.exports = lodash` 와 같은 [코드](exports)를 
 
 ## `.mjs`에 대해 파헤쳐 보자
 - [v8 문서에서 추천하는 이유](https://v8.dev/features/modules#mjs)
