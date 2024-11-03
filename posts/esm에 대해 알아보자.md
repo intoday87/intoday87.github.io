@@ -19,8 +19,12 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 ```html
  <script type="module" src="/scripts/main.js" />
 ```
-main.js에서 import는 경로에 따라 http로 요청해 js 리소스를 가져와 실행한다
+main.js에서 import는 경로에 따라 http로 요청해 js 리소스를 가져와 실행한다. file 프로토콜로 사용하는 경우 cors 오류를 마주할 수 있다
 
+###  모듈이 표준 스크립트와 다른 차이 점
+- file 프로토콜로 사용시 cors 오류가 발생한다
+- 기본적으로 strict 모드
+- 야
 ###  Default export
 https://hacks.mozilla.org/2015/08/es6-in-depth-modules 에서 `Default export`를 검색하면 나오는 섹션의 내용.(mdn인데 왜 [location hash](https://developer.mozilla.org/en-US/docs/Web/API/Location/hash)를 왜 안쓰는거지🤔 )
 새로운 표준 esm은 CommonJS와 AMD 모듈과 상호 협력하도록 설계 되었다
