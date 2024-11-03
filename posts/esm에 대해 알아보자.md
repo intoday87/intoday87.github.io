@@ -16,10 +16,10 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 
 ##  html에서 사용하는 경우
 `type="module"`로 선언해서 가져온다
- ```
+```html
+ <script type="module" src="/scripts/main.js" />
 ```
- <script type="module" src="/scripts/main.js" />`
-main
+main.js에서 import는 경로에 따라 http로 요청해 js 리소스를 가져와 실행한다
 
 ## `.mjs`에 대해 파헤쳐 보자
 - [v8 문서에서 추천하는 이유](https://v8.dev/features/modules#mjs)
