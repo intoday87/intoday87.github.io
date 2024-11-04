@@ -14,5 +14,8 @@ title: pnpm에 대해 정리해 보자
 	        "@nick/a": "file:../nick/packages/a",
 	```
 
-### pnpm dedupe
+### [pnpm dedupe](https://pnpm.io/cli/dedupe)
+
 > Perform an install removing older dependencies in the lockfile if a newer version can be used.
+
+캐럿(`^`)이나 tilde(`~`)로 변경 가능한 오래된 디펜던시를 갱신해주는걸로 보인다
