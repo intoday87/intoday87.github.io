@@ -13,3 +13,6 @@ title: pnpm에 대해 정리해 보자
 	```json
 	        "@nick/a": "file:../nick/packages/a",
 	```
+
+### pnpm dedupe
+> Perform an install removing older dependencies in the lockfile if a newer version can be used.
