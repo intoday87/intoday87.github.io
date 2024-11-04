@@ -18,4 +18,4 @@ title: pnpm에 대해 정리해 보자
 
 > Perform an install removing older dependencies in the lockfile if a newer version can be used.
 
-캐럿(`^`)이나 tilde(`~`)로 변경 가능한 오래된 디펜던시를 갱신해주는걸로 보인다
+캐럿(`^`)이나 tilde(`~`)로 변경 가능한 오래된 디펜던시를 갱신해주고 사용되지 않는 디펜던시도 제거가 되는것으로 보인다
