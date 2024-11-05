@@ -126,7 +126,7 @@ babel-preset-env에서 .browserslistrc를 인식한다고 되어 있다
 		[  
 			"@babel/preset-env",  
 			{  
-				"useBuiltIns": "entry",  
+				"useBuiltIns": "usage",  
 				"corejs": "3.22"  
 			}  
 		]  
