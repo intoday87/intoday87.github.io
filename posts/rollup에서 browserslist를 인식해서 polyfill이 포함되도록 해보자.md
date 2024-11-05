@@ -138,26 +138,22 @@ babel-preset-env에서 .browserslistrc를 인식한다고 되어 있다
 ie >= 9
 ```
 
-실제로 테스트를 해보니 `require('core-js/modules/es.array.includes.js');`가 포함되어 인식한다
+실제로 테스트를 해보니 `require('core-js/modules/es.array.includes.js');`가 포함된다
 
 ```js
-// `Array.prototype.{ indexOf, includes }` methods implementation
-var createMethod$3 = function (IS_INCLUDES) {
-  return function ($this, el, fromIndex) {
-    var O = toIndexedObject$8($this);
-    var length = lengthOfArrayLike$d(O);
-    var index = toAbsoluteIndex$6(fromIndex, length);
-    var value;
-    // Array#includes uses SameValueZero equality algorithm
-    // eslint-disable-next-line no-self-compare -- NaN check
-    if (IS_INCLUDES && el != el) while (length > index) {
-      value = O[index++];
-      // eslint-disable-next-line no-self-compare -- NaN check
-      if (value != value) return true;
-    // Array#indexOf ignores holes, Array#includes - not
-    } else for (;length > index; index++) {
-      if ((IS_INCLUDES || index in O) && O[index] === el) return IS_INCLUDES || index || 0;
-    } return !IS_INCLUDES && -1;
-  };
-};
+'use strict';
+
+require('core-js/modules/es.array.includes.js');
+
+var foo = 'hello world!';
+
+var arr = [1, 2, 3];
+console.log(arr.includes(4));
+function index () {
+  console.log(foo);
+}
+
+module.exports = index;
 ```
+
+### core-js가 peerDependencies에 추가되어야 할까?
