@@ -30,6 +30,15 @@ main.js에서 import는 경로에 따라 http로 요청해 js 리소스를 가�
 - file 프로토콜로 사용시 cors 오류가 발생한다
 - 기본적으로 strict 모드
 - script 엘리먼트의 defer 속성을 사용할 필요가 없다. 모듈은 자동으로 defer된다
+	```html
+	<!-- This script will execute after… -->
+	<script type="module" src="1.mjs"></script>
+	<!-- …this script… -->
+	<script src="2.js"></script>
+	<!-- …but before this script. -->
+	<script defer src="3.js"></script>
+	```
+	source: https://jakearchibald.com/2017/es-modules-in-browsers/#defer-by-default
 ###  Default export
 https://hacks.mozilla.org/2015/08/es6-in-depth-modules 에서 `Default export`를 검색하면 나오는 섹션의 내용.(mdn인데 왜 [location hash](https://developer.mozilla.org/en-US/docs/Web/API/Location/hash)를 왜 안쓰는거지🤔 )
 새로운 표준 esm은 CommonJS와 AMD 모듈과 상호 협력하도록 설계 되었다
