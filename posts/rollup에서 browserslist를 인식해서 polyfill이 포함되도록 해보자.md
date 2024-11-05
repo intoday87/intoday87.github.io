@@ -157,3 +157,4 @@ module.exports = index;
 ```
 
 ### core-js가 peerDependencies에 추가되어야 할까?
+- t
