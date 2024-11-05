@@ -31,7 +31,8 @@ export default {
           '@babel/preset-env',
           {
             targets: {
-              browsers: ['ie >= 9'], // ie 9부터 지원
+			  // ie 9부터 지원 Array.prototype.includes를 지원하지 않는다
+              browsers: ['ie >= 9'],
             },
             useBuiltIns: 'usage', // 코드에 따라 필요하면 포함
             corejs: 3,
