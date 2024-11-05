@@ -20,4 +20,4 @@ tc39 proposal 페이지에서는 언제 도입되었는지 파악하기 어렵�
 | --------------------------------------------------------------- | ---- |
 | [async functions](https://github.com/tc39/proposal-async-await) | 2017 |
 |                                                                 |      |
-※ typescirpt의 tsconfig의 `target` 필드에서 `ESNext`라는 설정을 볼 수 있는데 이것은 공식적인 ㅂ
+※ typescirpt의 tsconfig의 [`target`](https://www.typescriptlang.org/tsconfig/#target) 필드에서 `ESNext`라는 설정을 볼 수 있는데 이것은 공식적인 버전의 표시가 아니라
