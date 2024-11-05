@@ -138,7 +138,7 @@ babel-preset-env에서 .browserslistrc를 인식한다고 되어 있다
 ie >= 9
 ```
 
-실제로 테스트를 해보니 `Array.prototype.include`가 포함되어 인식한다
+실제로 테스트를 해보니 `require('core-js/modules/es.array.includes.js');`가 포함되어 인식한다
 
 ```js
 // `Array.prototype.{ indexOf, includes }` methods implementation
