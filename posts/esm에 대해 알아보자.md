@@ -21,7 +21,10 @@ javascript module은 두 가지 구문(statement)으로 구성된다
 ```
 main.js에서 import는 경로에 따라 http로 요청해 js 리소스를 가져와 실행한다. file 프로토콜로 사용하는 경우 cors 오류를 마주할 수 있다
 
-브라우저가 module을 지원하지 않는 경우 fallback으로 `noModule` 프로퍼티와 함께 
+브라우저가 module을 지원하지 않는 경우 fallback으로 [`noModule`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/noModule) 프로퍼티와 함께 별도의 하나의 파일로 번들링 된 파일을 지정해서 사용할 수 있다
+```html
+<script noModule src="/scripts/no-module-fallback.js" />
+```
 
 ###  모듈이 표준 스크립트와 다른 차이 점
 - file 프로토콜로 사용시 cors 오류가 발생한다
