@@ -28,4 +28,5 @@ var bar_1 = __importDefault(require("bar"));
 ```
 출처: [stackoverflow](https://stackoverflow.com/questions/50943704/whats-the-purpose-of-object-definepropertyexports-esmodule-value-0)
 
-## With typescript
+
+### plugin의 순서? hook?
