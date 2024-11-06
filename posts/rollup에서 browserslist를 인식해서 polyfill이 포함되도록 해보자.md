@@ -159,7 +159,7 @@ module.exports = index;
 
 ## @babel/preset-env를 사용하는 이유?
 ### [browserslist-integration](https://babeljs.io/docs/babel-preset-env#browserslist-integration)
-.bro
+.browserslist 파일을 인식해서 별도로 `target` 속성에 명시해줄 필요가 없다
 ```json
 //babel.config.json
 {  
@@ -181,6 +181,5 @@ module.exports = index;
 > 0.25%  
 not dead
 ```
-
 
 ### @babel/preset-env를 사용하지 않고 browserslist를 통합해서 사용할 수 없나?
