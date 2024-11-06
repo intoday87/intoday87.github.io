@@ -157,4 +157,7 @@ function index () {
 module.exports = index;
 ```
 
-### @babel/preset-env를 사용하는 이유?
+## @babel/preset-env를 사용하는 이유?
+### [browserslist-integration](https://babeljs.io/docs/babel-preset-env#browserslist-integration)
+
+### @babel/preset-env를 사용하지 않고 browserslist를 통합해서 사용할 수 ㅇ
