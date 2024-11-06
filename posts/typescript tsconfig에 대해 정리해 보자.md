@@ -1,3 +1,4 @@
 - `target`
 - [`lib`](https://www.typescriptlang.org/tsconfig/#lib)
 	- transfile시 포함시킬 라이브러리. ㅈ
+ - `module`
