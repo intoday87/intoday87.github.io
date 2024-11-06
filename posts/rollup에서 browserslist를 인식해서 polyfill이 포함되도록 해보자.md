@@ -159,5 +159,28 @@ module.exports = index;
 
 ## @babel/preset-env를 사용하는 이유?
 ### [browserslist-integration](https://babeljs.io/docs/babel-preset-env#browserslist-integration)
+.bro
+```json
+//babel.config.json
+{  
+	"presets": [  
+		[  
+			"@babel/preset-env",  
+			{  
+				// target 속성이 없음을 주목
+				"useBuiltIns": "entry",  
+				"corejs": "3.22"  
+			}  
+		]  
+	]  
+}
+```
 
-### @babel/preset-env를 사용하지 않고 browserslist를 통합해서 사용할 수 ㅇ
+```
+// .browserslist
+> 0.25%  
+not dead
+```
+
+
+### @babel/preset-env를 사용하지 않고 browserslist를 통합해서 사용할 수 없나?
