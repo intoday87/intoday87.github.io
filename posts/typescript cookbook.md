@@ -17,3 +17,12 @@ const O = {
 type KeysOfO = keyof typeof O // 아래 코드는 KeysOfO를 확인하는데 사용됩니다. console.log(KeysOfO); // "A" | "B" | "C"
 ```
 
+### enum computed value  >= 5.0
+[All `enum`s Are Union `enum`s](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#all-enums-are-union-enums) 참고
+```ts
+enum E {
+
+  Blah = Math.random()
+
+}
+```
