@@ -111,7 +111,7 @@ polyfill을 핸들링하는 방법을 지원하는 옵션. `entry`, `usage`를 �
 - `entry`
 	- import 또는 require로 core-js를 추가한 코드가 있으면 개별 core-js entry point로 대체해준다
 	- core-js import 또는 require가 없으면 처리되는게 없다 -> 별도 주입이 없다
-- `usage`: 해당 코드에서 모듈마다 import 처리로 변경. 실행 시점에 
+- `usage`: 해당 코드에서 모듈마다 import 처리로 변경. 실행 시점에 브라우저 서포트 여부를 확인하지 않고 import처리 
 - `false`: default
 
 ## `.browserslist` 파일은 그럼 필요한가?
