@@ -110,7 +110,7 @@ polyfill을 핸들링하는 방법을 지원하는 옵션. `entry`, `usage`를 �
 [package.json](https://github.com/babel/babel/blob/438b24cabca5715e311af1e3c53bc728cfbdf04d/packages/babel-preset-env/package.json#L86) 을 보면 core-js를 가지고 있지 않고 `core-js-compat`만 가지고 있다.  즉 [`corejs`](https://babeljs.io/docs/babel-preset-env#corejs) 옵션에서 버전을 지정할 경우 설치된 core-js의 버전 스펙을 그대로 따라가는것이 아니라 [core-js-compat](https://github.com/zloirock/core-js/blob/v3.39.0/packages/core-js-compat/src/modules-by-versions.mjs)에서 옵션에 지정된 매핑을 찾아서 3.0 이후로 그 버전에 추가된 polyfill들을 추가하게 된다
 - `entry`
 	- import 또는 require로 core-js를 추가한 코드가 있으면 개별 core-js entry point로 대체해준다
-	- impot 또는 require가 없으면 
+	- core-js import 또는 require가 없으면 처리되는게 없다 -> 별도 주입이 없다
 - `usage`
 - `false`: default
 
