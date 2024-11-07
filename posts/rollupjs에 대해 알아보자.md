@@ -29,4 +29,6 @@ var bar_1 = __importDefault(require("bar"));
 출처: [stackoverflow](https://stackoverflow.com/questions/50943704/whats-the-purpose-of-object-definepropertyexports-esmodule-value-0)
 
 
-### plugin의 순서? hook?
+### plugins의 순서? hook?
+TODO
+단순 배열의 순서대로 동작하는게 아니다 배열안에서 플러그인이 각 훅을 가지고 있고 그 훅과 일치하는 동일 플러그인 라이프사이클에서 순서대로 동작되는 것으로 보인다
