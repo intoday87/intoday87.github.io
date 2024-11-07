@@ -103,6 +103,14 @@ function index () {
 module.exports = index;
 ```
 
+## @babel/preset-env
+
+### `useBuiltIns`
+polyfill을 핸들링하는 방법을 지원하는 옵션. `entry`, `usage`를 사용하면 core-js를 직접 import 또는 require를 추가한다. core-js 파일 그 자체로 ㄱ겨
+- entry
+- usage
+- false
+
 ## `.browserslist` 파일은 그럼 필요한가?
 rollup.config.js에서 설정하는데 별도로 `.browserslist`이 필요 한가?
 
