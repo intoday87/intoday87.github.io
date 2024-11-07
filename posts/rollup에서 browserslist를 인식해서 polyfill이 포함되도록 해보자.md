@@ -157,6 +157,7 @@ function index () {
 module.exports = index;
 ```
 
+### useBuiltIns
 ## @babel/preset-env를 사용하는 이유?
 ### [browserslist-integration](https://babeljs.io/docs/babel-preset-env#browserslist-integration)
 .browserslist 파일을 인식해서 별도로 `target` 속성에 명시해줄 필요가 없다
