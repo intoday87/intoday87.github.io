@@ -3,7 +3,11 @@ title: js에 모르는 놓치고 있는 부분을 정리해 보자
 ---
 Promise에서 resolve까지 호출 순서
 iterator 지연
-generator
+## generator
+promise, 
+```js
+function* 
+```
 
 ## js spec과 속한 버전
 tc39 proposal 페이지에서는 언제 도입되었는지 파악하기 어렵다.  매번 잊어버리고 찾지 말고 표로 정리해보자
