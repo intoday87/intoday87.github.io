@@ -89,7 +89,9 @@ os2 == sym1 // true
 Symbol.for('foo') === Symbol.for('foo') // true
 Symbole.keyFor(Symbol.for('foo')) === 'foo' // true
 ```
-lifetime of program에 걸쳐 존재 하기 때문에 사용하는것으로 보인다
+
+js의 module 시스템과 더불어 사용하기 위한 것으로 생각이 된다. lifetime of program에 걸쳐 unique한 값으로 존재 할 수 있다
+
 ```js
 // a.mjs
 export const a = Symbol.for('foo')
@@ -101,7 +103,8 @@ export const b = Symbol.for('foo')
 import {a} from './a.mjs'
 import {b} from './b.mjs'
 
-console.log(a === b)
+console.log(a === b) // true
+console.log(Symbole.key)
 ```
 ## WeakMap
 key는 object와 not registered Symbol만 가능. 나머지는 type error
