@@ -71,13 +71,14 @@ o[sym1] // 1
 ```
 
 ### global symbol registry
+`Symbol.for`로 생성되는 Symbol value는 global symbol registry에 등록된 값으로 registry에 등록된 값을 공유 한다
 ```js
 Symbol.for('foo') === Symbol.for('foo') // true
-Symbole.
-
+Symbole.keyFor(Symbol.for('foo')) === 'foo' // true
 ```
 ## WeakMap
-key는 object와 not registered Symbol만 가능
+key는 object와 not registered Symbol만 가능. 나머지는 type error
+값은 js로 취급될 수 있는 모든것들이 해당한다
 ```js
 const w = new WeakMap()
 w.set(Symbol.for('foo'), 1) // Uncaught TypeError: Invalid value used as weak map key
