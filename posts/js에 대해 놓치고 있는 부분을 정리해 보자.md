@@ -3,7 +3,7 @@ title: js에 대해 놓치고 있는 부분을 정리해 보자
 ---
 Promise에서 resolve까지 호출 순서
 iterator 지연
-## generator
+## [generator](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Generator)
 ### eager evaluation
 즉시 실행되어(execute immediately) 실행 시점을 미룰수가 없다
 
@@ -35,6 +35,8 @@ function* gen(x) {
 const i = gen(40) // typeof i[Symbol.iterator] === 'function'
 // undefined => gen 함수내 console.log가 호출되는게 없음
 i.next() // x 40 { value: 42, done: false }
+i.next(2012) // y 2012 { value: 2042, done: false }
+i.next() // z undefined { value: undefined, done: true }
 ```
 
 ## js spec과 속한 버전
