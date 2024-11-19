@@ -37,12 +37,14 @@ const i = gen() // typeof i[Symbol.iterator] === 'function'
 tc39 proposal 페이지에서는 언제 도입되었는지 파악하기 어렵다.  매번 잊어버리고 찾지 말고 표로 정리해보자
 
 파악하는 방법
-1. [finished-proposals](https://github.com/tc39/proposals/blob/main/finished-proposals.md)에서 `expected publication year` 에서 확인할 수 있다
+-  [finished-proposals](https://github.com/tc39/proposals/blob/main/finished-proposals.md)에서 `expected publication year` 에서 확인할 수 있다
 	- 말그대로 예상 연도라 왠지 꺼려진다
-2.  [es version browser support - w3cschools](https://www.w3schools.com/js/js_versions.asp)
+- [es version browser support - w3cschools](https://www.w3schools.com/js/js_versions.asp)
 	- 잘 정리된 js version별 스펙이 description 탭에 명시되어 있다. official name으로 축약되지 않은 ecma 스크립트 연도별 버전도 나온다
 
 어디에 속하는지 헷갈리는 스펙들을 테이블에 추가해보자
+
+|
 
 | spec                                                            | year |
 | --------------------------------------------------------------- | ---- |
@@ -119,7 +121,7 @@ const w = new WeakMap()
 w.set(Symbol('foo'), { im: 'foo' }) // set
 w.set(Symbol.for('foo'), { im: 'foo too' }) // type error
 ```
-WeakMap은 
+WeakMap, WeakSet, WeakRef도 마찬가지
 
 ## WeakMap
 key는 object와 not registered Symbol만 가능. 나머지는 type error
