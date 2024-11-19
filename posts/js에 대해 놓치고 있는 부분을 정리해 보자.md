@@ -27,9 +27,14 @@ console.log('after promise')
 ```js
 function* gen(x) {
 	console.log('x', x)
-	const y = yield 
+	const y = yield x + 2
+	console.log('y', y)
+	const z = yield x + y
+	console.log('z', z)
 }
-const i = gen() // typeof i[Symbol.iterator] === 'function'
+const i = gen(40) // typeof i[Symbol.iterator] === 'function'
+// undefined => gen 함수내 console.log가 호출되는게 없음
+i.next() // x 40 { value: 42, done: false }
 ```
 
 ## js spec과 속한 버전
