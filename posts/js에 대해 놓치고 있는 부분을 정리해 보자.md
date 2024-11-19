@@ -5,7 +5,8 @@ Promise에서 resolve까지 호출 순서
 iterator 지연
 ## generator
 ### eager
-execute immediatly 
+즉시 실행되어(execute immediately) 실행 시점을 미룰수가 없다
+
 promise는 eager다
 ```js
 console.log('before promise')
@@ -22,6 +23,7 @@ console.log('after promise')
 // after promise
 ```
 ### lazy
+실행 시점을 호출시점까지 미룰수 있다
 ```js
 function* 
 ```
