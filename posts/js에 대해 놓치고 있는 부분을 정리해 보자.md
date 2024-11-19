@@ -3,7 +3,10 @@ title: js에 대해 놓치고 있는 부분을 정리해 보자
 ---
 Promise에서 resolve까지 호출 순서
 iterator 지연
-## [generator](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Generator)
+## [generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator)
+- iterable protocol
+- iterator protocol
+
 ### eager evaluation
 즉시 실행되어(execute immediately) 실행 시점을 미룰수가 없다
 
