@@ -45,14 +45,24 @@ tc39 proposal 페이지에서는 언제 도입되었는지 파악하기 어렵�
 ※ typescirpt의 tsconfig의 [`target`](https://www.typescriptlang.org/tsconfig/#target) 필드에서 `ESNext`라는 설정을 볼 수 있는데 이것은 공식적인 버전의 표시가 아니다. 
 
 ## [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
-primitive(unique value), encapsulation, information hiding
+primitive(unique value), weak encapsulation & information hiding
 ###  primitive
 ```js
 const sym1 = Symbol('foo')
 const sym2 = Symbol('foo')
 
 sym1 === sym2 // false
-sym1 === sym1 // true
+sym1 === sym1 // true, is not a object instance
+```
+
+### weak encapsulation & information hiding
+```js
+const sym1 = Symbol('foo')
+const o = {
+  [sym1]: 1
+}
+Object.keys(o) // []
+o[sym1] // 1
 ```
 
 ## WeakMap
