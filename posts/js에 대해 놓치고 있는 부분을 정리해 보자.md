@@ -70,6 +70,12 @@ Object.values(o) // []
 o[sym1] // 1
 ```
 
+### global symbol registry
+```js
+Symbol.for('foo') === Symbol.for('foo') // true
+Symbole.
+
+```
 ## WeakMap
 key는 object와 not registered Symbol만 가능
 ```js

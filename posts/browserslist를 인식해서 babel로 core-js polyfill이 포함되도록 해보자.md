@@ -194,4 +194,4 @@ module.exports = index;
 not dead
 ```
 
-### @babel/preset-env의 `useBuiltIns: "usage"` 옵
+### @babel/preset-env의 `useBuiltIns: "usage"`는 usage-global이다. core-js-pure를 사용할 수 없다
