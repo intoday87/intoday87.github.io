@@ -91,10 +91,17 @@ Symbole.keyFor(Symbol.for('foo')) === 'foo' // true
 ```
 lifetime of program에 걸쳐 존재 하기 때문에 사용하는것으로 보인다
 ```js
-// a.js
+// a.mjs
 export const a = Symbol.for('foo')
 
-// 
+//b.mjs
+export const b = Symbol.for('foo')
+
+//index.mjs
+import {a} from './a.mjs'
+import {b} from './b.mjs'
+
+console.log(a === b)
 ```
 ## WeakMap
 key는 object와 not registered Symbol만 가능. 나머지는 type error
