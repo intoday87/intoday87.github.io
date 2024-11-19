@@ -79,7 +79,8 @@ sym1 === os // false
 typeof sym1 // symbol
 typeof os // object
 const os2 = Object(sym1)
-
+os == os2 // false
+os2 == sym1 // true
 ```
 
 ### global symbol registry
@@ -87,6 +88,13 @@ const os2 = Object(sym1)
 ```js
 Symbol.for('foo') === Symbol.for('foo') // true
 Symbole.keyFor(Symbol.for('foo')) === 'foo' // true
+```
+lifetime of program에 걸쳐 존재 하기 때문에 사용하는것으로 보인다
+```js
+// a.js
+export const a = Symbol.for('foo')
+
+// 
 ```
 ## WeakMap
 key는 object와 not registered Symbol만 가능. 나머지는 type error
