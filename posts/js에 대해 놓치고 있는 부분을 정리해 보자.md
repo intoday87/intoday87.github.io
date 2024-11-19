@@ -25,10 +25,9 @@ console.log('after promise')
 ### lazy evaluation
 실행 시점을 호출시점까지 미룰수 있다
 ```js
-function* gen() {
-	yield 1
-	yield 2
-	yield 3
+function* gen(x) {
+	console.log('x', x)
+	const y = yield 
 }
 const i = gen() // typeof i[Symbol.iterator] === 'function'
 ```
