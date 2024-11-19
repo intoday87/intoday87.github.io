@@ -5,13 +5,21 @@ Promise에서 resolve까지 호출 순서
 iterator 지연
 ## generator
 ### eager
+execute immediatly 
 promise는 eager다
 ```js
+console.log('before promise')
 const p = new Promise((resolve, reject) => {
 	console.log("in a promsie")
-	resolve(')
+	resolve('resolve promise')
 })
+p.then((result) => console.log(result) )
+console.log('after promise')
 
+// before promise
+// in a promise
+// resolve promise
+// after promise
 ```
 ### lazy
 ```js
