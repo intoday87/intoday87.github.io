@@ -30,7 +30,7 @@ function* gen() {
 	yield 2
 	yield 3
 }
-const i = gen() // i[Symbol.iterator] 
+const i = gen() // typeof i[Symbol.iterator] === 'function'
 ```
 
 ## js spec과 속한 버전
@@ -77,4 +77,4 @@ const w = new WeakMap()
 w.set(Symbol.for('foo'), 1) // Uncaught TypeError: Invalid value used as weak map key
 w.set(Symbol('foo'), 2) // set ok
 ```
-strong reference를 생성하지 않음 -> 값이 언제든 gc 될 수 있다는 것
+strong reference를 생성하지 않음 -> reference count를 늘리지 않아 값이 언제든 gc 될 수 있다는 것

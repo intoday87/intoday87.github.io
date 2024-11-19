@@ -180,7 +180,7 @@ module.exports = index;
 			"@babel/preset-env",  
 			{  
 				// target 속성이 없음을 주목
-				"useBuiltIns": "entry",  
+				"useBuiltIns": "usage",  
 				"corejs": "3.22"  
 			}  
 		]  
@@ -194,4 +194,4 @@ module.exports = index;
 not dead
 ```
 
-### @babel/preset-env를 사용하지 않고 browserslist를 통합해서 사용할 수 없나?
+### @babel/preset-env의 `useBuiltIns: "usage"` 옵
