@@ -72,7 +72,14 @@ o[sym1] // 1
 
 ### reference identity를 가지는 유일한 primitive
 ```js
-Symbol('off;)
+const sym1 = Symbol('foo')
+const os = Object(sym1)
+sym1 == os // true
+sym1 === os // false
+typeof sym1 // symbol
+typeof os // object
+const os2 = Object(sym1)
+
 ```
 
 ### global symbol registry
