@@ -108,8 +108,15 @@ console.log(Symbol.keyFor(a) === Symbol.keyFor(a)) // true 'foo'
 ```
 
 이와 같은 특성으로 registered symbol은 기존 symbol과 달리 기억해 놓아야 할 점이 몇 가지 있다
-1. 유일하지 않다
-	삿
+1. 엄밀히 말하자면 호출시 매번 유일한 값을 얻지 않는다(달리 말하면 같은 값을 반환할 수 있다)
+```js
+const s1 = Symbol('foo')
+const s2 = Symbol('foo')
+s1 === s2 // false
+const rs1 = Symbol.for('foo')
+const rs2 = Symbol.for('foo)
+rs1 === rs2 // true
+```
 
 ## WeakMap
 key는 object와 not registered Symbol만 가능. 나머지는 type error
