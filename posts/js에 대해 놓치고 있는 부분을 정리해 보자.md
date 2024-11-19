@@ -25,7 +25,12 @@ console.log('after promise')
 ### lazy
 실행 시점을 호출시점까지 미룰수 있다
 ```js
-function* 
+function* gen() {
+	yield 1
+	yield 2
+	yield 3
+}
+const i = gen() // i[Symbol.iterator] 
 ```
 
 ## js spec과 속한 버전
@@ -54,7 +59,6 @@ const sym2 = Symbol('foo')
 sym1 === sym2 // false
 sym1 === sym1 // true, is not a object instance
 ```
-
 ### weak encapsulation & information hiding
 ```js
 const sym1 = Symbol('foo')
@@ -62,6 +66,7 @@ const o = {
   [sym1]: 1
 }
 Object.keys(o) // []
+Object.values(o) // []
 o[sym1] // 1
 ```
 
