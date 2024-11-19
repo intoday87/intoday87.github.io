@@ -51,7 +51,7 @@ tc39 proposal 페이지에서는 언제 도입되었는지 파악하기 어렵�
 
 ## [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
 primitive(unique value), weak encapsulation & information hiding
-###  primitive
+###  [primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
 ```js
 const sym1 = Symbol('foo')
 const sym2 = Symbol('foo')
@@ -68,6 +68,11 @@ const o = {
 Object.keys(o) // []
 Object.values(o) // []
 o[sym1] // 1
+```
+
+### reference identity를 가지는 유일한 primitive
+```js
+Symbol('off;)
 ```
 
 ### global symbol registry
