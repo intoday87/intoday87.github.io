@@ -104,7 +104,7 @@ import {a} from './a.mjs'
 import {b} from './b.mjs'
 
 console.log(a === b) // true
-console.log(Symbole.key)
+console.log(Symbol.keyFor(a) === Symbol.keyFor(a)) // true 'foo'
 ```
 ## WeakMap
 key는 object와 not registered Symbol만 가능. 나머지는 type error
