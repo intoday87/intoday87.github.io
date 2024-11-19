@@ -106,6 +106,11 @@ import {b} from './b.mjs'
 console.log(a === b) // true
 console.log(Symbol.keyFor(a) === Symbol.keyFor(a)) // true 'foo'
 ```
+
+이와 같은 특성으로 registered symbol은 기존 symbol과 달리 기억해 놓아야 할 점이 몇 가지 있다
+1. 유일하지 않다
+	삿
+
 ## WeakMap
 key는 object와 not registered Symbol만 가능. 나머지는 type error
 값은 js로 취급될 수 있는 모든것들이 해당한다
