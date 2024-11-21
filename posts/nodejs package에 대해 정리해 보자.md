@@ -6,4 +6,5 @@ title: nodejs package에 대해 정리해 보자
 - commonjs -> `main` 필드
 - esmodule(esm) -> `module` 필드
 
-## conditional exports
+## [conditional exports](https://nodejs.org/api/packages.html#conditional-exports)
+- `import` 환경(esm), `require` 환경(cjs)인 경우 entry point를 개별로 둘 수 있다
