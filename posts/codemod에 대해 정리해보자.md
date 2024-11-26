@@ -5,4 +5,8 @@ title: codemod에 대해 정리해보자
 source를 AST로 분석하고 AST node를 기반으로 library가 transform하는 코드를 작성해서 변경하는 방식으로 보인다
 
 https://astexplorer.net/
-을 들어가서 `Transform`을  jscodeshift로 변경해보자. [Transform module](https://github.com/facebook/jscodeshift?tab=readme-ov-file#transform-module)을 보면 transform의 코드를 작성하는 예제가 나와 있다
+을 들어가서 `Transform` 메뉴에서  jscodeshift로 선택해보자. 
+4칸의 공간에 왼쪽 상단은 변환 대상 코드를 오른쪽에는 변환 대상 코드가 AST로 분석된 결과를 볼 수 있다
+왼쪽 하단에는  [Transform module](https://github.com/facebook/jscodeshift?tab=readme-ov-file#transform-module)을 작성하는 코드란이고 오른쪽 하단은 변환 결과이다
+
+[ast-types def](https://github.com/benjamn/ast-types/blob/master/src/def/core.ts)를 보고 AST 인터페이스 타입을 확인할 수 있다
