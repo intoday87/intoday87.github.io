@@ -28,3 +28,21 @@ enum E {
 
 }
 ```
+
+## 배열의 문자열을 키로 하는 타입 만들기
+
+```ts
+const a = ['a', 'b', 'c', 'd', 'e'] as const
+
+// 배열의 값들을 키로 사용하는 타입 생성
+type AKeys = typeof a[number]
+
+// 타입 확인
+const example: Record<AKeys, string> = {
+  a: "value1",
+  b: "value2",
+  c: "value3",
+  d: "value4",
+  e: "value5",
+}
+```
