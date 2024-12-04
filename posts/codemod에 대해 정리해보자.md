@@ -10,3 +10,10 @@ https://astexplorer.net/
 왼쪽 하단에는  [Transform module](https://github.com/facebook/jscodeshift?tab=readme-ov-file#transform-module)을 작성하는 코드란이고 오른쪽 하단은 변환 결과이다
 
 [ast-types def](https://github.com/benjamn/ast-types/blob/master/src/def/core.ts)를 보고 AST 인터페이스 타입을 확인할 수 있다
+
+js환경에서 어떻게든 작업을 좀 해보려고 했지만 타입 지원 없이는 안되더라
+transform 파일을 .ts로 변경하고 types 파일을 설치해서 해보자
+```json
+"ast-types": "^0.14.2",
+"@types/jscodeshift": "^0.12.0"
+```
