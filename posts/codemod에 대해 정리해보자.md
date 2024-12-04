@@ -13,6 +13,7 @@ https://astexplorer.net/
 
 js환경에서 어떻게든 작업을 좀 해보려고 했지만 타입 지원 없이는 안되더라
 transform 파일을 .ts로 변경하고 types 파일을 설치해서 해보자
+
 ```json
 "ast-types": "^0.14.2",
 "@types/jscodeshift": "^0.12.0"
