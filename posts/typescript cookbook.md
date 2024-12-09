@@ -25,8 +25,8 @@ const O = {
 	C: 3 
 } as const;
 
-// 값들을 유니온 타입으로 추출 `typeof O[`
-type ValueUnion = typeof O[keyof typeof O];
+// 값들을 유니온 타입으로 추출 `typeof O[]` 주목
+type ValueUnion = typeof O[keyof typeof O]; // 1 | 2 | 3
 ```
 ## enum computed value  >= 5.0
 [All `enum`s Are Union `enum`s](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#all-enums-are-union-enums) 참고
