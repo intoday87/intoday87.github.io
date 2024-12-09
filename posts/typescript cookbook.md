@@ -71,4 +71,22 @@ const [num, bool, str] = results.map((v) => (v.status === 'fulfilled' ? v.value 
 
 // const num: string | number | boolean | null
 ```
+
 map에서 개별 타입의 정보를 인덱스별로 인식하지 못하고 잃어버림
+
+방법 1 리턴 타입 캐스팅
+```ts 
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T // 리턴 타입이 Promise<T> 형식일 경우 추출을 위한 헬퍼
+
+const results = await Promise.allSettled([
+	Promise.resolve(1),
+	Promise.resolve(false),
+	Promise.resolve('a')
+])
+
+const [num, bool, str] = results.map((v) => (v.status === 'fulfilled' ? v.value : null)) as [number, boolean, string]
+// const num: number
+```
+
+방법 2 map 돌리지 않고 인덱스로 꺼내기..
+더 좋은 방법🙏🏾
