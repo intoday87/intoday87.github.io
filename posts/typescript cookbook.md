@@ -57,3 +57,18 @@ const example: Record<AKeys, string> = {
   e: "value5",
 }
 ```
+
+## map에서 각 요소의 타입을 잃어버릴 때
+
+```ts
+const results = await Promise.allSettled([
+	Promise.resolve(1),
+	Promise.resolve(false),
+	Promise.resolve('a')
+])
+
+const [num, bool, str] = results.map((v) => (v.status === 'fulfilled' ? v.value : null))
+
+// const num: string | number | boolean | null
+```
+map에서 개별 타입의 정보를 인덱스별로 인식하지 못하고 잃어버림
