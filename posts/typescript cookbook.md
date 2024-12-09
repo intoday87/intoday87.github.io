@@ -23,8 +23,10 @@ const O = {
 	A: 1, 
 	B: 2, 
 	C: 3 
-} as const
-type KeysOfO = keyof typeof O // 아래 코드는 KeysOfO를 확인하는데 사용됩니다. console.log(KeysOfO); // "A" | "B" | "C"
+} as const;
+
+// 값들을 유니온 타입으로 추출 `typeof O[`
+type ValueUnion = typeof O[keyof typeof O];
 ```
 ## enum computed value  >= 5.0
 [All `enum`s Are Union `enum`s](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#all-enums-are-union-enums) 참고
