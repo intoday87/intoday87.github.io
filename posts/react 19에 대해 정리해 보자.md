@@ -8,3 +8,4 @@ title: react 19에 대해 정리해 보자
 즉 suspense의 보여짐이 더 빨라진다
 
 ## [New React DOM Static APIs?](https://react.dev/blog/2024/12/05/react-19#new-react-dom-static-apis)
+정적 페이지 최적화를 위해 react-dom/static에 API가 추가 되었고 nodejs Stream API기반의 streaming을 `prerenderToNodeStream` API를 통해서 지원한다
