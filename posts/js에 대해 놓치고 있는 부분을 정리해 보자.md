@@ -143,3 +143,4 @@ w.set(Symbol.for('foo'), 1) // Uncaught TypeError: Invalid value used as weak ma
 w.set(Symbol('foo'), 2) // set ok
 ```
 strong reference를 생성하지 않음 -> reference count를 늘리지 않아 값이 언제든 gc 될 수 있다는 것
+
