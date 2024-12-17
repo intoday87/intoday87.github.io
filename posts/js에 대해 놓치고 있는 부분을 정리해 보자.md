@@ -144,3 +144,12 @@ w.set(Symbol('foo'), 2) // set ok
 ```
 strong reference를 생성하지 않음 -> reference count를 늘리지 않아 값이 언제든 gc 될 수 있다는 것
 
+## [null-prototype object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototype_objects)
+react 19 server component의 props로 지원 안되는 목록 중  null-prototype objects가 있어서 보다가 정리
+모든 객체는 object를 상속하지만 object를 상속하지 않는 null-prototype object를 만들수 있다
+```js
+const obj = Object.create(null);
+const obj2 = { __proto__: null };
+
+[`Object.setPrototypeOf(obj, null)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf).
+```
