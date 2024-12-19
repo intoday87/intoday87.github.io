@@ -9,7 +9,9 @@ title: react 19에 대해 정리해 보자
 
 ## Server Functions
 ### [`'use server'` directive](https://react.dev/reference/rsc/use-server#use-server)
+- backtic `` dks
 - async function body 최상단에 마크한다
+- file 최
 - client에서 호출이 가능하며 실행은 서버에서 된다
 	- client에 `Symbol.for`로 global symbol storage에 관리되는 키 값으로 같은 키 값은 동일한 레퍼런스를 가리킨다
-	- client 호출시 xhr로 서
+	- client 호출시 xhr로 서버에 요청해서 serialized된 결과 값을 받아 처리한다. 그래서 serialized 가능한 props를 넘겨야 한다. 예를들어 null prototype object는 지원하지 않는다. undefined는 지원된다고 했던것 같은데 gssp 매커니즘과는 다른가..?
