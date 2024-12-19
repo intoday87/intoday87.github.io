@@ -8,3 +8,8 @@ title: react 19에 대해 정리해 보자
 즉 suspense의 보여짐이 더 빨라진다
 
 ## Server Functions
+### [`'use server'` directive](https://react.dev/reference/rsc/use-server#use-server)
+- async function body 최상단에 마크한다
+- client에서 호출이 가능하며 실행은 서버에서 된다
+	- client에 `Symbol.for`로 global symbol storage에 관리되는 키 값으로 같은 키 값은 동일한 레퍼런스를 가리킨다
+	- client 호출시 xhr로 서
