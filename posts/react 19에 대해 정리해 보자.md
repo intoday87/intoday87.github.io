@@ -27,7 +27,7 @@ onCaughtError: (error, errorInfo) => {
 });
 ```
 [codesandbox](https://codesandbox.io/p/sandbox/react-19-error-5qlgmh)에 테스트 예제 작성해 놓음
-말 그대로 렌더링시 발생하는 에러에 대해서만 ErrorBoundary가 catch(`componentDidCatch`)하느냐 안하느냐로 두 핸들러로 요청이 된다. `componentDidCatch`에서 호출되는 에러가 `onCaughtError`에서도 호출된다
+말 그대로 렌더링시 발생하는 에러에 대해서만 ErrorBoundary가 catch(`componentDidCatch`)하느냐 안하느냐로 두 핸들러로 요청이 된다. `componentDidCatch`에서 호출되는 에러가 `onCaughtError`에서도 호출된다. ErrorBoundary에서 `componentDidCatch`를 제거해도 `onCaughtError`가 잘 호출된다.
 ## Server Functions
 ### [`'use server'` directive](https://react.dev/reference/rsc/use-server#use-server)
 - backtic은 안된다. single, double quote만 된다
