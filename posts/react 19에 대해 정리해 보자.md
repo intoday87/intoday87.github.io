@@ -8,8 +8,26 @@ title: react 19에 대해 정리해 보자
 즉 suspense의 보여짐이 더 빨라진다
 
 ## breaking changes
-중복된 에러 
+렌더링시 에러 발생에 대해 re-thrown을 방지하려고 별도의 에러 핸들러 인터페이스를 만듬
+```tsx
+const root = createRoot(container, {  
 
+onUncaughtError: (error, errorInfo) => {  
+
+// ... log error report  
+
+},  
+
+onCaughtError: (error, errorInfo) => {  
+
+// ... log error report  
+
+}  
+
+});
+```
+[codesandbox](https://codesandbox.io/p/sandbox/react-19-error-5qlgmh)에 테스트 예제 작성해 놓음
+말 그대로 렌더링시 발생하는 에러에 대해서만 ErrorBoundary가 catch(`componentDidCatch`)하느냐 안하느냐로 두 핸들러로 요청이 된다. `componentDidCatch`에서 호출되는 에러가 `onCaughtError`에서도 호출된다
 ## Server Functions
 ### [`'use server'` directive](https://react.dev/reference/rsc/use-server#use-server)
 - backtic은 안된다. single, double quote만 된다
