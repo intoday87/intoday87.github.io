@@ -39,4 +39,8 @@ onCaughtError: (error, errorInfo) => {
 			- undefined가 되네?
 
 ## [StrictMode chnages](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#strict-mode-improvements)
-strict mo
+strictMode에서 렌더링 두 번 호출되는 예제
+- functional component
+- initializer
+- updater
+https://codesandbox.io/p/sandbox/m26d95
