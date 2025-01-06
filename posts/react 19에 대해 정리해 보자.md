@@ -39,3 +39,4 @@ onCaughtError: (error, errorInfo) => {
 			- undefined가 되네?
 
 ## [StrictMode chnages](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#strict-mode-improvements)
+strict mo
