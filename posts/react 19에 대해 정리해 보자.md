@@ -37,3 +37,5 @@ onCaughtError: (error, errorInfo) => {
 	- client 호출시 xhr로 서버에 요청해서 serialized된 결과 값을 받아 처리한다. 그래서 serialized 가능한 props를 넘겨야 한다 
 		 [Serializable arguments and return values](https://react.dev/reference/rsc/use-server#serializable-parameters-and-return-values "Link for Serializable arguments and return values") 참고
 			- undefined가 되네?
+
+## [StrictMode chnages](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#strict-mode-improvements)
