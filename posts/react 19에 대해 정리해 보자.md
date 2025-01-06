@@ -39,7 +39,8 @@ onCaughtError: (error, errorInfo) => {
 			- undefined가 되네?
 
 ## [StrictMode chnages](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#strict-mode-improvements)
-strictMode에서 렌더링 두 번 호출되는 예제
+strictMode에서 렌더링 두 번 호출되는 예제. 왜 두 번호출되는지를 좀 정확히 정리가 필요함
+pure한 대상은 두 번 호출해서 production에서 문제가 없게끔 하려는 의도로 보이는데
 - functional component
 - initializer
 - updater
