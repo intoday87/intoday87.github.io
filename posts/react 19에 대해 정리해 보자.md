@@ -46,3 +46,11 @@ pure한 대상은 두 번 호출해서 production에서 문제가 없게끔 하�
 - updater
 - ref callback
 [test codesandbox example](https://codesandbox.io/p/sandbox/m26d95)
+
+## [`ref` cleanups required](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#ref-cleanup-required)
+
+cleanup
+```diff
+- <div ref={current => (instance = current)} />  
++ <div ref={current => {instance = current}} />
+```
