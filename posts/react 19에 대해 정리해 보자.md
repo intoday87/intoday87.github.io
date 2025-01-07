@@ -44,4 +44,5 @@ pure한 대상은 두 번 호출해서 production에서 문제가 없게끔 하�
 - functional component
 - initializer
 - updater
-https://codesandbox.io/p/sandbox/m26d95
+- ref callback
+[test codesandbox example](https://codesandbox.io/p/sandbox/m26d95)
