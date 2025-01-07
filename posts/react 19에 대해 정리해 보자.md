@@ -49,8 +49,12 @@ pure한 대상은 두 번 호출해서 production에서 문제가 없게끔 하�
 
 ## [`ref` cleanups required](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#ref-cleanup-required)
 
-cleanup
+cleanup이 추가되기 때문에 ts는 이런 아무거나 return하는 기존의 형태가 있다면 수정해야 한다. [codemod](https://github.com/eps1lon/types-react-codemod/#no-implicit-ref-callback-return)
 ```diff
 - <div ref={current => (instance = current)} />  
 + <div ref={current => {instance = current}} />
 ```
+
+## [`useRef`, `createContext` requires an argument](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#ref-cleanup-required)
+
+`useRef`의 current는 
