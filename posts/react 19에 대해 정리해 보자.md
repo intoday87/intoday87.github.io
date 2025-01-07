@@ -79,3 +79,16 @@ const ref = useRef<number>(null);
 // Cannot assign to 'current' because it is a read-only property  
 ref.current = 1;
 ```
+
+## [Change to the `ReactElement`Typescript type](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#changes-to-the-reactelement-typescript-type)
+
+`props` 접근시 `any`가 아닌 `unknown`으로 대체
+```ts
+type Example = ReactElement["props"];  
+
+// ^? Before, was 'any', now 'unknown'
+```
+
+## [The JSX namespace in Typescript](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#the-jsx-namespace-in-typescript)
+
+global `JSX` namesplace 제거
