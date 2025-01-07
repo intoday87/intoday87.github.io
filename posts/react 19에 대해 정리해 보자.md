@@ -72,7 +72,7 @@ createContext();
 createContext(undefined);
 ```
 
-모든 ref의 current는 이제 mutable하다. `MutableRef`가 deprecated 됨
+모든 ref의 current는 이제 mutable하다. `MutableRef`가 deprecated 됨.
 ```ts
 const ref = useRef<number>(null);  
 
