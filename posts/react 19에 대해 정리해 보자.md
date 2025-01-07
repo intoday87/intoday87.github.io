@@ -57,4 +57,25 @@ cleanup이 추가되기 때문에 ts는 이런 아무거나 return하는 기존�
 
 ## [`useRef`, `createContext` requires an argument](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#ref-cleanup-required)
 
-`useRef`의 current는 
+`useRef`, `createContext`는 argument를 반드시 요구하게 되어 typescript에서 타입 정의가 심플해졌다고 한다.
+```ts
+// @ts-expect-error: Expected 1 argument but saw none  
+useRef();  
+
+// Passes  
+useRef(undefined);  
+
+// @ts-expect-error: Expected 1 argument but saw none  
+createContext();  
+
+// Passes  
+createContext(undefined);
+```
+
+모든 ref의 current는 이제 mutable하다. `MutableRef`가 deprecated 됨
+```ts
+const ref = useRef<number>(null);  
+
+// Cannot assign to 'current' because it is a read-only property  
+ref.current = 1;
+```
