@@ -92,3 +92,5 @@ type Example = ReactElement["props"];
 ## [The JSX namespace in Typescript](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#the-jsx-namespace-in-typescript)
 
 global `JSX` namesplace 제거
+
+## What's new in React 19
