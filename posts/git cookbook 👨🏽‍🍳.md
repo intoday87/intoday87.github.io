@@ -12,4 +12,6 @@ git update-index --assume-unchanged 파일경로
 git update-index --no-assume-unchaged 파일경로
 # assume-unchaged된 목록 보기
 git ls-files -v | grep "^[[:lower:]]"
+# 이것도 되는것 아닌가?
+git ls-files -v | grep "^h\s"
 ```
