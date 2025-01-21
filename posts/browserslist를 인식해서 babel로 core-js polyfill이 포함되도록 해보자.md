@@ -195,3 +195,6 @@ not dead
 ```
 
 ### @babel/preset-env의 `useBuiltIns: "usage"`는 usage-global이다. core-js-pure를 사용할 수 없다
+
+### browserlist에서 각 커버하는 퍼센티지는 어떻게 아는 것인가?
+caniuse-lite에서 각 나라별 https://github.com/browserslist/caniuse-lite/blob/main/data/regions/KR.js 
