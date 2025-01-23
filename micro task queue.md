@@ -8,7 +8,7 @@ then 함수로 호출되는 경우 micro task queue에 들어가게 되어 비�
 
 다음과 같은 await을 사용하는 syntax sugar도 같은것으로 생각된다
 ```js
-cosnt f = async () => {
+const f = async () => {
 	cosnt p = new Promise((resolve) => {
 		console.log('in promise')
 		resolve()
