@@ -49,12 +49,27 @@ export default function Message({
 `🚀 서버에서 받은 데이터!`가 어디에 위치를 하고 있는지 찾아봤다. document로 내려온 소스는 다음 같다
 
 ```html
-  <script>
-      self.__next_f.push([1, "f:\"🚀 서버에서 받은 데이터!\"\n"])
-  </script>
-  <div hidden id="S:0">
-      <div>🚀 서버에서 받은 데이터!</div>
-  </div>
+    <body class="geist_e531dabc-module__QGiZLq__variable geist_mono_68a01160-module__YLcDdW__variable">
+        <div>
+            <!--$?-->
+            <template id="B:0"></template>
+            <div>loading...</div>
+            <!--/$-->
+        </div>
+        <script src="/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc._.js" async=""></script>
+        <script>
+            (self.__next_f = self.__next_f || []).push([0])
+        </script>
+		<!-- 다른 self.__next_f.push 들이 사이에... -->
+        <script>
+            self.__next_f.push([1, "o\",\"sizes\":\"256x256\",\"type\":\"image/x-icon\"},\"$1f\"]]\n11:null\n"])
+        </script>
+        <script>
+            self.__next_f.push([1, "f:\"🚀 서버에서 받은 데이터!\"\n"])
+        </script>
+        <div hidden id="S:0">
+            <div>🚀 서버에서 받은 데이터!</div>
+        </div>
 ```
 
-함수 자체는 서버에서 실행이 된 듯 하고 
+위 결과를 보면 별도로 서버에 요청해서 가져오는 streaming 방식일 줄 알고 xh
