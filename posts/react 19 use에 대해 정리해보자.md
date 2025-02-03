@@ -45,4 +45,6 @@ export default function Message({
 
 ```
 
-위의 코드는 정확히 동작한다. ssr에서 `Suspense`의 `fallback`이 html로 렌더링되어 내려오고 cient에서 ㅑ`promise`를 resolve해서 결과를 가져와 보여준다. 아직은 잘 몰라
+위의 코드는 정확히 동작한다. ssr에서 `Suspense`의 `fallback`이 html로 렌더링되어 내려오고 cient에서 ㅑ`promise`를 resolve해서 결과를 가져와 보여준다. `fetchMessage`는 어디에 위치하고 있을까?
+
+함수 자체는 서버에서 실행되는것 같아 보인ㄷ
