@@ -46,5 +46,15 @@ export default function Message({
 ```
 
 위의 코드는 정확히 동작한다. ssr에서 `Suspense`의 `fallback`이 html로 렌더링되어 내려오고 cient에서 ㅑ`promise`를 resolve해서 결과를 가져와 보여준다. `fetchMessage`는 어디에 위치하고 있을까?
+`🚀 서버에서 받은 데이터!`가 어디에 위치를 하고 있는지 찾아봤다. document로 내려온 소스는 다음 같다
 
-함수 자체는 서버에서 실행되는것 같아 보인ㄷ
+```html
+  <script>
+      self.__next_f.push([1, "f:\"🚀 서버에서 받은 데이터!\"\n"])
+  </script>
+  <div hidden id="S:0">
+      <div>🚀 서버에서 받은 데이터!</div>
+  </div>
+```
+
+함수 자체는 서버에서 실행이 된 듯 하고 
