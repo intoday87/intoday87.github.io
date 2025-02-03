@@ -62,9 +62,6 @@ export default function Message({
         </script>
 		<!-- 다른 self.__next_f.push 들이 사이에... -->
         <script>
-            self.__next_f.push([1, "o\",\"sizes\":\"256x256\",\"type\":\"image/x-icon\"},\"$1f\"]]\n11:null\n"])
-        </script>
-        <script>
             self.__next_f.push([1, "f:\"🚀 서버에서 받은 데이터!\"\n"])
         </script>
         <div hidden id="S:0">
@@ -73,3 +70,22 @@ export default function Message({
 ```
 
 위 결과를 보면 별도로 서버에 요청해서 가져오는 [streaming](https://react.dev/reference/react/use#streaming-data-from-server-to-client) 방식일 줄 알고 xhr 요청을 기대했으나 fallback 및 `promise`의  resolve된 결과가 이미 포함되어 내려오고 `fetchMessage` 함수 자체는 보이지 않으나 실제 `setTimeout`으로 기다리는 시간만큼 실제로 `promise`를 이행하는 코드가 실행되는 것으로 보인다.
+
+`Suspense`로 감싸져 있는 경우와 아닌 경우도 다르다.
+감싸져 있지 않은 경우 기존의 ssr 동작과 같이 html에 이미 서버에서 resolve된 결과가 렌더링 되어 응답으로 날아온다. 즉 바로 `fallback` 없이 바로 결과가 보인다.
+
+```html
+<body class="geist_e531dabc-module__QGiZLq__variable geist_mono_68a01160-module__YLcDdW__variable">
+        <div>
+            <div>🚀 서버에서 받은 데이터!</div>
+        </div>
+		<!-- 다른 self.__next_f.push 들이 사이에... -->
+        <script>
+            (self.__next_f = self.__next_f || []).push([0])
+        </script>
+        <script>
+            self.__next_f.push([1, "e:\"🚀 서버에서 받은 데이터!\"\n"])
+        </script>
+    </body>
+
+```
