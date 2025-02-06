@@ -9,66 +9,37 @@ react hooks는 렌더링시마다 closer를 기반으로 한 singleton 배열이
 
 ```js
 const MyReact = (function () {
-
-let hooks = [],
-
-currentHook = 0; // array of hooks, and an iterator!
-
-return {
-
-render(Component) {
-
-const Comp = Component(); // run effects
-
-Comp.render();
-
-currentHook = 0; // reset for next render
-
-return Comp;
-
-},
-
-useEffect(callback, depArray) {
-
-const hasNoDeps = !depArray;
-
-const deps = hooks[currentHook]; // type: array | undefined
-
-const hasChangedDeps = deps
-
-? !depArray.every((el, i) => el === deps[i])
-
-: true;
-
-if (hasNoDeps || hasChangedDeps) {
-
-callback();
-
-hooks[currentHook] = depArray;
-
-}
-
-currentHook++; // done with this hook
-
-},
-
-useState(initialValue) {
-
-hooks[currentHook] = hooks[currentHook] || initialValue; // type: any
-
-const setStateHookIndex = currentHook; // for setState's closure!
-
-const setState = (newState) => (hooks[setStateHookIndex] = newState);
-
-return [hooks[currentHook++], setState];
-
-},
-
-};
-
+  let hooks = [], // 각각 순서대로 호출되는 훅의 deps를 가진다. single
+    currentHook = 0; // array of hooks, and an iterator!
+  return {
+    render(Component) {
+      const Comp = Component(); // run effects
+      Comp.render();
+      currentHook = 0; // reset for next render
+      return Comp;
+    },
+    useEffect(callback, depArray) {
+      const hasNoDeps = !depArray;
+      const deps = hooks[currentHook]; // type: array | undefined
+      const hasChangedDeps = deps
+        ? !depArray.every((el, i) => el === deps[i])
+        : true;
+      if (hasNoDeps || hasChangedDeps) {
+        callback();
+        hooks[currentHook] = depArray;
+      }
+      currentHook++; // done with this hook
+    },
+    useState(initialValue) {
+      hooks[currentHook] = hooks[currentHook] || initialValue; // type: any
+      const setStateHookIndex = currentHook; // for setState's closure!
+      const setState = (newState) => (hooks[setStateHookIndex] = newState);
+      return [hooks[currentHook++], setState];
+    },
+  };
 })();
 
-  
-
 export default MyReact;
+
+
 ```
