@@ -9,7 +9,7 @@ react hooks는 렌더링시마다 closer를 기반으로 한 singleton 배열이
 
 ```js
 const MyReact = (function () {
-  let hooks = [], // 각각 순서대로 호출되는 훅의 deps를 가진다. single
+  let hooks = [], // 각각 순서대로 호출되는 훅의 deps를 가진다. singleton으로 관리됨
     currentHook = 0; // array of hooks, and an iterator!
   return {
     render(Component) {
