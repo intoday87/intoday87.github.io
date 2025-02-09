@@ -24,4 +24,13 @@ const eslintConfig: Linter.Config[] = [ // lint type 추가
 export default eslintConfig;
 ```
 
-package.json에서는 
+package.json에서는 분명 9.20.0의 eslint를 사용하고 있다
+```zsh
+pnpm ls eslint version
+Legend: production dependency, optional only, dev only
+
+nextjs-15-practice@0.1.0 /Users/nick/vscode-repos/nextjs-15-practice (PRIVATE)
+```
+
+찾아보니 다음과 같은 이슈가 올라와 있다. [# next lint does not recognize eslint.config.mts #74900](https://github.com/vercel/next.js/issues/74900#issuecomment-2604725409)
+확인했던대로 eslint 9에서는 [TypeScript Configuration Files](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files)](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files)과 같이 deno나 bun에서는 ts를 인지하지만 nodejs환경에서는 [https://github.com/unjs/jiti]
