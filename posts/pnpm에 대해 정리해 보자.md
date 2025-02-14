@@ -1,7 +1,7 @@
 ---
 title: pnpm에 대해 정리해 보자
 ---
-### 설치하지 않고 로컬에 있는 프로젝트 연결 [`pnpm link <dir>`](https://pnpm.io/ko/cli/link)
+## 설치하지 않고 로컬에 있는 프로젝트 연결 [`pnpm link <dir>`](https://pnpm.io/ko/cli/link)
 기존 npm node_modules 파일의 경로를 확인해보면 node_modules/.pnpm 하위 설치된 파일들로 링크되어 있다
 
 현재 프로젝트에 node_modules에 링크 된다
@@ -15,10 +15,11 @@ title: pnpm에 대해 정리해 보자
 	        "@nick/a": "file:../nick/packages/a",
 	```
 
-### [pnpm dedupe](https://pnpm.io/cli/dedupe)
+## [pnpm dedupe](https://pnpm.io/cli/dedupe)
 
 > Perform an install removing older dependencies in the lockfile if a newer version can be used.
 
 캐럿(`^`)이나 tilde(`~`)로 변경 가능한 오래된 디펜던시를 갱신해주고 사용되지 않는 디펜던시도 제거가 되는것으로 보인다
 
-##
+## How peers are resolved
+peer dependency가 없는 경우 하나의 dependency는 하나의 dependency
