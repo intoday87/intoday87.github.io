@@ -19,7 +19,21 @@ git ls-files -v | grep "^h\s"
 ```
 
 ## remote로 push 하는데 502가 발생한다면?
-다음과 같은 에러로 push가 
+
+다음과 같은 에러로 push가 실패하는 경우
 ```zsh
+Enumerating objects: 640, done.
+Counting objects: 100% (640/640), done.
+Delta compression using up to 11 threads
+Compressing objects: 100% (268/268), done.
 error: RPC failed; HTTP 502 curl 22 The requested URL returned error: 502
+send-pack: unexpected disconnect while reading sideband packet
+Writing objects: 100% (593/593), 1.50 MiB | 8.60 MiB/s, done.
+Total 593 (delta 337), reused 499 (delta 273), pack-reused 0
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+```
+업로드 하려는 사이즈가 큰 경우 buffer 사이즈 이슈로 config를 다음과 같이 수정해주면 된다
+```zsh
+git config --local http.postBuffer 157286400
 ```
