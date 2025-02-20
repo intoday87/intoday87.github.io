@@ -98,3 +98,5 @@ global `JSX` namesplace 제거
 	- mental model에 대한 그림 참고
 
 ## [preconnect](https://react.dev/reference/react-dom/preconnect)
+dns lookup, tcp, tls 왕복에 대한 비용을 미리 줄여주는 용도로 보이는데 [`rel=preconnect`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preconnect)와 연관이 있는것으로 보인다.
+[ReactFiberConfigDOM.js](https://github.com/facebook/react/blob/18eaf51bd51fed8dfed661d64c306759101d0bfd/packages/react-dom-bindings/src/client/ReactFiberConfigDOM.js#L2481) 에 구현된 내용을 보니 그렇다
