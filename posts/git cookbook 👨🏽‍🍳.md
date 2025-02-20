@@ -37,3 +37,6 @@ Everything up-to-date
 ```zsh
 git config --local http.postBuffer 157286400
 ```
+
+## git이 파일명 디렉토리명 대소문자 제대로 인식 못할때
+``
