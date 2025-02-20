@@ -33,10 +33,16 @@ Total 593 (delta 337), reused 499 (delta 273), pack-reused 0
 fatal: the remote end hung up unexpectedly
 Everything up-to-date
 ```
+
 업로드 하려는 사이즈가 큰 경우 buffer 사이즈 이슈로 config를 다음과 같이 수정해주면 된다
+
 ```zsh
 git config --local http.postBuffer 157286400
 ```
 
-## git이 파일명 디렉토리명 대소문자 제대로 인식 못할때
-``
+## git이 파일명 디렉토리명 대소문자 제대로 인식 못 할 때
+```git
+# .git/config
+[core]
+	ignorecase = true # false로 바꿔준다
+```
