@@ -96,3 +96,5 @@ global `JSX` namesplace 제거
 ## What's new in React 19
 - [Why do Client Components get SSR'd to HTML?](https://github.com/reactwg/server-components/discussions/4)
 	- mental model에 대한 그림 참고
+
+## [preconnect](https://react.dev/reference/react-dom/preconnect)
