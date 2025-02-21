@@ -14,4 +14,16 @@
 		// 'null' 형식은 'number' 형식에 할당할 수 없습니다
 	```
 - `noEmitOnError`
-	- tsc는 c나 java 컴파일러와 달리 타입 체크이 문제가 있으면 결과물을 생성하지 않지만 ts는 타입 체크와 transfile을 두 가지를 하면서 두 가지는 서로 독립적이기 때문에 기본적으로 타입 체크 오류가 발생해도 transfile된 js 결과를 생성한다. 만약 타입 체크 오류가 발생시 결과물을 발생하지 않으려면 
+	- tsc는 c나 java 컴파일러와 달리 타입 체크이 문제가 있으면 결과물을 생성하지 않지만 ts는 타입 체크와 transfile을 두 가지를 하면서 두 가지는 서로 독립적이기 때문에 기본적으로 타입 체크 오류가 발생해도 transfile된 js 결과를 생성한다. 만약 타입 체크 오류가 발생시 결과물을 발생하지 않으려면 설정한다. 즉 **런타입에 타입체크는 안된다**
+	```zsh
+	$ tsc index.ts
+	index.ts:2:1 - error TS2322: Type 'number' is not assignable to type 'string'.
+	
+	2 x = 1234
+	  ~
+	
+	
+	Found 1 error in index.ts
+	$ ls
+	index.ts index.js	
+	```
