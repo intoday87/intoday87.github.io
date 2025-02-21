@@ -1,4 +1,5 @@
-- `target`
+- `noImplicitAny`
+	- 타입을 선언하지 않은 
 - [`lib`](https://www.typescriptlang.org/tsconfig/#lib)
-	- transfile시 포함시킬 라이브러리. ㅈ
+	- transfile시 포함시킬 라이브러리
  - `module`
