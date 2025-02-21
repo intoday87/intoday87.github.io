@@ -7,6 +7,12 @@
 			return a + b
 		}
 	```
+- `strictNullChecks`
+	- null이 아닌 타입에 null 할당을 허용할 것인지
+	```ts
+		const a: number = null	
+		// 'null' 형식은 'number' 형식에 할당할 수 없습니다
+	```
 - [`lib`](https://www.typescriptlang.org/tsconfig/#lib)
 	- transfile시 포함시킬 라이브러리
  - `module`
