@@ -90,3 +90,5 @@ const [num, bool, str] = results.map((v) => (v.status === 'fulfilled' ? v.value 
 
 방법 2 map 돌리지 않고 인덱스로 꺼내기..
 더 좋은 방법🙏🏾
+
+## key
