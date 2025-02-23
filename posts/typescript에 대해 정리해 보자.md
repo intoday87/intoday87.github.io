@@ -57,6 +57,6 @@ js의 duck typing과 마찬가지로 typescript의 구조적 타이핑 역시 �
 방법은 두 가지 정도가 있는데 다음은 [type predicate](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)를 사용해서 해결하는 방법이 있다
 ```ts
 function isVector2D(v: Vector2D): v is Vector2D {
-	return typeof v.x === 'number' && typeof v.y. === 'number' && typeof v.z === undefined
+	return typeof v.x === 'number' && typeof v.y === 'number' && typeof v.z === undefined
 }
 ```
