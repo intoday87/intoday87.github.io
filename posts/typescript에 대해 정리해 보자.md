@@ -18,3 +18,16 @@ source: https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any
 
 ## 'string' 형식의 식을 'SomeType' 인덱스 형식에 사용할 수 없으므로 요소에 암시적으로 'any' 형식이 있습니다
 
+자 다음과 같은 코드가 있다고 해보자
+```ts
+function calculateLengthL1(v: Vector3D) {
+  let length = 0
+  for (const axis of Object.keys(v)) {
+    const coord = v[axis]
+    // ~~~~~~~ 'string'은 'Vector3D'의 인덱스로 사용할 수 없기에
+    // 엘리먼트는 암시적으로 'any' 타입입니다.
+    length += Math.abs(coord)
+  }
+  return length
+}
+```
