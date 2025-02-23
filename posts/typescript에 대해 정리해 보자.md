@@ -19,7 +19,14 @@ source: https://www.typescriptlang.org/docs/handbook/type-compatibility.html#any
 ## 'string' 형식의 식을 'SomeType' 인덱스 형식에 사용할 수 없으므로 요소에 암시적으로 'any' 형식이 있습니다
 
 자 다음과 같은 코드가 있다고 해보자
+
 ```ts
+interface Vector3D {
+  x: number
+  y: number
+  z: number
+}
+
 function calculateLengthL1(v: Vector3D) {
   let length = 0
   for (const axis of Object.keys(v)) {
@@ -31,3 +38,5 @@ function calculateLengthL1(v: Vector3D) {
   return length
 }
 ```
+
+`Vector3D`의 key를 추출해서 값을 꺼내는데 `axis`로 `v`의 인덱스에 접근하는게 왜 문제가 되는것일까? 단순히 보면 `vector3D`의 봉인된 키값들만 꺼내서 처리하니 문제가 없을것 같아보인다. 그 이유는 구조적 타이핑(structural typing). js의 duck typing
