@@ -41,4 +41,13 @@ function calculateLengthL1(v: Vector3D) {
 
 `Vector3D`의 key를 추출해서 값을 꺼내는데 `axis`로 `v`의 인덱스에 접근하는게 왜 문제가 되는것일까? 단순히 보면 `vector3D`의 봉인된 키값들만 꺼내서 처리하니 문제가 없을것 같아보인다. 그 이유는 구조적 타이핑(structural typing). js의 duck typing처럼 알맞은 속성과 메서드가 있어서 인터페이스를 만족한다면 해당 객체로 보겠다는 개념을 typescript에서는 훼손하지 않고 유지하고 있는 셈이다. 그래서 다음과 같은 코드가 가능하다.
 ```ts
+interface NamedVector {
+	name: string
+	x: number
+	y: number
+	z: number
+}
+const v: NamedVector = { name: 'name', x: 1, y: 2, z: 3 }
+calculateLengthL1(v) // NaN
 ```
+ㅇㄹ
