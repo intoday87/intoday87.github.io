@@ -54,6 +54,9 @@ calculateLengthL1(v) // NaN
 결과는 `NaN`이 발생한다. 사실은 정확하게 타입 오류를 잡아 주고 있는 셈이다
 js의 duck typing과 마찬가지로 typescript의 구조적 타이핑 역시 인터페이스가 호환이 되면 지정된 타입이 아니여도 오류를 발생하지 않는다. 자바와 c++을 해본 사람이라면 class의 구조가 같다고 하더라도 선언된 class가 다르면 오류를 발생하는 것과 다른 점으로 당황스러울 수 있다.  typescript는 js의 본질을 유지하면서 js의 런타임을 설계하기 때문에 타입이 삭제되는 transfile된 결과에서 동작이 바뀌는것은 아니다
 
-ek
+방법은 두 가지 정도가 있는데 다음은 [type predicate](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)를 사용해서 해결하는 방법이 있다
 ```ts
+function isVector2D(v: Vector2D): v is Vector2D {
+	return v.
+}
 ```
