@@ -3,7 +3,7 @@ title: typescript에 놓치고 있는 부분을 정리해 보자
 ---
 ## any와 unknown에 대한 차이점
 
-`unknown`은 `any`와 달리 `any` type이 아닌 다른 모든 타입에 할당될 수 없는 차이가 있다. 어떤 타입이든 할 당될 수 있는 `any` 보다는 `unknown`을 선호해야겠다.
+`unknown`은 `any`와 달리 `any` type이 아닌 다른 모든 타입에 할당될 수 없는 차이가 있다. 어떤 타입이든 할 당될 수 있는 `any` 보다는 `unknown`을 선호해야겠다
 
 |     any     | unknown | object | void | undefined | null | never |     |
 | :---------: | :-----: | :----: | :--: | :-------: | :--: | :---: | --- |
@@ -40,7 +40,7 @@ function calculateLengthL1(v: Vector3D) {
 ```
 > source: o'reilly effective typescript - Dan vanderkam
 
-`Vector3D`의 key를 추출해서 값을 꺼내는데 `axis`로 `v`의 인덱스에 접근하는게 왜 문제가 되는것일까? 단순히 보면 `vector3D`의 봉인된 키값들만 꺼내서 처리하니 문제가 없을것 같아보인다. 그 이유는 구조적 타이핑(structural typing). js의 duck typing처럼 알맞은 속성과 메서드가 있어서 인터페이스를 만족한다면 해당 객체로 보겠다는 개념을 typescript에서는 훼손하지 않고 유지하고 있는 셈이다. 그래서 다음과 같은 코드가 가능하다
+`Vector3D`의 key를 추출해서 값을 꺼내는데 `axis`로 `v`의 인덱스에 접근하는게 왜 문제가 되는것일까?! 단순히 보면 `vector3D`의 봉인된 키값들만 꺼내서 처리하니 문제가 없을것 같아보인다. 그 이유는 구조적 타이핑(structural typing) 때문이다. js의 duck typing처럼 알맞은 속성과 메서드가 있어서 인터페이스를 만족한다면 해당 객체로 보겠다는 개념을 typescript에서는 훼손하지 않고 유지하고 있는 셈이다. 그래서 다음과 같은 코드가 가능하다
 ```ts
 interface NamedVector {
 	name: string
@@ -52,7 +52,7 @@ const v: NamedVector = { name: 'name', x: 1, y: 2, z: 3 }
 calculateLengthL1(v) // NaN
 ```
 결과는 `NaN`이 발생한다. 사실은 정확하게 타입 오류를 잡아 주고 있는 셈이다
-js의 duck typing과 마찬가지로 typescript의 구조적 타이핑 역시 인터페이스가 호환이 되면 지정된 타입이 아니여도 오류를 발생하지 않는다. 자바와 c++을 해본 사람이라면 class의 구조가 같다고 하더라도 선언된 class가 다르면 오류를 발생하는 것과 다른 점으로 당황스러울 수 있다.  typescript는 js의 본질을 유지하면서 js의 런타임을 설계하기 때문에 타입이 삭제되는 transfile된 결과에서 동작이 바뀌는것은 아니다
+js의 duck typing과 마찬가지로 typescript의 구조적 타이핑 역시 인터페이스가 호환이 되면 지정된 타입이 아니여도 오류를 발생하지 않는다. 자바와 c++을 해본 사람이라면 class의 구조가 같다고 하더라도 선언된 class가 다르면 오류를 발생하는 것과 다른 점으로 매우 당황스러울 수 있다.  typescript는 js의 본질을 유지하면서 js의 런타임을 설계하기는 용도 때문에 타입이 삭제되는 transfile된 결과에서 동작이 바뀌는것은 아니다
 
 방법은 두 가지 정도가 있는데 다음은 [type predicate](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)를 사용해서 해결하는 방법이 있다
 ```ts
