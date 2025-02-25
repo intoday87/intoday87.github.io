@@ -80,4 +80,8 @@ calculateLengthL1(v3)
 // Argument of type 'Vector3D' is not assignable to parameter of type 'Vector2D'. Types of property 'kind' are incompatible. Type '"vector3D"' is not assignable to type '"vector2D"'.
 ```
 
- 하지만 객체 리터럴로 넘길 경우 충족하는 프로퍼티가 모두 있음에도 불구하고 호환성
+ 하지만 객체 리터럴로 넘길 경우 충족하는 프로퍼티가 모두 있음에도 불구하고 타입간 호환성을 따지지 않고(타입이 없는 객체 리터럴) 초과 속성 검사(excess process checking)가 동작되어 이 타입간 호환성에 대해 간과하기 쉽다
+ 
+```ts
+calculateLengthL1({ x:1, y:2, z:3 }) // 초과 속성 검사로 'z'가 없다고 타입 오류 발생
+```
