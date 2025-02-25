@@ -79,3 +79,5 @@ const v3: Vector3D = {kind: 'vector3D', x:2, y:3, z:4}
 calculateLengthL1(v3)
 // Argument of type 'Vector3D' is not assignable to parameter of type 'Vector2D'. Types of property 'kind' are incompatible. Type '"vector3D"' is not assignable to type '"vector2D"'.
 ```
+
+ 하지만 객체 리터럴로 넘길 경우 충족하는 프로퍼티가 모두 있음에도 불구하고 호환성
