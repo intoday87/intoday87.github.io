@@ -63,7 +63,7 @@ function isVector2D(v: Vector2D): v is Vector2D { // 함수 결과가 true면 v�
 또 한 가지는 taged type을 이용하는 방법인데 타입에 국한되지 않으므로 타입 구분용 필드가 추가되는 부분에 거부감이 있을 수 있다
 ```ts
 interface Vector2D {
-	kind: 'vector2D' // tag literal을 명시하여 validation
+	kind: 'vector2D' // 타입 구분을 위한 tag를 명시하여 validation
 	x: number
 	y: number
 }
