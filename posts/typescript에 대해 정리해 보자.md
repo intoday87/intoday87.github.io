@@ -68,5 +68,5 @@ interface Vector2D {
 	y: number
 }
 calculateLengthL1({x:2, y:3, z:4})
-// ~ 
+// ~ '{ x: number; y: number; }' 형식의 인수는 'Vector2D' 형식의 매개 변수에 할당될 수 없습니다. 'kind' 속성이 '{ x: number; y: number; }' 형식에 없지만 'Vector2D' 형식에서 필수입니다.ts(2345)
 ```
