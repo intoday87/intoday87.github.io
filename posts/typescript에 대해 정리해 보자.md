@@ -85,3 +85,7 @@ calculateLengthL1(v3)
 ```ts
 calculateLengthL1({ x:1, y:2, z:3 }) // 초과 속성 검사로 'z'가 없다고 타입 오류 발생
 ```
+
+## Intersection Types
+타입의 intersection(`&`)은 집합으로 교집합에 해당하는데 왜 두 타입간 intersection은 서로간 모든 타입을 포함하게 되는것일까? 오히려 합집합을 의미하는 union(`|`)이어야 하지 않을까?
+이 대답에 명확하게 설명하는 글을 보지 못해서 여지것 [intersection-types](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html#intersection-types)에서 설명하는 예시대로만 표면적으로 사용을 해왔던것 같다. 하지만 o'reilly effective typescript - Dan vanderkam의 책을 읽으면서 조금더 와닿게 되는ㄱ
