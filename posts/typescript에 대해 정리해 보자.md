@@ -98,6 +98,19 @@ type A {
 type B {
 	c: number
 }
-df
+type StructuredTypedA {
+    a: number
+    b: number
+    c: number
+}
+type StructuredTypedB {
+
+}
+
+const ea: StructuredTypedA = {
+    a: 1, b: 2, c: 3
+}
+conste
+const a: A = ea
 
 ```
