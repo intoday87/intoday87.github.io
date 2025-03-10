@@ -144,5 +144,7 @@ interface B {
 	b: number
 }
 type k = keyof(A | U) // never
+type kab = keyof A | keyof B // `a` | `b`
+type kab2 = keyof (A & B) 
 
 ```
