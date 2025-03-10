@@ -131,3 +131,17 @@ const aAndB: AAndB = { // 구조적 타이핑 관점에서 A, B의 타입의 범
 }
 ```
 즉 요약하자면 구조적 타이핑 관점에서 선언된 속성 외에 다른 속성을 가질수 있다고 가정하면 선언된 속성외 어떤 속성은 intersection(`&`)하는 다른 속성이 있을수도 있다고 전제가 되기 때문에 결국에는 교집한은 A, B 속성이 모두 포함된 형태가 된다
+
+## Union type
+
+다음과 같은 케이스에서 하
+```ts
+interface A {
+	a: number
+}
+interface B {
+	b: number
+}
+type k = keyof(A | U) // never
+
+```
