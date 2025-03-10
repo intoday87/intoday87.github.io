@@ -145,6 +145,7 @@ interface B {
 }
 type k = keyof(A | U) // never
 type kab = keyof A | keyof B // `a` | `b`
-type kab2 = keyof (A & B) 
-
+type kab2 = keyof (A & B) // `a` | `b`
 ```
+
+단순히 합집합이라고 하면 모든 키가 합산되어 keyof에 나열되어야 할 것 같지만 never인 이유는 구조적 타이핑 관점에서 생각해봐야 한다. *모든 타입은 선언된 속성 말고도 추가적인 속성을 포함할 수 있다* 의 관점으로 생각해보면 `A | U`는 추가적은 속서
