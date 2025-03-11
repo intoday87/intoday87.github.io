@@ -51,5 +51,7 @@ git config --local http.postBuffer 157286400
 
 ```zsh
 git -vv | grep '^*'
-* feature/branch                           9c5ec458 [origin/member-plan/2809] [Product-Planning/Financial-member_Plan#2809] 구독자 멤버 타입 정리
+* feature/branch                           9c5ec458 [origin/feature/branch: ahead 3, behind 2] commit message
 ```
+
+이렇게 remote와 차이나는 부분을 보여준다. 물론 git fetch를 해야 최신 remote와 차이를 볼 수 있다
