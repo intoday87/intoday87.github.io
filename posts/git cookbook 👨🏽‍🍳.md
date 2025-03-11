@@ -46,3 +46,5 @@ git config --local http.postBuffer 157286400
 [core]
 	ignorecase = true # false로 바꿔준다
 ```
+
+## 현재 브랜치에 
