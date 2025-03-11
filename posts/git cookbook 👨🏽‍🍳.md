@@ -47,4 +47,9 @@ git config --local http.postBuffer 157286400
 	ignorecase = true # false로 바꿔준다
 ```
 
-## 현재 브랜치에 
+## 현재 브랜치가 remote와 얼마나 차이 나는지 확인
+
+```zsh
+git -vv | grep '^*'
+* feature/branch                           9c5ec458 [origin/member-plan/2809] [Product-Planning/Financial-member_Plan#2809] 구독자 멤버 타입 정리
+```
