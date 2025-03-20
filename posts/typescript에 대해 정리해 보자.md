@@ -150,11 +150,15 @@ type kab2 = keyof (A & B) // `a` | `b` // 구조적 타이핑관점에서 inters
 
 단순히 union이라고 생각 하면 A, B에 선언된 모든 키만 합산되어 keyof에서 나열되어야 할 것 같지만 never인 이유는 구조적 타이핑 관점에서 다시 생각해봐야 한다. *모든 타입은 선언된 속성 말고도 추가적인 속성을 포함할 수 있다*  의 관점으로 생각해보면 `A | B`는 추가적은 속성을 포함한 `U`(전체 집합)이 되기 때문에 각각의 타입에 속한 속성만 있다고 할 수 없어 never가 된다 
 
-## 튜플과 같은 타입간 호환은 length 속성을 체크한다
-```ts
-const tuple: 
-```
+## 값 쌍과 같은 타입간 호환은 length 속성도 체크한다
 
+```ts
+const pair: [number, number] = [1, 2]
+const triple: [number, number, number] = pair
+//    ~~~~~~
+// Type '[number, number, number]' is not assignable to type '[number, number]'. Source has 3 element(s) but target allows only 2.(2322)
+```
+물론 string triple에 할당하려고 하면 
 ## 타입스크립트 용어와 집합 이론 용어 사이의 대응 관계
 | 타입스크립트 용어              | 집합 용어                   |
 | ---------------------- | ----------------------- |
