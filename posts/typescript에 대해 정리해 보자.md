@@ -164,5 +164,9 @@ type kab2 = keyof (A & B) // `a` | `b` // 구조적 타이핑관점에서 inters
 > source: o'reilly effective typescript - Dan vanderkam
 ## typescript에서 type이 되지 못하는 값이 있다?
 
-- [ ] 정수에 대한 타입
-- [ ] x와 y 속성 외에 다른 속성이 없는 객체는 타입스크립트 타입에 존재하지 않습니다
+- [ ]  가끔 Exclude를 사용해서 일부 타입을 제외할 수는 있지만, 그 결과가 적절한 타입스크립트 타입일 때만 유효
+```ts
+type NonZeroNums = Exclude<number, 0>; // 타입은 여전히 number
+```
+
+- [ ] x와 y 속성 외에 다른 속성이 없는 객체는 타입스크립트 타입에 존재하지 않는다
