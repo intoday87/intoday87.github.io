@@ -158,7 +158,7 @@ const triple: [number, number, number] = pair
 //    ~~~~~~
 // Type '[number, number, number]' is not assignable to type '[number, number]'. Source has 3 element(s) but target allows only 2.(2322)
 ```
-물론 string triple에 할당하려고 하면 
+물론 string triple에 할당하려고 하면 number와 string타입이 달라 오류로 체크한다
 ## 타입스크립트 용어와 집합 이론 용어 사이의 대응 관계
 | 타입스크립트 용어              | 집합 용어                   |
 | ---------------------- | ----------------------- |
