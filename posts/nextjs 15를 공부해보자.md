@@ -148,6 +148,7 @@ streaming이 된다고 확인한 것은 document 응답을 보면 알 수가 있
 </html>
 ```
 와.. 신기하다! 응답 헤더의 `Content-Type`은 그냥 text/html인데..
-hidde
+hidden으로 감춰진 스트리밍된 결과값을 client 복구 함수를 통해서 복구한다.
+`template` 엘리먼트트의 id가 `B:0`인데 여기에 `S:0`이 id인 내용을 넣는다. 그리고 `template`아래 suspense fallback이 별도의 id가 없는데도 없애주네. 
 
 - [ ] latency를 위해 정해놓은 timeout이 넘어가면 client는 렌더링을 시작하고 timeout이 넘은 컴포넌트는 streaming처리로 suspense와 함께 skeleton과 같은 로딩 스테이트를 보여주면서 별도로 요청을 기다릴 수 있는가?
