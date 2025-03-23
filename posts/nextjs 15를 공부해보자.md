@@ -155,7 +155,7 @@ suspense fallback이 별도의 id를 가지지 않았는데 처리가 되는점�
 #### text/html은 어떻게 streaming을 해오는것인가
  대기중인 promise가 처리될 때까지 streaming write를 통해서 완료된 html 조각을 응답 스트리밍에 쓰는것으로 보인다.  별도의 스트리밍 컨텐트 타입 헤더가 없이 동작하는게 신기하다. 원래 가능했나..?
 #### 통짜 hydration 대신 이제 병렬처리니까 컴포넌트마다 streaming이 가능하다는 것인데?
-시도해보자!  다른 한 컴포넌트는 11초를 기다리도록 하고 메세지를 간단히 바꿔보자. 위에서 생각했던대로 streaming write를 
+시도해보자!  다른 한 컴포넌트는 11초를 기다리도록 하고 메세지를 간단히 바꿔보자. 위에서 생각했던대로 streaming write를 promise가 완료된 순서대로 write 하고 있음을 응답을 보면 알 수 있다
 ```tsx
 // app/page.tsx
 
