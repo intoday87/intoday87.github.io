@@ -4,7 +4,7 @@ title: nextjs 15를 공부해보자
 # [Loading UI and Streaming](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)
 ### 학습 목표
 - [ ] 기존 ssr에서 gssp의 모든 요청을 기다리는 대신 server suspense를 사용하여 개별 streaming이 가능한가?
-일단은 해보니까 streaming이 된다. 간단한 예시를 만들어 보자
+일단은 해보니까 streaming이 되는것 같다. 간단한 예시를 만들어 보자
 
 ```tsx
 // app/page.tsx
@@ -30,7 +30,21 @@ export default function Home() {
 }
 ```
 
+```tsx
+// components/Message.tsx
+'use client';
 
+import { use } from "react";
+
+export default function Message({
+  messagePromise,
+}: {
+  messagePromise: Promise<string>;
+}) {
+  const message = use(messagePromise);
+  return <div>{message}</div>;
+}
+```
 
 
 
