@@ -44,8 +44,17 @@ export default function Message({
   const message = use(messagePromise);
   return <div>{message}</div>;
 }
+
+// export default async function Message({
+//   messagePromise,
+// }: {
+//   messagePromise: Promise<string>;
+// }) {
+//   const message = await messagePromise;
+//   return <div>받은 메세지: {message}</div>;
+// }
 ```
 
-
+신기하게 `Message` 컴포넌트가 client 컴포넌트건 server 컴포넌트건 결과가 같은점이 
 
 - [ ] latency를 위해 정해놓은 timeout이 넘어가면 client는 렌더링을 시작하고 timeout이 넘은 컴포넌트는 streaming처리로 suspense와 함께 skeleton과 같은 로딩 스테이트를 보여주면서 별도로 요청을 기다릴 수 있는가?
