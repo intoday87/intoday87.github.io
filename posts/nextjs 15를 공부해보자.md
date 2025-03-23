@@ -101,7 +101,11 @@ streaming이 된다고 확인한 것은 document 응답을 보면 알 수가 있
             $RS("S:1", "P:1")
         </script>
         <script>
-			// ㅅ
+			/** react 18의 서버 컴포넌트 및 스트리밍 렌더링과 관련된 클라이언트 측 복구 로직 하나로 보인다
+			* @param b 업데이트할 노드(플레이스홀더)의 ID
+			* @param c 제거할 노드의 ID
+			* @param e? data-digest 검증용 해시값인듯?
+			*/
             $RC = function(b, c, e) {
                 c = document.getElementById(c);
                 c.parentNode.removeChild(c);
@@ -144,5 +148,6 @@ streaming이 된다고 확인한 것은 document 응답을 보면 알 수가 있
 </html>
 ```
 와.. 신기하다! 응답 헤더의 `Content-Type`은 그냥 text/html인데..
+hidde
 
 - [ ] latency를 위해 정해놓은 timeout이 넘어가면 client는 렌더링을 시작하고 timeout이 넘은 컴포넌트는 streaming처리로 suspense와 함께 skeleton과 같은 로딩 스테이트를 보여주면서 별도로 요청을 기다릴 수 있는가?
