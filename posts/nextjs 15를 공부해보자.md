@@ -155,7 +155,36 @@ suspense fallback이 별도의 id를 가지지 않았는데 처리가 되는점�
 #### text/html은 어떻게 streaming을 해오는것인가
  대기중인 promise가 처리될 때까지 streaming write를 통해서 완료된 html 조각을 응답 스트리밍에 쓰는것으로 보인다.  별도의 스트리밍 컨텐트 타입 헤더가 없이 동작하는게 신기하다. 원래 가능했나..?
 #### 통짜 hydration 대신 이제 병렬처리니까 컴포넌트마다 streaming이 가능하다는 것인데?
-todo 해보자!
-	
-		
+시도해보자!  다른 한 컴포넌트는 11초를 기다리도록 하고 메세지를 간단히 바꿔보자. 위에서 생각했던대로 streaming write를 
+```tsx
+// app/page.tsx
+
+import Message from "@/components/Message";
+import { Suspense } from "react";
+
+function fetchMessage() {
+  return new Promise<string>((resolve) => {
+    setTimeout(() => resolve("🚀 서버에서 받은 데이터! - messsage 1"), 7000);
+  });
+}
+
+function fetchMessage2() {
+  return new Promise<string>((resolve) => {
+    setTimeout(() => resolve("🚀 서버에서 받은 데이터! - messsage 2"), 11000);
+  });
+}
+
+export default function Home() {
+  return (
+    <div>
+      {/* 주석을 풀면 loading.tsx를 사용하지 않고 감싼 Suspense가 promise를 처리하게 된다 */}
+      {/* <Suspense fallback={<div>loading...?</div>}> */}
+      <Message messagePromise={fetchMessage()} />
+	  <Message messagePromise={fetchMessage2()} />
+      {/* </Suspense> */}
+    </div>
+  );
+}
+```
+
 - [ ] latency를 위해 정해놓은 timeout이 넘어가면 client는 렌더링을 시작하고 timeout이 넘은 컴포넌트는 streaming처리로 suspense와 함께 skeleton과 같은 로딩 스테이트를 보여주면서 별도로 요청을 기다릴 수 있는가?
