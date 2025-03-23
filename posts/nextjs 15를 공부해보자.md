@@ -147,7 +147,7 @@ streaming이 된다고 확인한 것은 document 응답을 보면 알 수가 있
     </body>
 </html>
 ```
-와.. 신기하다! 응답 헤더의 `Content-Type`은 그냥 text/html인데..
+대기중인 promise가 처리될 때까지 streaming write를 통해서 완료된 html 조각을 응답 스트리밍에 쓰는것으로 보인다
 hidden으로 감춰진 스트리밍된 결과값을 client 복구 함수를 통해서 복구한다.
 `template` 엘리먼트트의 id가 `B:0`인데 여기에 `S:0`이 id인 내용을 넣는다. 그리고 `template`아래 suspense fallback이 별도의 id가 없는데도 없애준다. 기가막히는고만
 여기서 궁금한게 다시
