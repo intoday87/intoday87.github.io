@@ -179,4 +179,23 @@ type NonZeroNums = Exclude<number, 0>; // 타입은 여전히 number
 type T = Exclude<string|Date, string|number>; // 타입은 Date
 ```
 
-- [ ] x와 y 속성 외에 다른 속성이 없는 객체는 타입스크립트 타입에 존재하지 않는다
+- [ ] x와 y 속성 외에 다른 속성이 없는 객체는 타입스크립트 타입에 존재하지 않는다 
+```ts
+interface Type {
+	a: number
+	b: number
+}
+const t: Type = {
+	a: 1,
+	b: 2,
+	c: 3, // exceed property checking
+//  ~
+//  Object literal may only specify known properties, and 'c' does not exist in type 'Type'.(2353)
+}
+const temp = {
+	a: 1
+	b: 2
+	c: 3
+}
+const t2: 
+```
