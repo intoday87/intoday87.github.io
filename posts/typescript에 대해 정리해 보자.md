@@ -208,6 +208,20 @@ const x = 'string'
 x.language = 'en'
 // en
 x.language
-// undefined. 객
+// undefined. 래핑된 객체는 이미 버려짐
 ```
+
 기본형 타입에 메서드를 사용하려면 일단 객체로 변환되고 사용된 객체는 바로 버려진다
+
+```js
+const x = new String('string')
+x.language = 'en'
+x.language
+// en
+```
+
+그렇기 때문에 typescript는 기본형과 래퍼객체에 대한 타입을 분리해 놓았다
+
+```ts
+const x: string
+```
