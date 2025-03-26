@@ -258,4 +258,5 @@ function isIncluded(v: String) {
 const s: String = 'string'
 const b: Boolean = true
 const n: Number = 1
+const n: BigInt = 1 // 이것만 오류나네;;
 ```
