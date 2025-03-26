@@ -200,5 +200,6 @@ const temp = {
 const t2: Type = temp // 정상. temp는 t2의 부분 집합인 a, b를 모두 포함하고 있어서 정상
 ```
 
-## JS runtime 타입
-`typeof`와 
+## javascript runtime 타입
+값 앞에 `typeof`를 붙이면 js의 런타임 타입을 얻을 수 있다. js 타입은 매우 단순하다.
+객체(object)를 제외하고 기본형에 대한 타입은 boolean, string, number, null, symbol, bigint, undefined 정도 이다.
