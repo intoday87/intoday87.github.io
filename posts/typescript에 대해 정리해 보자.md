@@ -223,5 +223,9 @@ x.language
 그렇기 때문에 typescript는 기본형과 래퍼객체에 대한 타입을 분리해 놓았다
 
 ```ts
-const x: string
+const s: string = 'string'
+const sw: String = new String('string')
+
+s === sw // false
+s == sw // true s를 래퍼객체로 타입 변환
 ```
