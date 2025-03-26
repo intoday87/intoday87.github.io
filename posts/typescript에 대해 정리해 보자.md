@@ -197,5 +197,8 @@ const temp = {
 	b: 2
 	c: 3
 }
-const t2: 
+const t2: Type = temp // 정상. temp는 t2의 부분 집합인 a, b를 모두 포함하고 있어서 정상
 ```
+
+## JS runtime 타입
+`typeof`와 
