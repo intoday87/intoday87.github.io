@@ -248,6 +248,14 @@ log(new String('some log')) // 정상
 function isIncluded(v: String) {
 	return ['a', 'b'].includes(v)
 	//                         ~
-	//                         기볺
+	//                         기본형 타입을 받는데 래퍼 타입이 들어왔음 오류
 }
+```
+
+그리고 기본형은 래퍼타입에 할당할 수 있기 때문에 조심해야 한다
+
+```ts
+const s: String = 'string'
+const b: Boolean = true
+const n: Number = 1
 ```
