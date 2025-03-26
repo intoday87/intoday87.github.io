@@ -228,4 +228,9 @@ const sw: String = new String('string')
 
 s === sw // false
 s == sw // true s를 래퍼객체로 타입 변환
+new String('string') === new String('string') // false 참조가 다른 객체
+'string' === 'string' // immutable한 기본형은 true
 ```
+
+이런 엄격한 동등 비교와 느슨한 동등 비교에서 차이가 있어서 왠만하면 래퍼 객체로 사용하지 않는것이 좋다. 
+다음으
