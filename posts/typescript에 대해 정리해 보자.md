@@ -240,4 +240,14 @@ const target: String = new String('love')
 'i love you'.search(target)
 //                  ~~~~~~
 //                  기본형 타입을 받는데 래퍼 타입이 들어와서 타입 오류
+
+function log(v: String) {}
+log('some log') // 정상
+log(new String('some log')) // 정상
+
+function isIncluded(v: String) {
+	return ['a', 'b'].includes(v)
+	//                         ~
+	//                         기볺
+}
 ```
