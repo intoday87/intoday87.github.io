@@ -264,16 +264,26 @@ const n: BigInt = 1 // 이것만 오류나네;;
 ```
 
 ## Exceed property checking (잉여 속성 체크)
+
 구조적 타이핑 관점에서는 다음과 같은 코드는 에러가 없어야 한다.  **타입은 추가적인 속성을 포함할 수 있다는 전제하에 있다**는 것이 구조적 타이핑의 관점이기 때문이다
 ```ts
 interface T {
 	a: number
 	b: number
 }
+// 객체 리터럴에서만 잉여 속성 체크가 동작한다
 const v: T = {
 	a: 1,
 	b: 2,
 	c: 3,
-//  
+//  ~
+//  Object literal may only specify known properties, and 'c' does not exist in type 'T'.(2353) -> c는 잉여 속성 체크에서 확인된 없는 속성
 }
+
+function sf(v: T) {}
+sf({ a: 1, b: 2, c: 3})
+//               ~
+//               c는 없는 속성
 ```
+
+하지만 
