@@ -146,7 +146,7 @@ interface B {
 	b: number
 }
 type k = keyof(A | B) // never -> 구조적 타이핑 관점에서 추가적인 속성이 있을수 있는 타입에서 A | B = U(전체집합)이 된다. 그러므로 A, B의 union은 키를 특정할 수 없어 never가 된다
-type kab = keyof A | keyof B // `a` | `b` -> 각 A,B의 키 값의 결과는 타입이 아닌 리터럴이라 우리가 생각했던 union에 대한 결과가 된다
+type kab = keyof A | keyof B // `a` | `b` -> 각 A,B의 키 값의 결과는 타입이 아닌 단 하나의 값을 가질 수 있는 리터럴이라 우리가 생각했던 union에 대한 결과가 된다
 type kab2 = keyof (A & B) // `a` | `b` // 구조적 타이핑관점에서 intersection은 A, B의 속한 속성들의 집합이 된다. 그러므로 keyof를 하면 A, B에 선언한 모든 속성이 결과가 된다
 ```
 
