@@ -126,7 +126,7 @@ const eb: StructuredTypedB = {
 }
 const b: B = eb
 type AAndB = A & B
-const aAndB: AAndB = { // 구조적 타이핑 관점에서 A, B의 타입의 범위의 교집합을 구하면 A, B의 모든 속성이 포함된 형태가 된다
+const aAndB: AAndB = { // 구조적 타이핑 관점에서 A, B의 타입의 범위의 교집합을 구하면 A, B의 선언한 모든 속성이 포함된 형태가 된다
     a: 1,
     b: 2,
     c: 3,
