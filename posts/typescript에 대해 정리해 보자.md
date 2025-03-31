@@ -262,3 +262,18 @@ const b: Boolean = true
 const n: Number = 1
 const n: BigInt = 1 // 이것만 오류나네;;
 ```
+
+## Exceed property checking (잉여 속성 체크)
+구조적 타이핑 관점에서는 다음과 같은 코드는 에러가 없어야 한다.  **타입은 추가적인 속성을 포함할 수 있다는 전제하에 있다**는 것이 구조적 타이핑의 관점이기 때문이다
+```ts
+interface T {
+	a: number
+	b: number
+}
+const v: T = {
+	a: 1,
+	b: 2,
+	c: 3,
+//  
+}
+```
