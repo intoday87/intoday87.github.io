@@ -286,4 +286,25 @@ sf({ a: 1, b: 2, c: 3})
 //               c는 없는 속성
 ```
 
-하지만 
+하지만 객체 리터럴이 아니라 임시 변수나 별도의 타입간 할당 가능한 부분 집합의 타입이라면 구조적 타이핑 관점대로 동작한다
+
+```ts
+const o = {
+	a: 1
+	b: 2
+	c: 3
+}
+const v: T = o // 정상
+
+interface SubT {
+	a: number
+	b: number
+	c: number
+}
+const st: SubT = {
+	a: 1
+	b: 2
+	c: 3
+}
+const v2: T = st // 정상. SubT는 T의 부분 집합. 즉 구조적 타이핑에서 할당 가능한 관계
+```
