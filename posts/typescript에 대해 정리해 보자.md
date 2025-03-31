@@ -328,6 +328,12 @@ interface Options {
 }
 
 const o: Options = {
-	tit
+	title: 'some title',
+	darkmode: true,
+//  ~~~~~~~~
+//  darkmode는 없는 속성입니다. -> 잉여 속성 체크(exceed property checking)
 }
+
+const o2: Options = document // 정상
+const o3: Options = new HtmlAnchorElement // 정상
 ```
