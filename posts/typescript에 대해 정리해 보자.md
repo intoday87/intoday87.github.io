@@ -324,7 +324,7 @@ const v2: T = st // 정상. SubT는 T의 부분 집합. 즉 구조적 타이핑�
 ```ts
 interface Options {
 	title: string
-	darkMode: boolean
+	darkMode?: boolean
 }
 
 const o: Options = {
