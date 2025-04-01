@@ -337,3 +337,9 @@ const o: Options = {
 const o2: Options = document // 정상
 const o3: Options = new HtmlAnchorElement // 정상
 ```
+
+## 선택적 속성만 가지는 약한(weak) 타입에 적용되는 속성 체크
+
+구조적 타이핑 관점으로 보면 선택적 속성만 가진 타입은 선언되지 않은 다른 필드만 가져도 문제 없이 동작할 것이라 기대할 수 있다. 타입은 다른 속성을 퐘
+```ts
+```
