@@ -351,9 +351,26 @@ interface SomePropertyOptional {
 
 // `d`만 있는 별도의 타입으로 선언하고 객체 리터럴로 초기화 해도 됨
 const o = {
+	a: 1,
+	d: 1,
+}
+
+const t: SomePropertyOptional = o // 정상. 구조적 타이핑 관점에서는 o의 타입은 필수인 a가 선언되어 있는 부분 집합. d는 구조적 타이핑 관점에서 얼마든지 선언 포함 가능한 추가 속성
+```
+
+하지만 모두 옵셔널인 약한 타입의 경우 별도의 속성 체크가 들어간다
+
+```ts
+interface WeakType {
+	a?: number
+	b?: number
+	c?: number
+}
+
+const o = {
 	d: 1
 }
 
-const  
-
+const t:WeakType = o
+//    ~
 ```
