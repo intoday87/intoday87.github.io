@@ -343,5 +343,17 @@ const o3: Options = new HtmlAnchorElement // 정상
 구조적 타이핑 관점으로 보면 선택적 속성만 가진 타입은 선언되지 않은 다른 필드만 가져도 문제 없이 동작할 것이라 기대할 수 있다. 타입은 다른 속성을 포함할 수 있다는 관점에서 보면 말이다. 하지만 여기서 약한 타입(모든 필드가 옵셔널)의 경우 별도의 공통 속성 체크가 동작해서 구조적 타이핑 관점을 헷갈리기 쉽다
 
 ```ts
-interface 
+interface SomePropertyOptional {
+	a: number
+	b?: number
+	c?: number
+}
+
+// `d`만 있는 별도의 타입으로 선언하고 객체 리터럴로 초기화 해도 됨
+const o = {
+	d: 1
+}
+
+const  
+
 ```
