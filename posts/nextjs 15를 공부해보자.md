@@ -206,10 +206,13 @@ export default function Home() {
 }
 ```
 
-결과는
+결과는 역시 예상한대로다. loading.tsx를 쓸일이 있으려나...
+
 ```txt
-🚀 서버에서 받은 데이터! - messsage 0
-loading waitting 1...?
+🚀 서버에서 받은 데이터! - messsage 1
+loading waitting 2...?
 ```
+
+개별로 스트리밍 처리가 가능하다는것을 이제 확인했으니 다음과 같은 궁금증이 남는다. 
 
 - [ ] latency를 위해 정해놓은 timeout이 넘어가면 client는 렌더링을 시작하고 timeout이 넘은 컴포넌트는 streaming처리로 suspense와 함께 skeleton과 같은 로딩 스테이트를 보여주면서 별도로 요청을 기다릴 수 있는가?
