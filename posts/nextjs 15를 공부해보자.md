@@ -187,4 +187,6 @@ export default function Home() {
 }
 ```
 
+한 가지 알게된 점은 page와 같은 directory내 loading.tsx를 만들어 놓으면 모든 서버의 요청을 다 기다리고 난 후에 스트리밍된 결과를 받으면 사라진다. 즉 개별 서버 컴포넌트를 suspense로 따로 감싸 주지 않으면 스트리밍하는 이유가 없네?!
+
 - [ ] latency를 위해 정해놓은 timeout이 넘어가면 client는 렌더링을 시작하고 timeout이 넘은 컴포넌트는 streaming처리로 suspense와 함께 skeleton과 같은 로딩 스테이트를 보여주면서 별도로 요청을 기다릴 수 있는가?
