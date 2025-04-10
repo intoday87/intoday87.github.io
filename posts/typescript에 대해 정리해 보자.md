@@ -380,4 +380,4 @@ const t:WeakType = o
 
 ##  interface와 type의 차이
 interface를 언제 써야 하는가? 하는 물음이 항상 있었는데 확실한 예제와 답이 되는 케이스가 책에 있었다
-선언적 머지([declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html))를 예로 들 수 있다. `Array.prototype.find`의 경우 typescript의 lib.es5.core.d.ts에서 선언을 찾을수 있다.  하지만 `findIndex`는 어떤가 
+선언적 머지([declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html))를 예로 들 수 있다. `Array.prototype.find`의 경우 typescript의 lib/es5.d.ts에서 선언을 찾을수 있다.  하지만 `find`는 어떤가 lib
