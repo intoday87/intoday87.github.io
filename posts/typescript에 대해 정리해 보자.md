@@ -145,6 +145,7 @@ interface A {
 interface B {
 	b: number
 }
+type u = A | B // A가 되거나 B가 되거나
 type k = keyof(A | B) // never -> 구조적 타이핑 관점에서 추가적인 속성이 있을수 있는 타입에서 A | B = U(전체집합)이 된다. 그러므로 A, B의 union은 키를 특정할 수 없어 never가 된다
 type kab = keyof A | keyof B // `a` | `b` -> 각 A,B의 키 값의 결과는 타입이 아닌 단 하나의 값을 가질 수 있는 리터럴이라 우리가 생각했던 union에 대한 결과가 된다
 type kab2 = keyof (A & B) // `a` | `b` // 구조적 타이핑관점에서 intersection은 A, B의 속한 속성들의 집합이 된다. 그러므로 keyof를 하면 A, B에 선언한 모든 속성이 결과가 된다
@@ -152,7 +153,7 @@ type kab2 = keyof (A & B) // `a` | `b` // 구조적 타이핑관점에서 inters
 const O = {
 	a: 1,
 }
-const AorB: A | B = O // 정상. 전체 집합 U에 대해 a만 있어도 상관 없다
+const AorB: A | B = O // 정상. 전체 집합 U에 대해 a만 있어도 상관 없다. A가 되거나 B가 되거나 이기 때문
 const AandB: A & B = O
 //    ~~~~~ 
 //    b가 없다
@@ -162,7 +163,7 @@ const AandB: A & B = O
 
 ## 값 쌍과 같은 타입간 호환은 length 속성도 체크한다
 
-```ts
+	```ts
 const pair: [number, number] = [1, 2]
 const triple: [number, number, number] = pair
 //    ~~~~~~
