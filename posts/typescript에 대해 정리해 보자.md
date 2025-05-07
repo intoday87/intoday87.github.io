@@ -381,4 +381,22 @@ const t:WeakType = o
 
 ##  interface와 type의 차이
 interface를 언제 써야 하는가? 하는 물음이 항상 있었는데 확실한 예제와 답이 되는 케이스가 책에 있었다
-선언적 머지([declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html))를 예로 들 수 있다. `Array.prototype.`concat의 경우 typescript의 lib/es5.d.ts에서 선언을 찾을수 있다.  하지만 `Array.prototype.find`는 어떤가 lib/lib.es2015.core.d.ts에서 찾을수 있다. 두 인터페이스가 `Array.prototype`에 있는 인터페이스인데 d.ts는 나뉘고 있는 부분에서 짐작할 수 있듯이 tsconfig에 `lib`에 'es2015'의 d.ts가 추가되어 
+선언적 머지([declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html))를 예로 들 수 있다. `Array.prototype.`concat의 경우 typescript의 lib/es5.d.ts에서 선언을 찾을수 있다.  하지만 `Array.prototype.find`는 어떤가 lib/lib.es2015.core.d.ts에서 찾을수 있다. 두 가지 메서드가 `Array.prototype`에 있는데 d.ts는 나뉘고 있는 부분에서 짐작할 수 있듯이 tsconfig에 `lib`에 'es2015'의 추가하면 lib/es5.d.ts에 lib/lib.es2015.core.d.ts가 추가되어 선언적으로 머지가 되어 기존 인터페이스를 확장하게 된다
+
+
+## Readonly
+```ts
+interface Outer {
+	inner: {
+		readonly x: number;
+	}
+}
+
+const o: Readonly<Outer> = { inner: { x: 0 }};
+
+o.inner = { x: 1 };
+
+// ~~~~~ 읽기 전용 속성이기 때문에 'inner'에 할당할 수 없습니다.
+
+o.inner.x = 1; // 정상
+```
