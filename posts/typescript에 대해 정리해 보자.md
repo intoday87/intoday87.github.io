@@ -388,15 +388,16 @@ interface를 언제 써야 하는가? 하는 물음이 항상 있었는데 확�
 ```ts
 interface Outer {
 	inner: {
-		readonly x: number;
+		x: number;
 	}
 }
 
 const o: Readonly<Outer> = { inner: { x: 0 }};
 
 o.inner = { x: 1 };
-
 // ~~~~~ 읽기 전용 속성이기 때문에 'inner'에 할당할 수 없습니다.
 
-o.inner.x = 1; // 정상
+o.inner.x = 1; // 정상 x에 readonly를 설정해야만 오류가 발생한다
 ```
+
+ts는 아직까지 내부의 필드까지 deep 순회를 하면서 readonly를 지원하는 기능은 없다. 하지만 ts-essential에 [DeepReadonly](https://github.com/ts-essentials/ts-essentials/tree/master/lib/deep-readonly)를 사용할 수 있다.
