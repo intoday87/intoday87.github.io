@@ -424,14 +424,15 @@ let인 경우 넓히기로 string 타입으로 추론되는 이유가 let의 재
 그럼 const가 만능인가?
 
 ```ts
-const mixed = ['x', 1]
+const mixed = ['x', 1] // (string|number)[]
 
-const v = {
+const v = { // { x: number }
 	x: 1,
 };
 
 v.x = 3;
 v.x = '3';
+//~ string 할당 안됨
 v.y = 4;
 v.name = 'Pythagoras';
 ```
