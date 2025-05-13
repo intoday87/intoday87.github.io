@@ -402,3 +402,10 @@ o.inner.x = 1; // 정상 x에 readonly를 설정해야만 오류가 발생한다
 
 readonly는 얕게 동작한다.
 ts는 아직까지 내부의 필드까지 deep 순회를 하면서 readonly를 지원하는 기능은 없다. 하지만 ts-essential에 [DeepReadonly](https://github.com/ts-essentials/ts-essentials/tree/master/lib/deep-readonly)를 사용할 수 있다.  [playground](https://www.typescriptlang.org/play/?jsx=0#code/JYWwDg9gTgLgBAbzgEQKarAJVQQwCYQB2ANgJ5wC+cAZlBCHAEQwDOAtKiy6oTMDsRaMA3AChRwXqijUcAY1RwAwvTA5C5BKLhxCOEKgBccFjCiSA5mJ2pwxCKXQtjSPQeOnzhC5QDaAXTEKcRhSMEU0DGx8IjIVcHVyAF4UdCxcAhJSAB54tQ0APjEAemKdOAA9AH5xPFQ5YhwoRTkiUzhWhI1jSPSYrLzEsVFS5XVCCHgcLmALQjgYCDgAcjdUZbgAI3qcAFduOGB4YBY4HDhm-DZY8jA6cNhSUU780gA6NbgU5dYOLh4+AIWMsSmUlONJmcZnMFktlrYwPZHJwNts5HsDkdDqdzpc8NcsnA7hAHqFnqpEm8EUinF84AFQWNCBMptD5osVmtUTt9oosSczhcMgSyET7tIyS9KdSHE5fAAGfwffSKb4AaXMpzV8gAXtBluJqLtCHI+EQ4HUMAAxZqoHWobIAFTCilQAA8YDw8KcIJsAFb1GAFAAUvr9xmd4QAlD00tFMmQnS6CohtHBRtgzMBUAA3RQwAAWimJpPIa1OdWoklQeDg5rDgbTrUI7RLADkVacUthqMRA28IAB3Qhq1CkFih-1RqFwYMAazHEGocEjqCjDPEOlGNvQ9rFJIl2dO22o0EUtF3lhMqGI1DTp6gs+b7U+S-3YA7BhY0605Q6bXgHMBF2VU639Xw1kCTdymAZdg2DIDiBAuAADIUIWF030Q5CklwpgG1NRhpwAH2IjDwiw4DVTwxgjRNM1CCI1M-x0S0wB3O1UAQqio2scpgh0YI02aGBdigeYAHl-X7C9OMnP1p2mVIogyG4k3CIpRAoIA)로도 확인해볼 수 있으니 참고해보자!b
+
+## 넓히기(Widening)
+
+타입스크립트는 타입 추론시 선언된 변수가 최종 사용시점까지 파악해서 추론하는 방식이 아닌 선언되는 시작 시점에 타임을 추론한다
+```ts
+
+```
