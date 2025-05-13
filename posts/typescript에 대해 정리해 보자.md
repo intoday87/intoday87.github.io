@@ -434,5 +434,8 @@ v.x = 3;
 v.x = '3';
 //~ string 할당 안됨
 v.y = 4;
+//~ y라는 키 없음
 v.name = 'Pythagoras';
+//~~~~ name이라는 키 없음
 ```
+
