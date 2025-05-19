@@ -497,3 +497,4 @@ function foo(x?: number | string | null) {
 	}
 }
 ```
+빈 문자열도 0도 false로 평가되기 때문에 타입은 전혀 좁
