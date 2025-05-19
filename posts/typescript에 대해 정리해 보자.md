@@ -478,4 +478,18 @@ function contains(texts: string | string[]) {
 		return [texts] // string
 	}
 }
+
+function includes(text: string, search: string | RegExp) {
+	if (search instanceof RegExp) {
+		return !!search.exec(text)
+	} else {
+		return text.includes(searc)
+	}
+}
+```
+
+이해가 잘 안가는 케이스
+
+```ts
+function foo(x?: number)
 ```
