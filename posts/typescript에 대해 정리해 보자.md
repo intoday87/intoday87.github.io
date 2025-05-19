@@ -470,4 +470,12 @@ function pickAB (ab: A | B) {
 		ab // B
 	}
 }
+
+function contains(texts: string | string[]) {
+	if (Array.isArray(texts)) {
+		return texts // string[]
+	} else {
+		return [texts] // string
+	}
+}
 ```
