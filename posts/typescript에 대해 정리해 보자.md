@@ -459,3 +459,15 @@ const v2 = { // { readonly x: 1, readonly y: 2 }
 ## 좁히기
 
 넓히기와 반대로 조건에 따라 타입이 제한되어 좁혀질 수 있다
+
+```ts
+interface A { a: number }
+interface B { b: number }
+function pickAB (ab: A | B) {
+	if ('a' in ab) {
+		ab // A
+	} else {
+		ab // B
+	}
+}
+```
