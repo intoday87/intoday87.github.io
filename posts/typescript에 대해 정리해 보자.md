@@ -488,7 +488,7 @@ function includes(text: string, search: string | RegExp) {
 }
 ```
 
-이해가 잘 안가는 케이스
+헷갈릴 수 있는 케이스
 
 ```ts
 function foo(x?: number | string | null) {
