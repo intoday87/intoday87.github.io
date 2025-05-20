@@ -499,7 +499,7 @@ function foo(x?: number | string | null) {
 ```
 number에서 `0`과 string의 `''` 빈 문자열이 false로 평가되기 때문에 같이 false로 평가되는 `undefined`, `null`과 같이 통과되어 원본 타입이 좁혀지지 않았다
 
-태그 기법을 이용해 타입을 좁히는 방법
+태그된 유니온(tagged union)에서 구별된 유니온(discriminated union)을 이용해 타입을 좁히는 방법
 
 ```ts
 interface A { type: 'A' }
@@ -516,3 +516,6 @@ function resolve(v: A | B) {
 	}
 }
 ```
+
+### 사용자 타입 가드
+조건에 따라 좁히기와는 구별되는 특지
