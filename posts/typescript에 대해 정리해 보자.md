@@ -525,5 +525,11 @@ function isInputElement(el: HTMLInputElement): el is HTMLInputElement {
 	return 'value' in el
 }
 
-function getElementContent
+function getElementContent(el: HTMLElement) {
+	if(isInputElement(el)) {
+		return el.value
+	}
+
+	return el.textContent
+}
 ```
