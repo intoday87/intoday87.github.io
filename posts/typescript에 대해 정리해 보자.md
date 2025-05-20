@@ -533,3 +533,15 @@ function getElementContent(el: HTMLElement) {
 	return el.textContent
 }
 ```
+
+array에서 filter로 undefined를 걸러내도 최종 결과값이 undefined가 포함되는 불편함이 있었는데 5.5.4에서 이와 같은 불편함이 해결되었다. [5.5.4 release note]()
+
+```ts
+const jackson5 = ['Jackie', 'Tito', 'Jermaine', 'Marlon', 'Michael'];
+
+const members = ['Janet', 'Michael'].map(
+
+who => jackson5.find(n => n === who)
+
+).filter(who => who !== undefined); // 타입이 (string | undefined)[] // 타입이 (string | undefined)[]. 5.5.4에서는 string[]
+```
