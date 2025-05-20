@@ -518,4 +518,12 @@ function resolve(v: A | B) {
 ```
 
 ### 사용자 타입 가드
-조건에 따라 좁히기와는 구별되는 특지
+조건에 따라 좁히기와는 구별되는 리턴 타입 시그니쳐 특징이 있다. 이 함수가 true를 반환하면 타입 체커에게 리턴 시그니쳐로 타입을 좁힐수 있다고 알려주게 된다
+
+```ts
+function isInputElement(el: HTMLInputElement): el is HTMLInputElement {
+	return 'value' in el
+}
+
+function getElementContent
+```
