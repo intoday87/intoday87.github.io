@@ -508,9 +508,11 @@ interface B { type: 'B' }
 function resolve(v: A | B) {
 	switch(v.type) {
 		case 'A':
-			A	
+			v // A
+			break
 		case 'B':
-			B
+			v // B
+			break
 	}
 }
 ```
