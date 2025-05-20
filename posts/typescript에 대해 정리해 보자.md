@@ -504,4 +504,13 @@ number에서 `0`과 string의 `''` 빈 문자열이 false로 평가되기 때문
 ```ts
 interface A { type: 'A' }
 interface B { type: 'B' }
+
+function resolve(v: A | B) {
+	switch(v.type) {
+		case 'A':
+			A	
+		case 'B':
+			B
+	}
+}
 ```
