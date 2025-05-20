@@ -488,7 +488,7 @@ function includes(text: string, search: string | RegExp) {
 }
 ```
 
-헷갈릴 수 있는 케이스
+ 자세히 안보면 헷갈릴 수 있는 케이스
 
 ```ts
 function foo(x?: number | string | null) {
@@ -497,4 +497,4 @@ function foo(x?: number | string | null) {
 	}
 }
 ```
-빈 문자열도 0도 false로 평가되기 때문에 타입은 전혀 좁혀지지 않았다. null, undefined도 좁혀지지 않는 이유가 좀 헷갈린다
+number에서 `0`과 string의 `''` 빈 문자열이 false로 평가되기 때문에 같이 false로 평가되는 `undefined`, `null`
