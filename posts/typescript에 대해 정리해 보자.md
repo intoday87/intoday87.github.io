@@ -534,14 +534,30 @@ function getElementContent(el: HTMLElement) {
 }
 ```
 
-array에서 filter로 undefined를 걸러내도 최종 결과값이 undefined가 포함되는 불편함이 있었는데 5.5.4에서 이와 같은 불편함이 해결되었다. [5.5.4 release note]()
+array에서 filter로 undefined를 걸러내도 최종 결과값이 undefined가 포함되는 불편함이 있었는데 5.5.4에서 이와 같은 불편함이 해결되었다. [5.5.4 release note](https://devblogs.microsoft.com/typescript/announcing-typescript-5-5/)
 
 ```ts
-const jackson5 = ['Jackie', 'Tito', 'Jermaine', 'Marlon', 'Michael'];
+interface Bird {
+	commonName: string;
+	scientificName: string;
+	sing(): void;
+}
 
-const members = ['Janet', 'Michael'].map(
+// Maps country names -> national bird.
+// Not all nations have official birds (looking at you, Canada!)
+declare const nationalBirds: Map<string, Bird>;
 
-who => jackson5.find(n => n === who)
+function makeBirdCalls(countries: string[]) {
 
-).filter(who => who !== undefined); // 타입이 (string | undefined)[] // 타입이 (string | undefined)[]. 5.5.4에서는 string[]
+	// birds: (Bird | undefined)[]
+	// 5.5.4에서는 Bird[]
+	const birds = countries
+	.map(country => nationalBirds.get(country))
+	.filter(bird => bird !== undefined);
+
+	for (const bird of birds) {
+		bird.sing(); // error: 'bird' is possibly 'undefined'.
+	}
+
+}
 ```
