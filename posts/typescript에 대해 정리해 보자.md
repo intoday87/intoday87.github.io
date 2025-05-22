@@ -574,5 +574,24 @@ const pharaoh = {
 	...(hasDates ? {start: -2589, end: -2566} : {})
 };
 
+// `start`, `end`의 옵셔널일 것이라는 기대와 달리 4.1.5 이전에는 다음과 같이 타입이 유니온으로 처리된다. 
+const pharaoh: {  
+	start: number;  
+	end: number;  
+	name: string;  
+	title: string;  
+} | {  
+	name: string;  
+	title: string;  
+}
+
+// 4.1.5 부터 다음과 같이 처리된다
+const pharaoh: {  
+start?: number;  
+end?: number;  
+name: string;  
+title: string;  
+}
+
 
 ```
