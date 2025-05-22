@@ -561,3 +561,18 @@ function makeBirdCalls(countries: string[]) {
 
 }
 ```
+
+## object spread 사용시
+
+```ts
+declare let hasDates: boolean;
+
+const nameTitle = {name: 'Khufu', title: 'Pharaoh'};
+
+const pharaoh = {
+	...nameTitle,
+	...(hasDates ? {start: -2589, end: -2566} : {})
+};
+
+
+```
