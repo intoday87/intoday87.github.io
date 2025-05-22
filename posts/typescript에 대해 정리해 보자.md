@@ -562,7 +562,7 @@ function makeBirdCalls(countries: string[]) {
 }
 ```
 
-## object spread 사용시
+## object spread 사용환경에서 타입 추론
 
 ```ts
 declare let hasDates: boolean;
@@ -587,11 +587,9 @@ const pharaoh: {
 
 // 4.1.5 부터 다음과 같이 처리된다
 const pharaoh: {  
-start?: number;  
-end?: number;  
-name: string;  
-title: string;  
+	start?: number;  
+	end?: number;  
+	name: string;  
+	title: string;  
 }
-
-
 ```
