@@ -1,1 +1,1 @@
-[`Cache-Controll: no-store` 사용 최소화](https://web.dev/articles/bfcache?hl=ko#minimize-no-store) 단락에 흥미로운 부분이 있다. `Cache-Controll: no-store no-cache`로 지정하더라도 bfcache가 동작할 수 있다는 글이다. 
+[`Cache-Controll: no-store` 사용 최소화](https://web.dev/articles/bfcache?hl=ko#minimize-no-store) 단락에 흥미로운 부분이 있다. `Cache-Controll: no-store no-cache`로 지정하더라도 bfcache가 동작할 수 있다는 글이다. [`Cache-Control`에 bfcache 사용설정: no-store](https://developer.chrome.com/docs/web-platform/bfcache-ccns?hl=ko#more_information_on_bfcache) https의 secure cookie가 변경되지 않는한 bfcache를 보여줄 수 있다는 내용으로 보인다.
