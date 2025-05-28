@@ -1,0 +1,1 @@
+[`Cache-Controll: no-store` 사용 최소화](https://web.dev/articles/bfcache?hl=ko#minimize-no-store) 단락에 흥미로운 부분이 있다. `Cache-Controll: no-store no-cache`로 지정하더라도 bfcache가 동작할 수 있다는 글이다. 
