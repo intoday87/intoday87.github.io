@@ -595,20 +595,18 @@ const pharaoh: {
 ```
 
 ## 타입 추론
+
 ```ts
 function timeout(millis: number): Promise<never> {
-
-return new Promise((resolve, reject) => {
-
-setTimeout(() => reject('timeout'), millis);
-
-});
-
-async function fetchWithTimeout(url: string, ms: number) {
-
-return Promise.race([fetch(url), timeout(ms)]);
-
+	return new Promise((resolve, reject) => {
+		setTimeout(() => reject('timeout'), millis);
+	});
 }
 
+// 반환 타입이 Promise<Response>로 추론!?
+async function fetchWithTimeout(url: string, ms: number) {
+	return Promise.race([fetch(url), timeout(ms)]);
 }
 ```
+Promise<Response | never>가 됩니다. 그러나 never(공집합)와의 유니온은 아
+무런 효과가 없으므로, 결과가 Promise<Response>로
