@@ -608,4 +608,4 @@ async function fetchWithTimeout(url: string, ms: number) {
 	return Promise.race([fetch(url), timeout(ms)]);
 }
 ```
-`reject`가 리턴 타입이 `void`이기 때문에 `timeout`의 리턴 타입이 `Promise<never>`로 가능하다. 
+`reject`가 리턴 타입이 `void`이기 때문에 `timeout`의 리턴 타입이 `Promise<never>`로 가능하다.(명시 하지 않으면 5.8.3기준 `Promise<unknown>`) `fetchWithTimeout`에서 `race`의 응답으로 배열이 오는데 유니온 타입으로 `Promise<Response | never>[]`가 된다. 하지만 `never`와의 공집합은 의미가 없으므로 `Promise<Response>`가 된다.
