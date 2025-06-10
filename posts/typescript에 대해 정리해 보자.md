@@ -593,3 +593,22 @@ const pharaoh: {
 	title: string;  
 }
 ```
+
+## 타입 추론
+```ts
+function timeout(millis: number): Promise<never> {
+
+return new Promise((resolve, reject) => {
+
+setTimeout(() => reject('timeout'), millis);
+
+});
+
+async function fetchWithTimeout(url: string, ms: number) {
+
+return Promise.race([fetch(url), timeout(ms)]);
+
+}
+
+}
+```
