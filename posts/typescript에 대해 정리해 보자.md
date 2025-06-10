@@ -608,5 +608,6 @@ async function fetchWithTimeout(url: string, ms: number) {
 	return Promise.race([fetch(url), timeout(ms)]);
 }
 ```
+Promise.race의 반환 타입은 입력 타입들의 유니온이고, 이번 경우는
 Promise<Response | never>가 됩니다. 그러나 never(공집합)와의 유니온은 아
-무런 효과가 없으므로, 결과가 Promise<Response>로
+무런 효과가 없으므로, 결과가 Promise<Response>로 간단해집니다.
