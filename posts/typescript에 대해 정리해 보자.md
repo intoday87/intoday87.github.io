@@ -614,7 +614,7 @@ async function fetchWithTimeout(url: string, ms: number) {
 ```ts
 function panTo(where: [number, number]) { /* ... */ }
 
-panTo([10, 20]); // **정상**
+panTo([10, 20]); // 정상
 
 const loc = [10, 20]; // number[]
 
@@ -624,3 +624,10 @@ panTo(loc);
 Target requires 2 element(s) but source may have fewer.
 ```
 
+const로 `loc`를 선언했다고 type이 `[number, number]`가 될 것 같다고 착각할 수 있지만 push, pop등이 사용 가능하기 때문에 튜플로 인식하지 않는다.  타입 단언을 사용하지 않고 고칠수 있는 방법은 뭐가 있을까?
+
+```ts
+const loc: [number, number] = [10, 20]
+panTo(loc) // 정상
+
+```
