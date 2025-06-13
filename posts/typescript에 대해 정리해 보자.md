@@ -631,7 +631,9 @@ const loc: [number, number] = [10, 20]
 panTo(loc) // 정상
 
 const loc2 = [10, 20] as const
-panTo(loc) // 함수 파라미터 타입이 readonly
+panTo(loc) // 함수 파라미터 타입이 readonly가 아닌 mutable이기 때문에 이 방법은 안된다
 //    ~~~
 // Argument of type 'readonly [number, number]' is not assignable to parameter of type '[number, number]'.   The type 'readonly [number, number]' is 'readonly' and cannot be assigned to the mutable type '[number, number]'.
  ```
+
+`panTo` 함수를 `Readonly<[number, number]`로 고칠수 있다면 앞서 언급한 모든 케이스를 다 커버할 수 있다
