@@ -624,10 +624,14 @@ panTo(loc);
 Target requires 2 element(s) but source may have fewer.
 ```
 
-const로 `loc`를 선언했다고 type이 `[number, number]`가 될 것 같다고 착각할 수 있지만 push, pop등이 사용 가능하기 때문에 튜플로 인식하지 않는다.  타입 단언을 사용하지 않고 고칠수 있는 방법은 뭐가 있을까?
+const로 `loc`를 선언했다고 type이 `[number, number]`가 될 것 같다고 착각할 수 있지만 push, pop등이 사용 가능하기 때문에 튜플로 인식하지 않는다.  any를 사용하지 않고 고칠수 있는 방법은 뭐가 있을까?
 
 ```ts
 const loc: [number, number] = [10, 20]
 panTo(loc) // 정상
 
-```
+const loc2 = [10, 20] as const
+panTo(loc) // 함수 파라미터 타입이 readonly
+//    ~~~
+// Argument of type 'readonly [number, number]' is not assignable to parameter of type '[number, number]'.   The type 'readonly [number, number]' is 'readonly' and cannot be assigned to the mutable type '[number, number]'.
+ ```
