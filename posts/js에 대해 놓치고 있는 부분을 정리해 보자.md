@@ -168,5 +168,16 @@ const obj2 = { __proto__: null };
 >4. The side effects of a declaration are produced before evaluating the rest of the code that contains it.
 
 
-오랜만에 보니까 이런게 있었나 라는 내용에 당황😅(또 그세 까먹은 것인가..?!)
-2. `var`로 선언하는 경우 블록 스코프 룰을 적용받지 않기 때문에 선언 전에  
+오랜만에 보니까 이런게 있었나 라는 내용에 당황😅(또 그세 까먹은것인가..?!)
+2. `var`로 선언 하는 경우 블록 스코프룰을 적용받지 않기 때문에 선언 전에 변수의 사용은 선언 호이스팅(declaration hosting)에 따라 스코프의 최상단에 undefined로 초기화 된 값을 참조하게 된다
+```js
+console.log(a) // undefined
+var a = 10
+
+// 다음과 같은 코드와 동일하게 처리 된다
+var a = undefined
+console.log(a)
+a = 10
+```
+※ `var`는 블록
+3. 
