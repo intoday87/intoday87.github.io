@@ -179,5 +179,19 @@ var a = undefined
 console.log(a)
 a = 10
 ```
-※ `var`는 블록
+
+`var`는 블록 스코프가 아닌 함수의 스코프룰을 적용받는다는 것을 기억하자
+
+```js
+var a = 1
+function f() {
+	console.log(a) // undefined
+	var a = 10
+}
+f()
+
+// 블록 스코프로 테스트
+
+```
+
 3. 
