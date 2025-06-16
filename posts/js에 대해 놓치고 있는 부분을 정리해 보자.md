@@ -154,3 +154,17 @@ const obj2 = { __proto__: null };
 ```
 [`Object.setPrototypeOf(obj, null)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)과 같이 prototype을 수정해서도 바꿀 수 있다
  어떤 object의 method도 상속하지 않는다
+
+## Hoisting
+
+문득 다시 [mdn](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)보니 내가 알던 declaraion hosting이 아닌 value hosting이란 조건이 있다.
+```
+1. Being able to use a variable's value in its scope before the line it is declared. ("Value hoisting")
+
+2. Being able to use a variable's value in its scope before the line it is declared. ("Value hoisting")
+3. Being able to reference a variable in its scope before the line it is declared, without throwing a [`ReferenceError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError), but the value is always [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined). ("Declaration hoisting")
+4. The declaration of the variable causes behavior changes in its scope before the line in which it is declared.
+5. The side effects of a declaration are produced before evaluating the rest of the code that contains it.
+```
+
+오랜만에 보니까 이런게 있었나 라는 내용에 당황😅(또 그세 까먹은 것인가..?!)
