@@ -122,6 +122,7 @@ Did you mean to import "./a.js"?
 }
 ```
 
+
 ## todo esm과 cjs의 로딩 방식
 - esm: 비동기
 - cjs: 동기
