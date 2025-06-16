@@ -158,13 +158,15 @@ const obj2 = { __proto__: null };
 ## Hoisting
 
 문득 다시 [mdn](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)보니 내가 알던 declaraion hosting이 아닌 value hosting이란 조건이 있다.
-```
-1. Being able to use a variable's value in its scope before the line it is declared. ("Value hoisting")
 
-2. Being able to use a variable's value in its scope before the line it is declared. ("Value hoisting")
-3. Being able to reference a variable in its scope before the line it is declared, without throwing a [`ReferenceError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError), but the value is always [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined). ("Declaration hoisting")
-4. The declaration of the variable causes behavior changes in its scope before the line in which it is declared.
-5. The side effects of a declaration are produced before evaluating the rest of the code that contains it.
-```
+>1. **Being able to use a variable's value in its scope before the line it is declared. ("Value hoisting")**
+>
+>2. Being able to reference a variable in its scope before the line it is declared, without throwing a [`ReferenceError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError), but the value is always [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined). ("Declaration hoisting")
+>
+>3. The declaration of the variable causes behavior changes in its scope before the line in which it is declared.
+>
+>4. The side effects of a declaration are produced before evaluating the rest of the code that contains it.
+
 
 오랜만에 보니까 이런게 있었나 라는 내용에 당황😅(또 그세 까먹은 것인가..?!)
+2 ~ 3은 알던 내용이다
