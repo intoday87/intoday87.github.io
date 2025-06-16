@@ -636,4 +636,9 @@ panTo(loc) // 함수 파라미터 타입이 readonly가 아닌 mutable이기 때
 // Argument of type 'readonly [number, number]' is not assignable to parameter of type '[number, number]'.   The type 'readonly [number, number]' is 'readonly' and cannot be assigned to the mutable type '[number, number]'.
  ```
 
-`panTo` 함수를 `Readonly<[number, number]`로 고칠수 있다면 앞서 언급한 모든 케이스를 다 커버할 수 있다
+`panTo` 함수를 `Readonly<[number, number]`로 고칠수 있다면 앞서 언급한 모든 케이스를 다 커버할 수 있다
+
+```ts
+const loc = [10, 20] as const // Readonly<[10, 20]
+```
+`const`는 선언된 값이 단지 참조가 변하지 않는 얕은(shallow) 상수인 반면에 `as const` 단언은 
