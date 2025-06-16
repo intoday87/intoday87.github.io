@@ -639,6 +639,9 @@ panTo(loc) // 함수 파라미터 타입이 readonly가 아닌 mutable이기 때
 `panTo` 함수를 `Readonly<[number, number]`로 고칠수 있다면 앞서 언급한 모든 케이스를 다 커버할 수 있다
 
 ```ts
-const loc = [10, 20] as const // Readonly<[10, 20]
+const loc = [10, 20] as const // readonly [10, 20]
+loc.push(1)
+//  ~~~~
+// Property 'push' does not exist on type 'readonly [10, 20]'.(2339)
 ```
-`const`는 선언된 값이 단지 참조가 변하지 않는 얕은(shallow) 상수인 반면에 `as const` 단언은 
+`const`는 선언된 값이 단지 참조가 변하지 않는 얕은(shallow) 상수인 반면에 `as const` 단언은 값의 내부까지 상수라고(deeply) ts에 알려준다
