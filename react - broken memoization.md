@@ -11,10 +11,10 @@
 export default function Component() {
 	const handleCallback = useCallback(() => {
 		// handle click...
-	})
+	}, [/* dependencies... */])
 	return <button type="button" onClick={handleClick}>click</button>
 }
 ```
 
 이 케이스는 많은 사람들의 믿음에 근거하고 있고 심지어 chatGPT도 효과가 있다고 설명한다는데 실제로는 효과가 없다
-그 이유는 모두가 알다싶이 컴포넌트의 상태가 변경되면 해당 컴포넌트의 하위(down stream) 컴포넌트도 re-render된다. 그 점에서 `Component`가 re-render될 때 `button` 컴포넌트는 re-render가 멈출까? 그렇지 않다
+그 이유는 모두가 알다싶이 컴포넌트의 상태가 변경되면 해당 컴포넌트의 하위(down stream) 컴포넌트도 re-render된다. 그 점에서 `Component`가 re-render될 때 `button` 컴포넌트는 re-render를 멈출수 있을까? 그렇지는 않다
