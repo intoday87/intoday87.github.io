@@ -1,1 +1,5 @@
 theme: jekyll-theme-tactile
+collections:
+  posts:
+    output: true
+    permalink: /posts/:path/
