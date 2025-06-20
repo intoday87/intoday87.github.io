@@ -7,7 +7,7 @@
 Source: Makarevich, Nadia. Advanced React: Deep dives, investigations, performance patterns and techniques (p. 79). (Function). Kindle Edition. 
 
 왜 그렇게 말을 하는지 살펴보자
-다음과 같은 케이스는 memoizing props의 효과가 있을까?
+다음과 같은 케이스는 memoizing props라는 anti pattern으로 소개하고 있는데 memoization의 효과가 있을까?
 
 ```jsx
 export default function Component() {
