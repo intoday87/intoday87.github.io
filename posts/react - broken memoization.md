@@ -1,11 +1,13 @@
 [advanced react](https://www.advanced-react.com/)에서 다루는 내용을 읽고 이해한 부분을 바탕으로 정리해 본다
 
-저자는 주제에 앞서 다음과 같은 말을 했던것으로 기억한다.(정확한 워딩은 아니다. 일단 기억나는대로..)
+저자는 주제에 앞서 다음과 같은 말을 한다
 
-> react에서 실제로 의도한대로 memoization을 하는 것이 절대 쉽지 않을 것이다. 당장은 이 말에 공감하기는 힘들수 있을것같다. 하지만 이 주제를 다루고 나서 독자들도 공감하게 될 것이라 생각한다
+> And I'm not joking or exaggerating about half the time by the way. Doing memoization properly is hard, much harder than it seems. By the end of this chapter, hopefully, you'll agree with me. Here you'll learn:
+
+Source: Makarevich, Nadia. Advanced React: Deep dives, investigations, performance patterns and techniques (p. 79). (Function). Kindle Edition. 
 
 왜 그렇게 말을 하는지 살펴보자
-다음과 같은 케이스는 memoization의 효과가 있을까?
+다음과 같은 케이스는 memoizing props의 효과가 있을까?
 
 ```jsx
 export default function Component() {
