@@ -24,35 +24,35 @@ export default function Component() {
 또 다른 케이스를 보자
 
 ```jsx
+// components/A.jsx
+export default function A() {
+	console.log("A component render");
+	
+	return <div>A</div>;
+}
+
+// components/Parent.jsx
+import { memo } from "react";
+  
+export default memo(function Parent({ children }) {
+	console.log("Parent render");
+	return <div>{children}</div>;
+});
+
+// app.jsx
 import Parent from "./components/Parent";
-
 import A from "./components/A";
-
 import { useState } from "react";
 
-  
-
 export default function App() {
-
-const [state, setState] = useState(false);
-
-  
-
-return (
-
-<>
-
-<Parent>
-
-<A />
-
-</Parent>
-
-<button onClick={() => setState((v) => !v)}>button</button>
-
-</>
-
-);
-
+	const [state, setState] = useState(false);
+	return (
+		<>
+			<Parent>
+				<A />
+			</Parent>
+			<button onClick={() => setState((v) => !v)}>button</button>
+		</>
+	);
 }
 ```
