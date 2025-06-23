@@ -24,4 +24,35 @@ export default function Component() {
 또 다른 케이스를 보자
 
 ```jsx
+import Parent from "./components/Parent";
+
+import A from "./components/A";
+
+import { useState } from "react";
+
+  
+
+export default function App() {
+
+const [state, setState] = useState(false);
+
+  
+
+return (
+
+<>
+
+<Parent>
+
+<A />
+
+</Parent>
+
+<button onClick={() => setState((v) => !v)}>button</button>
+
+</>
+
+);
+
+}
 ```
