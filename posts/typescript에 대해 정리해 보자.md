@@ -504,18 +504,42 @@ number에서 `0`과 string의 `''` 빈 문자열이 false로 평가되기 때문
 태그된 유니온(tagged union 또는discriminated union)을 이용해 타입을 좁히는 방법
 
 ```ts
-interface A { type: 'A' }
-interface B { type: 'B' }
+interface A {
+	type: 'A',
+	aValue: string
+}
 
-function resolve(v: A | B) {
-	switch(v.type) {
-		case 'A':
-			v // A
-			break
-		case 'B':
-			v // B
-			break
-	}
+interface B {
+	type: 'B',
+	bValue: string
+}
+
+interface C {
+	type: 'C',
+	cValue: string
+}
+
+function resolver(t: A | B | C) {
+switch(t.type) {
+
+case 'A':
+
+return t.aValue
+
+case 'B':
+
+return t.bValue
+
+case 'C':
+
+return t.cValue
+
+default:
+
+throw new Error('unsupported type')
+
+}
+
 }
 ```
 
