@@ -520,25 +520,16 @@ interface C {
 }
 
 function resolver(t: A | B | C) {
-switch(t.type) {
-
-case 'A':
-
-return t.aValue
-
-case 'B':
-
-return t.bValue
-
-case 'C':
-
-return t.cValue
-
-default:
-
-throw new Error('unsupported type')
-
-}
+	switch(t.type) {
+		case 'A':
+			return t.aValue
+		case 'B':
+			return t.bValue
+		case 'C':
+			return t.cValue
+		default:
+			throw new Error('unsupported type')
+	}
 
 }
 ```
