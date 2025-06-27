@@ -76,7 +76,7 @@ export default function App() {
 <Parent children={<A />} />
 ```
 
-두 번째 - children으로 전달되는 엘리먼트는 함수내 생성되는 object일 뿐이다. jsx에서 엘리먼트는 react에서 렌더링할 컴포넌트와 그에 전달할 props object를 
+두 번째 - children으로 전달되는 엘리먼트는 object일 뿐이다. jsx에서 엘리먼트는 react에서 렌더링할 컴포넌트와 그에 전달할 props object를 
 
 ```jsx
 ```
