@@ -139,3 +139,48 @@ export default function App() {
 	);
 }
 ```
+
+헷갈릴 수 있으니 transfile된 jsx로 다시 봐보자
+
+```jsx
+// before
+import { useMemo } from 'react'
+
+function Children() {
+	return <div>i'm children</div>
+}
+
+function Parent({ children }) {
+	return <div>{children}</div>
+}
+
+function App() {
+	const memoChildren = useMemo(() => <Children />, [])
+	return <Parent>{memoChildren}</Parent>
+}
+
+// transfiled
+import { useMemo } from 'react';
+
+import { jsx as _jsx } from "react/jsx-runtime";
+
+function Children() {
+	return /*#__PURE__*/_jsx("div", {
+		children: "i'm children"
+	});
+}
+
+function Parent({ children }) {
+	return /*#__PURE__*/_jsx("div", {
+		children: children
+	});
+}
+
+function App() {
+	const memoChildren = useMemo(() => /*#__PURE__*/_jsx(Children, {}), []);
+
+	return /*#__PURE__*/_jsx(Parent, {
+		children: memoChildren // memo에서 memoChi
+	});
+}
+```
