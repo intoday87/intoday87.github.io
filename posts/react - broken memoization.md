@@ -60,4 +60,13 @@ export default function App() {
 }
 ```
 
-얼핏 보기에는 처음에는 App -> Parent -> 
+얼핏 보기에는 처음에는 App -> Parent -> A가 렌더링 되고 button 클릭시 App만 렌더링 될 것 같아 보인다.
+왜 그럴까?
+
+그 이유는 두 가지로 정리를 할 수 있을것 같다
+
+첫 번째 - children as prop: 말 그대로 children은 prop이고 nesting된 엘리먼트의 문법은 jsx에서 syntax sugar에 지나지 않는다.
+```jsx
+<Parent>
+<
+```
