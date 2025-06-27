@@ -1,4 +1,4 @@
-[advanced react](https://www.advanced-react.com/)에서 다루는 내용을 읽고 이해한 부분을 바탕으로 정리해 본다
+[advanced react](https://www.advanced-react.com/)에서 다루는 내용을 읽고 이해한 부분을 바탕으로 정리해 본다. 이 주제를 읽으면서 생각해보니 나도 모르게 memo가 깨지는 상황에 대해 잘 인지하지 않고 개발하는 경우가 나도 모르게 있었던 것 같다
 
 저자는 주제에 앞서 다음과 같은 말을 한다
 
