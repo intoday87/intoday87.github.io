@@ -180,7 +180,16 @@ function App() {
 	const memoChildren = useMemo(() => /*#__PURE__*/_jsx(Children, {}), []);
 
 	return /*#__PURE__*/_jsx(Parent, {
-		children: memoChildren // memo에서 memoChi
+		children: memoChildren
 	});
+}
+```
+
+이번 케이스는 이전에 다루었던 케이스보다 단순하고 직관적이다. 흔히 하는 실수고 런타임 과정에서 사용자가 사용처의 사용 여부를 추적하지 않으면 발생할 수 있는 문제다. 예시를 보자
+
+```jsx
+
+function Component () {
+	const { handleClick } = useClick
 }
 ```
