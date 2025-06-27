@@ -65,8 +65,18 @@ export default function App() {
 
 그 이유는 두 가지로 정리를 할 수 있을것 같다
 
-첫 번째 - children as prop: 말 그대로 children은 prop이고 nesting된 엘리먼트의 문법은 jsx에서 syntax sugar에 지나지 않는다.
+첫 번째 - children as prop: 말 그대로 children은 prop이고 nesting된 엘리먼트의 문법은 jsx에서 syntax sugar에 지나지 않는다
+
 ```jsx
 <Parent>
-<
+	<A />
+</Parent>
+
+//는 다음과 같다
+<Parent children={<A />} />
+```
+
+두 번째 - children으로 전달되는 엘리먼트는 함수내 생성되는 object일 뿐이다. jsx에서 엘리먼트는 react에서 렌더링된 컴포넌트를 선언하는 object를 리턴하는 함수다
+
+```jsx
 ```
