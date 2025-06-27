@@ -115,4 +115,27 @@ function App() {
 ```
 [babel로 transfile된 결과 보기](https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.42&spec=false&loose=false&code_lz=GYVwdgxgLglg9mABAYQBYwDYBMBOBTMACgEpEBvAKEUXyhByQB4sYA3APhgHIBbRCdNnxhGAehYcKAXwqhIsBIgAKAQ2FRCZfoNwFEU0pWq16TCezIDMusFLHnps8NHhIAggAcPJclRp46BkRGVXV2RjRrYURRcNFQgih2aSA&forceAllTransforms=false&modules=false&shippedProposals=false&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=react&prettier=false&targets=&version=7.27.7&externalPlugins=&assumptions=%7B%7D)
 
-children으로 전달되는 object의 참조가 다르기 때문에 기대했던 re-render를 멈추기 위해서는 
+children으로 전달되는 object의 참조가 다르기 때문에 기대했던 re-render를 멈추기 위해서는 엘리먼트(object)를 memoization 해줘야 한다
+
+```jsx
+// app.jsx
+import Parent from "./components/Parent";
+import A from "./components/A";
+import { useState } from "react";
+
+export default function App() {
+	const [state, setState] = useState(false);
+	const memoA = useMemo(() => <A />, []);
+	
+	console.log("App component render");
+	
+	return (
+		<>
+			<Parent>
+				{memoA /* */}
+			</Parent>
+			<button onClick={() => setState((v) => !v)}>button</button>
+		</>
+	);
+}
+```
