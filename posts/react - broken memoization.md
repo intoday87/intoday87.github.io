@@ -76,7 +76,54 @@ export default function App() {
 <Parent children={<A />} />
 ```
 
-두 번째 - children으로 전달되는 엘리먼트는 object일 뿐이다. jsx에서 엘리먼트는 react에서 렌더링할 컴포넌트와 그에 전달할 props object를 
+두 번째 - children으로 전달되는 엘리먼트는 object일 뿐이다. jsx에서 엘리먼트는 react에서 렌더링할 컴포넌트와 그에 전달할 props를 담은 [object](https://github.com/facebook/react/blob/4db4b21c63ebc4edc508c5f7674f9df50d8f9744/packages/react/src/jsx/ReactJSXElement.js#L242)일 뿐이다
 
 ```jsx
+// jsx
+function Children() {
+	return <div>i'm children</div>
+}
+
+function Parent({ children }) {
+	return <div>{children}</div>
+}
+
+function App() {
+	return <Parent><Children /></Parent>
+}
+
+// transfiled
+import { jsx as _jsx } from "react/jsx-runtime";
+
+function Children() {
+
+	return /*#__PURE__*/_jsx("div", {
+		children: "i'm children"
+	});
+
+}
+
+function Parent({
+
+children
+
+}) {
+
+return /*#__PURE__*/_jsx("div", {
+
+children: children
+
+});
+
+}
+
+function App() {
+
+return /*#__PURE__*/_jsx(Parent, {
+
+children: /*#__PURE__*/_jsx(Children, {})
+
+});
+
+}
 ```
