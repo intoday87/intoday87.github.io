@@ -202,8 +202,13 @@ function Component () {
 import { useEffect } from 'react'
 
 function Parent({ handleClick }) {
+	const [toggled, setToggled] = useState(false)
 	useEffect(() => {
-		if ()	
-	}, [handleClick])
+		handleClick(toggled)
+	}, [handleClick, toggled])
+
+	// 나머지 코드..
 }
 ```
+
+여기 까지 봐도 별 문제가 없을수도 있겠다 싶어 보인다. 그럼 `useHandleClick`은 어떻게 되어 있을까?
