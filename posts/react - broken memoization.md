@@ -190,6 +190,20 @@ function App() {
 ```jsx
 
 function Component () {
-	const { handleClick } = useClick
+	const { handleClick } = useHandleClick()
+
+	return <Parent onClick={handleClick}><Children /></Parent>
+}
+```
+
+별 문제가 없어 보인다 하지만 `Parent`의 내부를 보자
+
+```jsx
+import { useEffect } from 'react'
+
+function Parent({ handleClick }) {
+	useEffect(() => {
+		if ()	
+	}, [handleClick])
 }
 ```
