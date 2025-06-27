@@ -2,7 +2,7 @@
 
 저자는 주제에 앞서 다음과 같은 말을 한다
 
-> And I'm not joking or exaggerating about half the time by the way. Doing memoization properly is hard, much harder than it seems. By the end of this chapter, hopefully, you'll agree with me. Here you'll learn:
+> And I'm not joking or exaggerating about half the time by the way. **Doing memoization properly is hard, much harder than it seems.** By the end of this chapter, hopefully, you'll agree with me. Here you'll learn:
 
 Source: Makarevich, Nadia. Advanced React: Deep dives, investigations, performance patterns and techniques (p. 79). (Function). Kindle Edition. 
 
@@ -46,6 +46,9 @@ import { useState } from "react";
 
 export default function App() {
 	const [state, setState] = useState(false);
+	
+	console.log("App component render");
+	
 	return (
 		<>
 			<Parent>
@@ -56,3 +59,5 @@ export default function App() {
 	);
 }
 ```
+
+얼핏 보기에는 처음에는 App -> Parent -> 
