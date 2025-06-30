@@ -666,6 +666,20 @@ loc.push(1)
 
 ## 타입 설계
 
-```
-max = num;
+다음 코드에서 발생하는 문제점들을 확인해 보자(테스트를 아)
+
+```ts
+function extent(nums: number[]) {
+  let min, max;
+  for (const num of nums) {
+    if (!min) {
+      min = num;
+      max = num;
+    } else {
+      min = Math.min(min, num);
+      max = Math.max(max, num);
+    }
+  }
+  return [min, max];
+}
 ```
