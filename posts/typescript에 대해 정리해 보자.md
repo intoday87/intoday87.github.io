@@ -666,7 +666,7 @@ loc.push(1)
 
 ## 타입 설계
 
-다음 코드에서 발생하는 문제점들을 확인해 보자(테스트를 아)
+다음 코드에서 발생하는 문제점들을 확인해 보자(테스트를 안짜는 버릇을 들이면 이런 코드를 짠다..)
 
 ```ts
 function extent(nums: number[]) {
@@ -683,3 +683,9 @@ function extent(nums: number[]) {
   return [min, max];
 }
 ```
+
+source: [effective typescript](https://effectivetypescript.com/)
+
+- 빈 배열이면 `min`, `max`가 undefined로 처리된다
+- 0이 있는 경우 min 값으로 처리되지 않는다. `if(!min) { ~` 부분
+- `max`가 u
