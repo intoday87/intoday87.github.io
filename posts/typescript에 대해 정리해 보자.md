@@ -662,3 +662,10 @@ loc.push(1)
 // Property 'push' does not exist on type 'readonly [10, 20]'.(2339)
 ```
 `const`는 선언된 값이 단지 참조가 변하지 않는 얕은(shallow) 상수인 반면에 `as const` 단언은 값의 내부까지 상수라고(deeply) ts에 알려준다
+
+
+## 타입 설계
+
+```
+max = num;
+```
