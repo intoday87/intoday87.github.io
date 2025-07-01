@@ -688,18 +688,34 @@ source: [effective typescript](https://effectivetypescript.com/)
 
 문제점
 - 빈 배열이면 `min`, `max`가 undefined로 처리된다
-- 0이 있는 경우 min 값으로 처리되지 않는다. `if(!min) { ~` 부분 -> bug fix
+- 0이 있는 경우 min 값으로 처리되지 않는다. `if(!min) { ~` 부분
 - `max`가 undefined일 수 있다는 타입 오류. 리턴 타입이 `(number|undefind)[]` -> `number[] | null`로 리턴타입이 결정되어야
 
 문제점을 해결하기 위해 다음과 같이 해결되도록 해본다
 
 > - 빈 배열이면 `min`, `max`가 undefined로 처리된다
 
- 빈 배열로 리되지 않았으면 명시적으로 null을 리턴하도록 수정 필요
+ 빈 배열로 처리할 값이 없으면 명시적으로 null을 리턴하도록 수정 필요
+ 
+>  - 0이 있는 경우 min 값으로 처리되지 않는다. `if(!min) { ~` 부분
+
+비교를 잘하던가 비교를 없애던가
+
+>  - `max`가 undefined일 수 있다는 타입 오류. 리턴 타입이 `(number|undefind)[]`
+
+`number[] | null`로 리턴타입이 결정되도록 수정 필요
 
 ```ts
 function extend(nums: number[]) {
-	let
+	let result: number[] | null = null
+
+	for(const v of nums) {
+		if (!result) {
+			reslut = [v, v]	
+		} else {
+			result = [Math.max([v[-]])]
+		}
+	}
 }
 ```
 
