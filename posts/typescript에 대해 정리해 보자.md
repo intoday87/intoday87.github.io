@@ -711,11 +711,13 @@ function extend(nums: number[]) {
 
 	for(const v of nums) {
 		if (!result) {
-			reslut = [v, v]	
+			result = [v, v]	
 		} else {
-			result = [Math.max([v[-]])]
+			result = [Math.min(result[0]), Math.max(result[1], v)]
 		}
 	}
+
+	return result
 }
 ```
 
