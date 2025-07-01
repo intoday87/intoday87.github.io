@@ -687,6 +687,7 @@ function extent(nums: number[]) {
 source: [effective typescript](https://effectivetypescript.com/)
 
 문제점
-- 빈 배열이면 `min`, `max`가 undefined로 처리된다
+- 빈 배열이면 `min`, `max`가 undefined로 처리된다 -> 처리되지 않았으면 명시적으로 null을 리턴해야
 - 0이 있는 경우 min 값으로 처리되지 않는다. `if(!min) { ~` 부분
 - `max`가 undefined일 수 있다는 타입 오류. 리턴 타입이 `(number|undefind)[]`
+
