@@ -1,0 +1,1 @@
+[WebAssembly 가비지 컬렉션 (WasmGC)이 이제 Chrome에서 기본적으로 사용 설정됨](https://developer.chrome.com/blog/wasmgc?hl=ko)
