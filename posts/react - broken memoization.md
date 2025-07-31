@@ -225,4 +225,4 @@ export const useHandleClick = () => {
 }
 ```
 
-`handleClick`을 별도의 memoization없이 내보내고 있다. 이런 경우 `handleClick`을 사용하는 
+`handleClick`을 별도의 memoization없이 내보내고 있다. 이런 경우 `handleClick`을 props로 사용하는 memo 컴포넌트나 props로 받아서 다운스트림 컴포넌트내에서 다른 훅의 의존성 배열에 추가된다면 원하지 않게 re-render가 발생하면서 memoization이 깨질것이다. 라이브러리로 제공할 때 이런 시점이 상당히 중요하게 느껴진다. 그리고 사용처에서 사용자로 하여금 hook의 내부르 보지 않으면 안되는 상황이 발생하기도 한다
