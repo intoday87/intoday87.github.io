@@ -18,6 +18,7 @@ import debounce from '@naverpay/hidash/debounce'
 
 export default function App() {
 	const { debounce: debounced } = debounce((e) => {
+		// 최신 입력 정보를 키 타이핑이 멈춘 500ms 지연 후에 출력한다
 		console.log(e.target.value);
 	}, 500);
 
@@ -30,3 +31,20 @@ export default function App() {
 아무 문제 없이 동작한다. 정확히 키 타이핑이 멈추고 500ms 지연이 끝나면 비로소 input에 입력한 키 타이핑 결과를 출력한다.
 하지만 우리는 state라는것을 사용해 컴포넌트가 각 state에 맞는 closure 내(re-rencer)에서 state를 활용해 컴포넌트에 정보를 표시하거나 사용한다
 
+```ts
+import debounce from '@naverpay/hidash/debounce'
+
+export default function App() {
+	const [state, setState] = useState('')
+	const { debounce: debounced } = debounce((e) => {
+		console.log(e.target.value);
+	}, 500);
+
+	return (
+		<input onChange={(e) => {
+			debounced(e)
+			setState(e)
+		}} />
+	)
+}
+```
