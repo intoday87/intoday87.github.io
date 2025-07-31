@@ -212,3 +212,17 @@ function Parent({ handleClick }) {
 ```
 
 여기 까지 봐도 별 문제가 없을수도 있겠다 싶어 보인다. 그럼 `useHandleClick`은 어떻게 되어 있을까?
+
+```jsx
+export const useHandleClick = () => {
+	const handleClick = (e) => {
+	   // handle click...
+	}
+    
+    return {
+	    handleClick,
+    }
+}
+```
+
+`handleClick`을 별도의 memoization없이 내보내고 있다. 이런 경우 `handleClick`을 사용하는 
