@@ -5,4 +5,6 @@ debounce를 사용하는 일은 잦다. 대표적으로 자동완성 요청이 �
 
 `throttle`: 앞어 본 `debounce`는 요약하자면 우다다다 사용자 타이핑이 끝나고 나서 진정 되면 함수를 호출해 주는 반면 그 우다다다 타이핑이 길어지면 결국 그 동안에는 api호출을 하지 못하는 단점이 있어서 지연시킬 ms동안 함수 호출을 주기적으로 호출해준다. `debounce`는 `setTimeout`이라면 `throttle`은 `setInterval`같은 느낌
 
-여기서는 중요한 것은 stale clouse
+여기서는 중요한 것은 re-render에 대응하는 stale closure에 따른 문제를 react 환경에서 어떻게 다루느냐가 중점이 되므로 `debounce`와  `throttle` 둘 다를 다루지는 않고  `debounce`로 `useDebounce` 훅이 만들어지는 과정을 다루어본다.
+
+머리로는 이해했어도 실제로 output을 내보며 한 단계 한 단계 단계를 밟아보면 늘 중간에 턱하고 막힐때가 있다. 이 부분이 바로 익숙함과 익숙하지 않음의 영역이라고 보고있고 단계를 밟
