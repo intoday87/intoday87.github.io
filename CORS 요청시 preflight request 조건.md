@@ -1,0 +1,1 @@
+브라우저에서 CORS 요청시 [단순 요청](https://developer.mozilla.org/ko/docs/Web/HTTP/Guides/CORS#%EB%8B%A8%EC%88%9C_%EC%9A%94%EC%B2%ADsimple_requests)이 아니면 [preflight 요청](https://developer.mozilla.org/ko/docs/Glossary/Preflight_request)이 발생한다. 
