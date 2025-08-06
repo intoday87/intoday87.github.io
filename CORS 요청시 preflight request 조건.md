@@ -1,1 +1,8 @@
-브라우저에서 CORS 요청시 [단순 요청](https://developer.mozilla.org/ko/docs/Web/HTTP/Guides/CORS#%EB%8B%A8%EC%88%9C_%EC%9A%94%EC%B2%ADsimple_requests)이 아니면 [preflight 요청](https://developer.mozilla.org/ko/docs/Glossary/Preflight_request)이 발생한다. 
+브라우저에서 CORS 요청시 [단순 요청](https://developer.mozilla.org/ko/docs/Web/HTTP/Guides/CORS#%EB%8B%A8%EC%88%9C_%EC%9A%94%EC%B2%ADsimple_requests)이 아니면 [사전 요청(preflight request)](https://developer.mozilla.org/ko/docs/Glossary/Preflight_request)이 발생한다. 
+
+## 사전 요청
+
+CORS 요청시 단순 요청이 아니면 http 메소드를 `OPTIONS`로 해서 실제로 보낼려는 http 요청에 앞서 해당 요청이 처리 가능한지 먼저 요청을 보내서 확인을 받는다
+
+```
+```
