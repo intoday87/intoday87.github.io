@@ -8,3 +8,16 @@ CORS 요청시 단순 요청이 아니면 http 메소드를 `OPTIONS`로 해서 
 // 단순 요청으로 처리되지 않는 경우 preflight 요청을 보내는 경우
 fetch('https://jsonplaceholder.typicode.com/posts/1', { headers: { 'cache-control': 'no-cache' } })
 ```
+
+```
+// network tab
+
+Request URL https://jsonplaceholder.typicode.com/posts/1
+Request Method OPTIONS
+Status Code 204 No Content
+Remote Address xx.xx.xx.x:443
+Referrer Policy strict-origin-when-cross-origin
+
+
+//
+```
