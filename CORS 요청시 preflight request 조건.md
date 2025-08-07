@@ -30,4 +30,7 @@ access-control-allow-origin https://some.domain.com
 access-control-request-headers cache-control
 access-control-request-method GET
 ```
+
 `access-control-request-method`로 `GET` 요청에 대한 허용을 응답 헤더로 받는 부분과 `access-control-request-headers`로 `cache-control`을 받을수 있을지도 요청과 응답헤더를 보면 확인할 수 있다
+
+단순 요청에서 `Accept`를 제외한 대부분의 헤더는 단순 요청에 해당하지 않기 때문에 preflight 요청은 생략되지 않았으며 허용된 응답 후에 비로소 실제 `GET` 요청을 보내게 된다
