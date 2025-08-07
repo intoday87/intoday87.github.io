@@ -9,6 +9,8 @@ CORS 요청시 단순 요청이 아니면 http 메소드를 `OPTIONS`로 해서 
 fetch('https://jsonplaceholder.typicode.com/posts/1', { headers: { 'cache-control': 'no-cache' } })
 ```
 
+다음은 preflight 요청이 발생한 경우 네트워크 탭 정보이다
+
 ```
 // network tab
 
@@ -18,6 +20,14 @@ Status Code 204 No Content
 Remote Address xx.xx.xx.x:443
 Referrer Policy strict-origin-when-cross-origin
 
+// response header 일부
+access-control-allow-credentials true
+access-control-allow-headers cache-control
+access-control-allow-methods GET,HEAD,PUT,PATCH,POST,DELETE
+access-control-allow-origin https://some.domain.com
 
-//
+// request header 일부
+access-control-request-headers cache-control
+access-control-request-method GET
 ```
+`access-control-request-method`로 `GET` 요청에 대한 허용을 응답 헤더로 받는 부분과 `access-control-request-headers`로 `cache-control`을 받을수 있을지도 요청과 응답헤더를 보면 확인할 수 있다
