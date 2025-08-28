@@ -731,11 +731,22 @@ interface I {
 	d: Date
 }
 
-const item: I 
+  
 
-function getByKey (item: I, key: keyof T) {
+const item: I = {
+	a: 1,
+	b: '2',
+	c: true,
+	d: new Date('2025-08-28'),
+}
+
+  
+
+function getByKey<T>(item: T, key: keyof T) {
 	return item[key]
 }
 
-getByKey()
+const result = getByKey(item, 'd') // const result: string | number | boolean | Date
+
+
 ```
