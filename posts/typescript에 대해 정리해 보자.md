@@ -767,6 +767,10 @@ function getByKey<T, K extends keyof T>(item: T, key: keyof K) { // 새로 추�
 const result = getByKey2(item, 'd') // const result: Date
 ```
 
-하지만 이렇게 `K`로 한정된 추가 generic type으로 선언하게 되면 다음과 리턴 타입이 다음과 같이 변한다
+하지만 이렇게 `K`로 한정된 추가 generic type으로 선언하게 되면 다음과 리턴 타입이 다음과 같이 변한다.
+
+```ts
+function getByKey<T, K extends keyof T>(item: T, key: K): T[K]
+```
 ``
 
