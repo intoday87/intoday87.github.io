@@ -69,7 +69,7 @@ For your company account, make sure that you use `git!github-COMPANY` as the hos
 ## 안될 때 더 확인해 봐야할 것들
 - ssh로 잘 붙는지 확인하는 방법이 있다
  ```
-	ssg -T git@github-COMPANY
+	ssh -T git@github-COMPANY
  ```
 
 #github-multiple-account #github-계정-여러개
