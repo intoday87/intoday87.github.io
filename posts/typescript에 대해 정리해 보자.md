@@ -723,7 +723,7 @@ function extend(nums: number[]) {
 
 ## keyof
 
-generic type에서 해당 필드만 추출하는 함수가 있다고 가정해보자.  함수는 generic type의 필드에 해당하는 키 값을 문자열로 받아 키에 해당하는 값을 리턴하는데 해당 필드가 generic type의 필드의 타입으로만(단일 타입) 받고 싶을 것이다. 하지만 생각처럼 되지 않는
+generic type에서 해당 필드만 추출하는 함수가 있다고 가정해보자.  함수는 generic type의 필드에 해당하는 키 값을 문자열로 받아 키에 해당하는 값을 리턴하는데 해당 필드가 generic type의 필드의 타입으로만(단일 타입) 받고 싶을 것이다. 하지만 두 번째 파라미터로 `key: keyof T`로 받으면 될 것 같지만 단일 타입으로 리턴되지 않는다
 
 ```ts
 interface I {
@@ -747,10 +747,17 @@ function getByKey<T>(item: T, key: keyof T) {
 
 // 우리가 기대하는 타입은 `Date`
 const result = getByKey(item, 'd') // const result: string | number | boolean | Date
+```
 
-function getByKey2<T, K extends keyof T>(item: T, key: keyof K) {
+우리가 기대하는 타입은 `I.d` 타입인 `Date`로 되기를 기대했다. 하지만 그렇게 되지 않았고 다음과 같이 고치면 원하는대로 동작한다. 왜 그럴까?!
+
+`getByKey`로 리턴되는 과정은 `item[key]`에서 `key`가 `keyof T`
+
+```ts
+function getByKey<T, K extends keyof T>(item: T, key: keyof K) { // 새로 추가한 `K` generic type을 눈여겨 보자
 	return item[key]
 }
 
 const result = getByKey2(item, 'd') // const result: Date
 ```
+
