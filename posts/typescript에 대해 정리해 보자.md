@@ -723,6 +723,8 @@ function extend(nums: number[]) {
 
 ## keyof
 
+generic type에 `keyof` 사용시 해당 필드의 타입만 얻을 수 없는 경우
+
 ```ts
 interface I {
 	a: number
@@ -730,8 +732,6 @@ interface I {
 	c: boolean
 	d: Date
 }
-
-  
 
 const item: I = {
 	a: 1,
@@ -741,12 +741,16 @@ const item: I = {
 }
 
   
-
 function getByKey<T>(item: T, key: keyof T) {
 	return item[key]
 }
 
+// 우리가 기대하는 타입은 `Date`
 const result = getByKey(item, 'd') // const result: string | number | boolean | Date
 
+function getByKey2<T, K extends keyof T>(item: T, key: keyof K) {
+	return item[key]
+}
 
+const result = getByKey2(item, 'd') // const result: Date
 ```
