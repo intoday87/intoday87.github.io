@@ -751,7 +751,13 @@ const result = getByKey(item, 'd') // const result: string | number | boolean | 
 
 우리가 기대하는 타입은 `I.d` 타입인 `Date`로 되기를 기대했다. 하지만 그렇게 되지 않았고 다음과 같이 고치면 원하는대로 동작한다. 왜 그럴까?!
 
-`getByKey`로 리턴되는 과정은 `item[key]`에서 `key`가 `keyof T`이기 `key`가 때문에 하나의 타입으로 좁혀지지 않았다. `getByKey`
+`getByKey`로 리턴되는 과정은 `item[key]`에서 `key`가 `keyof T`이기 `key`가 때문에 하나의 타입으로 좁혀지지 않았다. `getByKey`의 리턴 타입을 보면 다음과 같다
+
+```ts
+function getByKey<T>(item: T, key: keyof T): T[keyof T]
+```
+
+`T[keyof T]` T에 해당한는 모든 키로 처리되는 것으로 보인다.
 
 ```ts
 function getByKey<T, K extends keyof T>(item: T, key: keyof K) { // 새로 추가한 `K` generic type을 눈여겨 보자
@@ -760,4 +766,7 @@ function getByKey<T, K extends keyof T>(item: T, key: keyof K) { // 새로 추�
 
 const result = getByKey2(item, 'd') // const result: Date
 ```
+
+하지만 이렇게 `K`로 한정된 추가 generic type으로 선언하게 되면 다음과 리턴 타입이 다음과 같이 변한다
+``
 
