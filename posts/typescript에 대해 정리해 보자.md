@@ -721,3 +721,21 @@ function extend(nums: number[]) {
 }
 ```
 
+## keyof
+
+```ts
+interface I {
+	a: number
+	b: string
+	c: boolean
+	d: Date
+}
+
+const item: I 
+
+function getByKey (item: I, key: keyof T) {
+	return item[key]
+}
+
+getByKey()
+```
