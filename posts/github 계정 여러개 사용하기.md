@@ -68,8 +68,9 @@ For your company account, make sure that you use `git!github-COMPANY` as the hos
 
 ## 안될 때 더 확인해 봐야할 것들
 - ssh로 잘 붙는지 확인하는 방법이 있다
- ```
-	ssh -T git@github-COMPANY
+ ```zsh
+$ ssh -T git@github-COMPANY
+Hi intoday87! You\'ve successfully authenticated, but GitHub does not provide shell access.
  ```
 
 #github-multiple-account #github-계정-여러개
