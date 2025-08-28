@@ -751,7 +751,7 @@ const result = getByKey(item, 'd') // const result: string | number | boolean | 
 
 우리가 기대하는 타입은 `I.d` 타입인 `Date`로 되기를 기대했다. 하지만 그렇게 되지 않았고 다음과 같이 고치면 원하는대로 동작한다. 왜 그럴까?!
 
-`getByKey`로 리턴되는 과정은 `item[key]`에서 `key`가 `keyof T`
+`getByKey`로 리턴되는 과정은 `item[key]`에서 `key`가 `keyof T`이기 `key`가 때문에 하나의 타입으로 좁혀지지 않았다. `getByKey`
 
 ```ts
 function getByKey<T, K extends keyof T>(item: T, key: keyof K) { // 새로 추가한 `K` generic type을 눈여겨 보자
