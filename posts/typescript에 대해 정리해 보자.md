@@ -723,7 +723,7 @@ function extend(nums: number[]) {
 
 ## keyof
 
-generic type에 `keyof` 사용시 해당 필드의 타입만 얻을 수 없는 경우
+generic type에서 해당 필드만 추출하는 함수가 있다고 가정해보자.  함수는 generic type의 필드에 해당하는 키 값을 문자열로 받아 키에 해당하는 값을 리턴하는데
 
 ```ts
 interface I {
