@@ -134,8 +134,29 @@ Did you mean to import "./a.js"?
 ## 라이브러리 작업시 cjs, esm이 잘 설정되어 있는지 확인하는 cli
 [`@arethetypeswrong/cli`](https://www.npmjs.com/package/@arethetypeswrong/cli) 이하 줄여서 `attw`라고도 함
 npx로 글로벌 설치 없이 사용 가능
+
 ```zsh
 $  npx --yes @arethetypeswrong/cli --pack .
 ```
-현재 npm package를 분석해서 esm, cjs에 대한 올바른 module resolution 이슈를 확인해준다
-그래도 현재 ts에서 cjs환경(`"type": "module"`이 아닌)에서 ts가 conditional export를 인식하지 못해서 barrel file(index.ts에)을 만들어야 하는것으로 보인다.(`"type": "module"`인 경우는 )
+
+현재 npm package를 분석해서 esm, cjs에 대한 올바른 module resolution 이슈를 확인해준다.
+그래도 현재 ts에서 cjs환경(`"type": "module"`이 아닌)에서 ts가 conditional export를 인식하지 못해서 barrel file(index.ts에)을 만들어야 하는것으로 보인다.
+`"type": "module"`인 경우는 ts에서 `@some/module/file`로 import시 잘 읽힌다. package.json에 export로 다음과 같이 잘 설정해 놓았다면
+
+```package.json
+{
+  "exports": {
+    "./file": {
+      "import": {
+        "types": "./dist/esm/file.d.mts",
+        "default": "./dist/esm/file.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/file.d.ts",
+        "default": "./dist/cjs/file.js"
+      }
+    }
+  },
+  ...
+}
+```
