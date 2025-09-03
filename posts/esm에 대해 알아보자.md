@@ -130,3 +130,6 @@ Did you mean to import "./a.js"?
 - 복사냐 참조냐
 
 #esm #javascript-module
+
+## 라이브러리 작업시 cjs, esm이 잘 설정되어 있는지 확인하는 cli
+[`@arethetypeswrong/cli`](https://www.npmjs.com/package/@arethetypeswrong/cli) 이하 줄여서 `attw`라고도 함
