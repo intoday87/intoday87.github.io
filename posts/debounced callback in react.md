@@ -34,6 +34,7 @@ export default function App() {
 하지만 우리는 state라는것을 사용해 컴포넌트가 각 state에 맞는 closure 내(re-rencer)에서 state를 활용해 컴포넌트에 정보를 표시하거나 사용한다
 
 ```ts
+import {useState} from 'react'
 import debounce from '@naverpay/hidash/debounce'
 
 export default function App() {
@@ -53,4 +54,26 @@ export default function App() {
 
 실행해보면  console.log에 찍히는 값은 500ms의 지연 후에 찍히는게 아니라 매번 `setState`로 input의 변경을 re-render를 발생시는 횟수만큼 찍히게 된다
 
-`throttle` 구현을 직접 들여다 보면 그 이유를 알 수 있는데 re-ren
+`throttle` 구현을 직접 들여다 보면 그 이유를 알 수 있는데 `throttle`함수 호출시 내부에 [timer](https://github.com/NaverPayDev/hidash/blob/d74aedec88a685b1b8c1522f8bbed55bd8448371/src/throttle.ts#L12) 초기화 하기 때문이다. 비동기로 `setState` 호출로 re-render가 발생함에 따라 `throttle`이 매번 호출되고 timer가 초기화 되기 때문에 발생한다.
+
+이런 문제를 우리는 보통 memoization으로 해결한다
+
+```ts
+import {useState, useCallback} from 'react'
+import debounce from '@naverpay/hidash/debounce'
+
+export default function App() {
+	const [state, setState] = useState('')
+	// useCallback으로 throttle 함수를 memo
+	const { debounce: debounced } = useCallback(debounce((e) => {
+		console.log(e.target.value);
+	}, 500), []);
+
+	return (
+		<input onChange={(e) => {
+			debounced(e)
+			setState(e)
+		}} />
+	)
+}
+```
