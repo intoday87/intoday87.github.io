@@ -52,3 +52,5 @@ export default function App() {
 ```
 
 실행해보면  console.log에 찍히는 값은 500ms의 지연 후에 찍히는게 아니라 매번 `setState`로 input의 변경을 re-render를 발생시는 횟수만큼 찍히게 된다
+
+왜 그럴까?
