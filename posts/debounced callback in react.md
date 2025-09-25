@@ -51,4 +51,4 @@ export default function App() {
 }
 ```
 
-실행해보면  console.log에 찍히는 값은 500msㅇ`setState`로 input의 변경을 re-render를 발생시키면서 
+실행해보면  console.log에 찍히는 값은 500ms의 지연 후에 찍히는게 아니라 매번 `setState`로 input의 변경을 re-render를 발생시키면서 
