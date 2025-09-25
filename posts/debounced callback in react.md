@@ -51,4 +51,4 @@ export default function App() {
 }
 ```
 
-실행해보면 `setState`로 input의 변경을 re
+실행해보면 `setState`로 input의 변경을 re-rend
