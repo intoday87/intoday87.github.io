@@ -51,4 +51,4 @@ export default function App() {
 }
 ```
 
-실행해보면 
+실행해보면 set
