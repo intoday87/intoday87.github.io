@@ -79,3 +79,26 @@ export default function App() {
 ```
 
 실제로 `debounce` 호출은 memo되어 내부 타이버가 초기화 되지 않고 유지 된다. 하지만 이렇게면 해결된 것일까?
+
+```ts
+import {useState, useCallback} from 'react'
+import debounce from '@naverpay/hidash/debounce'
+
+export default function App() {
+	const [state, setState] = useState('')
+	// useCallback으로 throttle 함수를 memo
+	const { debounce: debounced } = useCallback(debounce((e) => {
+		console.log("input의 현재 value", e.target.value); // input의 현재 value 123213
+		console.log("현재 state", state); // 현재 state 
+	}, 500), []);
+
+	return (
+		<input onChange={(e) => {
+			debounced(e)
+			setState(e)
+		}} />
+	)
+}
+```
+
+`debounce`에 전달되는 함수는 매번 새
