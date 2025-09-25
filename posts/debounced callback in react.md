@@ -1,9 +1,11 @@
+source: https://www.developerway.com/posts/debouncing-in-react 
+
 `debounce`함수를 사용하는 일은 잦다. 대표적으로 자동완성 요청이 떠오를 수 있다.  키보드 타이핑 스킬이 좋은 사람이면 1분에 70여개의 영단어를 타이핑할 수 있다고 한다. 그것은 대략 1초에 6키를 누른다는 것인데 이런 상황에 매 키 스트로크마다 자동완성 api를 요청한다거나 필터링 처리 로직으로 re-render을 발생시킨다면 사용자 경험측면에서도 성능 측면에서도 매우 좋지 않을 것이다.
-이런 상황에서 우리가 주로 사용하는 것은 두 가지 정도가 있다 `debounce`와 `throttle`이다.  두 가지는 구현적 측면에서 비슷하다고 느껴지지만 처리하는 결과에서는 차이가 있다. 둘 다 실행할 함수와 지연시킬 ms 파라미터를 받고 각각의 기능에 맞게 처리된 함수를 리턴한다. 이 함수를 앞서 언급한 타이핑하는 input의 `onChange`이벤트 핸들러로 사용한다고 생각해보자.
+이런 상황에서 우리가 주로 사용하는 것은 두 가지 정도가 있다 `debounce`와 `throttle`이다.  두 가지는 구현적 측면에서 비슷하다고 느껴지지만 처리하는 결과에서는 차이가 있다. 둘 다 실행할 함수와 ms동안 지연시킬 `delay` 파라미터를 받고 각각의 기능에 맞게 처리된 함수를 리턴한다. 이 함수를 앞서 언급한 타이핑하는 input의 `onChange`이벤트 핸들러로 사용한다고 생각해보자.
 
 `debounce`: 지연시킬 ms 파라미터를 받아서 지연시간 동안 재호출이 들어오면 함수 호출을 무시하고 타이머를 다시 ms로 리셋한다. ms 동안 추가 호출 없이 지연이 무사히 끝나면 비로소 파라미터로 받았던 함수를 호출한다
 
-`throttle`: 앞어 본 `debounce`는 요약하자면 우다다다 사용자 타이핑이 끝나고 나서 진정 되면 함수를 호출해 주는 반면 그 우다다다 타이핑이 길어지면 결국 그 동안에는 api호출을 하지 못하는 단점이 있어서 지연시킬 ms동안 함수 호출을 주기적으로 호출해준다. `debounce`는 `setTimeout`이라면 `throttle`은 `setInterval`같은 느낌
+`throttle`: 앞서 본 `debounce`는 요약하자면 우다다다 사용자 타이핑이 끝나고 나서 진정 되면 함수를 호출해 주는 반면 그 우다다다 타이핑이 길어지면 결국 그 동안에는 api호출을 하지 못하는 단점이 있어서 지연시킬 ms동안 함수 호출을 주기적으로 호출해준다. `debounce`는 `setTimeout`이라면 `throttle`은 `setInterval`같은 느낌
 
 여기서는 중요한 것은 re-render에 대응하는 stale closure 문제를 react 환경에서 어떻게 다루느냐가 중점으로 다룰것이므로  `debounce`와  `throttle`  두 가지 케이스를 모두 다루지는 않고  `debounce`로 `useDebounce` 훅이 만들어지는 과정을만을 다루어본다.
 
@@ -11,7 +13,7 @@
 
 ## debounce in react component
 
-codesandbox의 react + ts 환경에서 컴포넌트에 debounce를 직접 써보자
+react + ts 환경에서 컴포넌트에 debounce를 직접 써보자
 
 ```ts
 import debounce from '@naverpay/hidash/debounce'
@@ -48,3 +50,5 @@ export default function App() {
 	)
 }
 ```
+
+실행해보면 
