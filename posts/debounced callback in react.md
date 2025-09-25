@@ -51,4 +51,4 @@ export default function App() {
 }
 ```
 
-실행해보면 set
+실행해보면 `setState`로 
