@@ -77,3 +77,5 @@ export default function App() {
 	)
 }
 ```
+
+실제로 `debounce` 호출은 memo되어 내부 타이버가 초기화 되지 않고 유지 된다. 하지만 이렇게면 해결된 것일까?
