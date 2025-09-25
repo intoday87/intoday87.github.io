@@ -101,4 +101,5 @@ export default function App() {
 }
 ```
 
-`debounce`에 전달되는 함수는 매번 새
+`console.log`를 추가해서 현재 컨텍스트에서 `state`를 참조하고 있는 값을
+`debounce`에 전달되는 함수와 함께 매번 re-render시에 호출되어 생성되어 전달되나 호출한 결과 값은 memo로 인해 현재 첫 번째 호출된 결과 값만 참조하고 있다. 
