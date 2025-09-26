@@ -9,4 +9,4 @@
 rm -rf ~/Library/Application\ Support/Code/User/workspaceStorage
 ```
 
-이 스토리지를 날려버리자. 날리면(not biden ❌) 에디터를 다시 열면 작업중인 창들 기록 및 히스토리 같은게 다 날아간다
+이 스토리지를 날려버리자. 날리면(not biden ❌) 에디터를 다시 열면 작업중인 창들 기록 및 히스토리 같은게 다 날아간다. 아직 정확히 추가적인 영향 범위는 모르겠으나. git checkout 해서 처음 열었을때와 같은 상태로 보인다
