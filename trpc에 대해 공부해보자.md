@@ -1,5 +1,9 @@
 ## [Concepts](https://trpc.io/docs/concepts)
 
-trpc는 t(ye)
+일단 concepts 페이지 내용이 단순해서 좋다
+
+trpc는 T(ypescript) & Remote Procedure Call이다
+rpc하면 보통 백엔드에서 말 그대로 원격 함수 호출인데 이 개념을 front-end 개발에 들고온 것이고 클라이언트에서 서버로의 api 요청을 원격 함수 호출의 형태로 단순화 하고 서버의 API 요청 및 응답에 필요한 타입 지원을 typescript로 지원 받도록 하는 것으로 이해된다
 
 > It's just functions
+
