@@ -14,7 +14,11 @@ rpc하면 보통 백엔드에서 말 그대로 원격 함수 호출인데 이 �
 
 ### Don't think about HTTP/REST implementation details
 
+trpc의 추상화 레벨의 구현에는 신경쓰지 말라는 내용이 담겨 있다. 어떤 레이어의 통신이든 신경쓰지 않고 일관화된 trpc의 함수 호출을 통해 통신할 것이다라는 내용. 추상화가 매우 잘 되어 있고 trpc를 믿어라 라고 말하는 듯한 내용. 추상화에 대한 내용에 맞게 함수의 이름에 집중 하라는 메세지가 좋다.
 
+`getUser(id)` -> `GET /users/:id`
+
+반드시 REST의 표현 방식대로 
 
 
 
