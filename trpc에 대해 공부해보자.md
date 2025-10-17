@@ -7,7 +7,12 @@ rpc하면 보통 백엔드에서 말 그대로 원격 함수 호출인데 이 �
 
 \*: 우리는 서버와 클라이언트 모델을 주로 사용하지만 rpc 개념에서는 서버라기 보단 다른 원격지 호스트를 의미
 
+다음과 같은 한 문장이 잘 설명해주고 있는듯 하다
+
+> tRPC (TypeScript Remote Procedure Call) is one implementation of RPC, designed for TypeScript monorepos. It has its own flavor, but is RPC at its heart.
+
+
 > It's just functions
 
-s
+
 
