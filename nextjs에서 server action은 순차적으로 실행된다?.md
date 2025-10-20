@@ -8,4 +8,5 @@ https://react.dev/reference/rsc/use-server#caveats 에 중요한 설명이 있�
 
 > - Server Functions should be called in a [Transition](https://react.dev/reference/react/useTransition). Server Functions passed to [`<form action>`](https://react.dev/reference/react-dom/components/form#props) or [`formAction`](https://react.dev/reference/react-dom/components/input#props) will automatically be called in a transition.
 
-server action은 form에서 호출할 때 transition을 유발한다
+server action은 form에서 호출할 때 자동적으로 transition을 유발한다
+ㅐ
