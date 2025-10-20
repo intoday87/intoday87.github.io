@@ -1,1 +1,1 @@
-server action이 react 렌더링 처리 프로세스와
+server action은 함수 호출이라 병렬로 처리가 가능할 것 같지만
