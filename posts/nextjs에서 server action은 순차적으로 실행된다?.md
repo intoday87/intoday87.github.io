@@ -6,7 +6,7 @@ https://react.dev/reference/rsc/use-server#caveats 에 중요한 설명이 있�
 
 > - Server Functions are designed for mutations that update server-side state; they are not recommended for data fetching. Accordingly, frameworks implementing Server Functions typically process one action at a time and do not have a way to cache the return value.
 
-http 요청에서 GET(read) 요청에는 적합하지 않고 CUD(Create: post, 한 번에 하나의 action을 처리하도록 구현되어 있는것으로 보인다
+http 요청에서 GET(read) 요청에는 적합하지 않고 CUD(Create: post, Update: put, Delete: delete) mutation 요청을 위해 설계 되었다고 하고 있고 한 번에 하나의 action을 처리하도록 구현되어 있는것으로 보인다
 
 > - Server Functions should be called in a [Transition](https://react.dev/reference/react/useTransition). Server Functions passed to [`<form action>`](https://react.dev/reference/react-dom/components/form#props) or [`formAction`](https://react.dev/reference/react-dom/components/input#props) will automatically be called in a transition.
 
