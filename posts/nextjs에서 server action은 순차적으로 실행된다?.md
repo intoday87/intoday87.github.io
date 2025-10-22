@@ -1,4 +1,4 @@
-server action은 함수 호출이라 병렬로 처리가 가능할 것 같지만 react re-rendering 프로세스(transition)을 발생시키기 때문에 순차적으로 요청이 처리되는것으로 보인다.
+server action은 함수 호출이라 병렬 처리가 가능할 것 같지만 react re-rendering 프로세스(transition)와 엮여 있어서 순차적으로 요청이 처리되는것으로 보인다
 
 이 https://hmos.dev/en/next-server-action-sequence 글을 보면 순차적 응답에 대한 실험이 담겨져 있다
 
@@ -6,7 +6,7 @@ https://react.dev/reference/rsc/use-server#caveats 에 중요한 설명이 있�
 
 > - Server Functions are designed for mutations that update server-side state; they are not recommended for data fetching. Accordingly, frameworks implementing Server Functions typically process one action at a time and do not have a way to cache the return value.
 
-한 번에 하나의 action을 처리하도록 구현되어 있는것으로 보인다
+http 요청에서 GET(read) 요청에는 적합하지 않고 CUD(Create: post, 한 번에 하나의 action을 처리하도록 구현되어 있는것으로 보인다
 
 > - Server Functions should be called in a [Transition](https://react.dev/reference/react/useTransition). Server Functions passed to [`<form action>`](https://react.dev/reference/react-dom/components/form#props) or [`formAction`](https://react.dev/reference/react-dom/components/input#props) will automatically be called in a transition.
 
