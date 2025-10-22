@@ -20,6 +20,12 @@ trpc의 추상화 레벨의 구현에는 신경쓰지 말라는 내용이 담겨
 
 반드시 REST의 표현 방식대로 http 통신의 엔드 포인트를 상상하면서 함수 이름을 매칭하라는 강박적인 내용은 아니고 우리는 우리가 필요한 행동(method)에 집중해서 함수의 이름을 짓고 그 함수를 사용한다
 
+##  trpc vs server actions
+
+[reddit -a ]
+https://www.reddit.com/r/nextjs/comments/1etpoup/trpc_vs_server_actions/
+
+
 
 
 
