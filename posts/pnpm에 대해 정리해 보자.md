@@ -28,4 +28,4 @@ peer dependency가 없는 경우 하나의 dependency는 하나의 dependency
 ## workspace
 
 ### workspace 참조
-- pnpm-workspace.yaml에 packages로 명시된 worksp
+- pnpm-workspace.yaml에 packages로 명시된 workspace들은 서로 다른 패키지에서 package.json의 name으로 참조가 가능하다. 각 패키지 node_modules에 사용하는 workpace의 symlink가 생성되어 일반 node_modules의 패키지처럼 참조가 가능하다
