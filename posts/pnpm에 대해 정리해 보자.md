@@ -23,3 +23,9 @@ title: pnpm에 대해 정리해 보자
 
 ## How peers are resolved
 peer dependency가 없는 경우 하나의 dependency는 하나의 dependency
+
+
+## workspace
+
+### workspace 참조
+- pnpm-workspace.yaml에 packages로 명시된 worksp
