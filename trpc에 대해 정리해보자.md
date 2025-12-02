@@ -1,3 +1,7 @@
+---
+title: trpc에 대해 정리해보자
+---
+
 ## [Concepts](https://trpc.io/docs/concepts)
 
 일단 concepts 페이지 내용이 단순해서 좋다
