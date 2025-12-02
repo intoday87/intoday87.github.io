@@ -73,6 +73,8 @@ fastify().get('/', (req, res) => {
 
 그리고 `register`에서 확인했듯이 context는 캡슐화 되어 있기 때문에 다른 register에서는 오류가 발생한다
 
+> Inside the second register call `instance.util` will throw an error because `util` exists only inside the first register context.
+
 ```ts
 fastify.register((instance, opts, done) => {  
 	instance.decorate('util', (a, b) => a + b) // ok
