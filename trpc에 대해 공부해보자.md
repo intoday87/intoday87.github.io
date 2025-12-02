@@ -25,8 +25,7 @@ trpc의 추상화 레벨의 구현에는 신경쓰지 말라는 내용이 담겨
 요즘 어떻게 사용하나 하고 정찰하다가 reddit의 글을 봤다
 [reddit - # tRPC vs Server Actions ](https://www.reddit.com/r/nextjs/?f=flair_name%3A%22Discussion%22)
 요지는 server action은 설계상 mutation을 위해 설계됬고 client에서 병렬로 요청하더라도 순차적으로 처리되기 때문에 데이터 페칭에 적합하지 않다
-[nextjs에서 server action은 순차적으로 실행된다?](/nextjs에서 server action은 순차적으로 실행된다?)
-
+[nextjs에서 server action은 순차적으로 실행된다?](./nextjs에서 server action은 순차적으로 실행된다)
 
 
 
