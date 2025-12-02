@@ -1,3 +1,7 @@
+---
+title: nextjs에서 server action은 순차적으로 실행된다
+---
+
 server action은 함수 호출이라 병렬 처리가 가능할 것 같지만 react re-rendering 프로세스(transition)와 엮여 있어서 순차적으로 요청이 처리되는것으로 보인다
 
 이 https://hmos.dev/en/next-server-action-sequence 글을 보면 순차적 응답에 대한 실험이 담겨져 있다
@@ -14,8 +18,6 @@ server action은 form에서 호출할 때 자동적으로 transition을 유발�
 
 ## Next.js Server Actions 순차 실행 증명 예제
 
-https://hmos.dev/en/next-server-action-sequence 의 샘플 코드를 기반으로 직접 실험해 본 예제
-
-https://github.com/intoday87/nextjs-server-action-sequencial
+<https://github.com/intoday87/nextjs-server-action-sequencial>
 
 client의 요청이 병렬(`Promise.all`)로 처리 한다고 해서 요청 자체는 병렬로 처리될 줄 알았으나(응답만 순차적으로 배치 처리될 줄) 요청 자체도 순차로 처리 됨을 볼 수 있다
