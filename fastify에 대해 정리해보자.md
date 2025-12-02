@@ -17,3 +17,36 @@ register는 새로운 context를 생성한다. 캡슐화 되어 있어서 해당
 > 
 > Ok, you are growing very fast and you want to change your architecture and try microservices. Usually, this implies a huge amount of work, because of cross dependencies and a lack of separation of concerns in the codebase.
 
+
+## Decorators
+
+util함수를 인스턴스의 namespace로 추가하는 방식이다. 아직은 다음 예제만 봐서는  decorator 패턴과의 연관성은 잘 모르겠다
+
+```ts
+import type { FastifyPluginAsync } from "fastify";
+
+// FastifyInstance 타입 확장
+declare module "fastify" {
+  interface FastifyInstance {
+    util: (a: number, b: number) => number;
+  }
+}
+
+const routes: FastifyPluginAsync = async (
+  fastify,
+  options
+) => {
+  fastify.decorate("util", (a, b) => a + b);
+
+  fastify.get("/", async (request, reply) => {
+    return { hello: "world", result: fastify.util(2, 3) };
+  });
+};
+
+export default routes;
+```
+
+declare를 통한 타입 확장으로 util 함수를 인식하도록 한다. fastify내에 있는 파일에서도 같은 패턴으로 처리
+
+```
+```
