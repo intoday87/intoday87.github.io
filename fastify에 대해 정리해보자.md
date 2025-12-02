@@ -46,7 +46,44 @@ const routes: FastifyPluginAsync = async (
 export default routes;
 ```
 
-declare를 통한 타입 확장으로 util 함수를 인식하도록 한다. fastify내에 있는 파일에서도 같은 패턴으로 처리
+declare를 통한 타입 확장으로 util 함수를 인식하도록 한다. fastify내에 있는 파일에서도 같은 패턴으로 처리하는 코드가 보인다
 
+```ts
+// fastify@5.6.2/node_modules/fastify/test/types/decorate-request-reply.test-d.ts
+
+mport fastify from '../../fastify'
+import { expectType } from 'tsd'
+
+type TestType = void
+
+declare module '../../fastify' {
+  interface FastifyRequest {
+    testProp: TestType;
+  }
+  interface FastifyReply {
+    testProp: TestType;
+  }
+}
+
+fastify().get('/', (req, res) => {
+  expectType<TestType>(req.testProp)
+  expectType<TestType>(res.testProp)
+})
 ```
+
+그리고 `register`에서 확인했듯이 context는 캡슐화 되어 있기 때문에 다른 register에서는 오류가 발생한다
+
+```ts
+fastify.register((instance, opts, done) => {  
+	instance.decorate('util', (a, b) => a + b) // ok
+	console.log(instance.util('that is ', 'awesome'))  
+	  
+	done()  
+})  
+  
+fastify.register((instance, opts, done) => {  
+	console.log(instance.util('that is ', 'awesome')) // This will throw an error  
+	  
+	done()  
+})
 ```
