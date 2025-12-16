@@ -5,9 +5,9 @@ title: 모르고 살자니 너무 불편한 Prometheus
 
 이해하는 내용을 정리를 해보자!
 
-# [Prometheus](https://prometheus.io/) 는 뭐하는 애인가?
+## [Prometheus](https://prometheus.io/) 는 뭐하는 애인가?
 
-## Prometheus가 뭐하는 애인가?
+### Prometheus가 뭐하는 애인가?
 
 **Prometheus는 메트릭 기반 모니터링 시스템**이에요.
 
@@ -26,9 +26,9 @@ title: 모르고 살자니 너무 불편한 Prometheus
 
 ---
 
-## Prometheus가 많이 쓰이는 이유
+### Prometheus가 많이 쓰이는 이유
 
-### 1. Pull 방식 구조 (운영에 유리)
+#### 1. Pull 방식 구조 (운영에 유리)
 
 - Prometheus가 대상 서비스의 `/metrics` 엔드포인트를 **가져오는 방식**
     
@@ -137,3 +137,5 @@ title: 모르고 살자니 너무 불편한 Prometheus
 
 ---
 by chatgpt
+
+## 
