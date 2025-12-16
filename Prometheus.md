@@ -138,5 +138,5 @@ title: 모르고 살자니 너무 불편한 Prometheus
 ---
 by chatgpt
 
-## nodejs랑은 어떻게 쓰여야 하나?
+## 그래서 nodejs랑은 어떻게 쓰여야 하나?
 
