@@ -140,3 +140,7 @@ by chatgpt
 
 ## 그래서 nodejs랑은 어떻게 쓰여야 하나?
 
+prometheus는 exporter가 매우 많은데 nodejs의 경우 별도의 exporter를 사용하지 않고 [prom-client](https://www.npmjs.com/package/prom-client) 를 사용해서 nodejs에 대한 정보를 제공한다.
+
+
+
