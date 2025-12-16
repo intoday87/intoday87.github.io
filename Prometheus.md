@@ -45,7 +45,7 @@ title: 모르고 살자니 너무 불편한 Prometheus
 
 ---
 
-### 2. 강력한 데이터 모델 + PromQL
+#### 2. 강력한 데이터 모델 + PromQL
 
 - 모든 메트릭이:
     
@@ -65,7 +65,7 @@ title: 모르고 살자니 너무 불편한 Prometheus
 
 ---
 
-### 3. CNCF 공식 프로젝트 (사실상 표준)
+#### 3. CNCF 공식 프로젝트 (사실상 표준)
 
 - Kubernetes, Envoy, etcd, Redis, MySQL, Node exporter 등
     
@@ -76,7 +76,7 @@ title: 모르고 살자니 너무 불편한 Prometheus
 
 ---
 
-### 4. Alerting까지 한 세트
+#### 4. Alerting까지 한 세트
 
 - Alertmanager와 조합하면:
     
@@ -138,4 +138,5 @@ title: 모르고 살자니 너무 불편한 Prometheus
 ---
 by chatgpt
 
-## 
+## nodejs랑은 어떻게 쓰여야 하나?
+
