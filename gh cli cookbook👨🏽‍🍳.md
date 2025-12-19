@@ -2,5 +2,5 @@
 ```zsh
 $ gh pr view --web
 
-Opening https://github.com/org/authentication-web/pull/630 in your browser.
+Opening https://github.com/org/repo/pull/630 in your browser.
 ```
