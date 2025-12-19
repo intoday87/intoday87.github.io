@@ -1,6 +1,6 @@
 ## 현재 브랜치로 열려있는 PR 보기
 
-친절하게 browser로 열어주는 옵션 `--web` 까지 존쟇
+친절하게 browser로 열어주는 옵션 `--web` 까지 존재한다
 ```zsh
 $ gh pr view --web
 
